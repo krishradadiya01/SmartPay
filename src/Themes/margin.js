@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {getHeight, moderateScale} from '../common/constant';
+import {getHeight, moderateScale} from '../Common/constant';
 
 // All Margin Styles
 export default StyleSheet.create({

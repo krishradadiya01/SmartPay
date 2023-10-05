@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {getHeight, moderateScale} from '../common/constant';
+import {getHeight, moderateScale} from '../Common/constant';
 
 export default StyleSheet.create({
   p10: {
