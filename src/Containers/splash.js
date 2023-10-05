@@ -7,7 +7,7 @@ import {StackNav} from '../Navigation/navigationKeys';
 
 const Splash = props => {
   setTimeout(() => {
-    props.navigation.navigate(StackNav.OnBoardingScreen);
+    props.navigation.navigate(StackNav.onBoarding);
   }, 1500);
 
   return (

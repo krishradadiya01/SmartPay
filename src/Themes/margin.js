@@ -43,10 +43,10 @@ export default StyleSheet.create({
     marginBottom: getHeight(5),
   },
   mb50: {
-    marginBottom: getHeight(50),
+    marginBottom: getHeight(100),
   },
   mb55: {
-    marginBottom: getHeight(55),
+    marginButton: getHeight(55),
   },
   mh0: {
     marginHorizontal: 0,
@@ -146,6 +146,9 @@ export default StyleSheet.create({
   },
   mt50: {
     marginTop: getHeight(50),
+  },
+  mt70: {
+    marginTop: getHeight(70),
   },
   mt100: {
     marginTop: getHeight(100),

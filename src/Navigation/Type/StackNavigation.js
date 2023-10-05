@@ -13,6 +13,11 @@ const StackNavigation = () => {
         component={StackRoute.splash}
         options={{headerShown: false}}
       />
+      <Stack.Screen
+        name={StackNav.onBoarding}
+        component={StackRoute.onBoarding}
+        options={{headerShown: false}}
+      />
     </Stack.Navigator>
   );
 };

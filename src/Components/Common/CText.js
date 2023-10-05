@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text} from 'react-native';
-import {colors} from '../../themes/colors';
-import Typography from '../../themes/typography';
+import {colors} from '../../Themes/colors';
+import Typography from '../../Themes/typography';
 
 const CText = ({type, style, align, color, children, onPress, ...props}) => {
   const fontWeights = () => {

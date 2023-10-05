@@ -9,6 +9,9 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  alignCenter: {
+    alignItems: 'center'
+  },
   columnCenter: {
     alignItems: 'center',
     flexDirection: 'column',
