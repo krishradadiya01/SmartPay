@@ -1,0 +1,27 @@
+import AsyncStorage from "@react-native-async-storage/async-storage"
+import { ACCESS_TOKEN, ON_BOARDING } from "./keys"
+
+const StorageValue = async () => {
+   let asyncData = await AsyncStorage.multiGet([ON_BOARDING, ACCESS_TOKEN])
+   const onBoardingDataValue = !!asyncData[0][1]
+   ? asyncData[0][1]
+   : false
+   const authDataValue = !!asyncData[1][1]
+   ? JSON.parse(asyncData[1][1])
+   : false
+   return {onBoardingDataValue, authDataValue}
+}
+
+const onBoardingToken = async value => {
+   const stringData = JSON.stringify(value)
+   await AsyncStorage.setItem(ON_BOARDING, stringData)
+   return;
+}
+
+const authToken = async value => {
+    const stringData = JSON.stringify(value)
+    await AsyncStorage.setItem(ACCESS_TOKEN, stringData)
+    return;
+}
+
+export {onBoardingToken, authToken, StorageValue};

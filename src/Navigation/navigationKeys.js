@@ -1,5 +1,14 @@
 export const StackNav = {
   splash: 'splash',
   onBoarding: 'onBoarding',
-  SignUpEmpty: 'SignUpEmpty'
+  AuthNavigation: 'AuthNavigation',
+  TabNavigation: 'TabNavigation'
+};
+
+export const AuthNav = {
+  SignUpEmpty: 'SignUpEmpty',
+};
+
+export const TabNav = {
+  HomeScreen: 'HomeScreen',
 };

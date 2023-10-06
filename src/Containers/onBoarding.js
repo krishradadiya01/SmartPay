@@ -8,8 +8,10 @@ import {OnBoardingData} from '../Api/constants';
 import {deviceWidth, moderateScale} from '../Common/constant';
 import {colors} from '../Themes/colors';
 import CButton from '../Components/Common/CButton';
+import {onBoardingToken} from '../Utils/asyncStorage';
+import {AuthNav, StackNav} from '../Navigation/navigationKeys';
 
-export default function onBoarding() {
+export default function onBoarding({navigation}) {
   const [onBoardingDetails, setonBoardingDetails] = useState(0);
   const BoardingRef = useRef(null);
 
@@ -18,9 +20,9 @@ export default function onBoarding() {
   }, []);
 
   const onPressRightArrow = () => {
-    if (onBoardingDetails === 2) {
-      props.navigation.navigate('AuthNavigation');
-      //  OnBoardingToken(true);
+    if (onBoardingDetails === 1) {
+      navigation.navigate(StackNav.AuthNavigation);
+      onBoardingToken(true);
     } else {
       BoardingRef.current._listRef._scrollRef.scrollTo({
         x: deviceWidth * (onBoardingDetails + 1),
@@ -106,7 +108,7 @@ const localStyles = StyleSheet.create({
   },
   DescStyle: {
     textAlign: 'center',
-    width: deviceWidth,
+    width: moderateScale(350),
     ...styles.ph35,
     ...styles.pv30,
     backgroundColor: colors.white,

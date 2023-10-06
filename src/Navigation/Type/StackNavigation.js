@@ -18,6 +18,10 @@ const StackNavigation = () => {
         component={StackRoute.onBoarding}
         options={{headerShown: false}}
       />
+      <Stack.Screen
+        name={StackNav.AuthNavigation}
+        component={StackRoute.AuthNavigation}
+        options={{headerShown: false}}></Stack.Screen>
     </Stack.Navigator>
   );
 };

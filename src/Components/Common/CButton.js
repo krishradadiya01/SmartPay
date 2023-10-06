@@ -28,7 +28,7 @@ const localStyles = StyleSheet.create({
     ...styles.ml15,
     ...styles.center,
     ...styles.mt35,
-    backgroundColor: colors.black
+    backgroundColor: colors.black,
   },
 
   ChildButton: {
