@@ -1,5 +1,7 @@
-import {Text, TouchableOpacity, StyleSheet} from 'react-native';
+import {TouchableOpacity, StyleSheet, View} from 'react-native';
 import React from 'react';
+
+// Local imports
 import {colors} from '../../Themes/colors';
 import {moderateScale} from '../../Common/constant';
 import {styles} from '../../Themes/index';
@@ -10,24 +12,25 @@ const CButton = props => {
   let {ParentLoginBtn, ChildLoginBtn, text, onPress} = props;
 
   return (
-    <TouchableOpacity
-      style={[localStyles.ParentButton, ParentLoginBtn]}
-      onPress={onPress}>
-      <CText style={[localStyles.ChildButton, ChildLoginBtn]}>
-        {text || 'Next'}
-      </CText>
-    </TouchableOpacity>
+    <View style={styles.center}>
+      <TouchableOpacity
+        style={[localStyles.ParentButton, ParentLoginBtn]}
+        onPress={onPress}>
+        <CText style={[localStyles.ChildButton, ChildLoginBtn]}>
+          {text || 'Continue'}
+        </CText>
+      </TouchableOpacity>
+    </View>
   );
 };
 
 const localStyles = StyleSheet.create({
   ParentButton: {
-    backgroundColor: colors.default,
-    width: moderateScale(344),
+    borderRadius: moderateScale(16),
+    width: moderateScale(327),
     height: moderateScale(54),
-    ...styles.ml15,
     ...styles.center,
-    ...styles.mt35,
+    ...styles.mt25,
     backgroundColor: colors.black,
   },
 

@@ -68,6 +68,9 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  flexEnd: {
+    justifyContent: 'flex-end'
+  },
   rowCenter: {
     alignItems: 'center',
     flexDirection: 'row',

@@ -71,6 +71,9 @@ export default StyleSheet.create({
   pl10: {
     paddingLeft: moderateScale(10),
   },
+  pl20: {
+    paddingLeft: moderateScale(20),
+  },
   pr10: {
     paddingRight: moderateScale(10),
   },
@@ -79,6 +82,9 @@ export default StyleSheet.create({
   },
   pt10: {
     paddingTop: getHeight(10),
+  },
+  pt6: {
+    paddingTop: getHeight(6),
   },
   pt15: {
     paddingTop: getHeight(15),
@@ -109,6 +115,9 @@ export default StyleSheet.create({
   },
   pv30: {
     paddingVertical: getHeight(30),
+  },
+  pv40: {
+    paddingVertical: getHeight(40),
   },
   pv5: {
     paddingVertical: getHeight(5),

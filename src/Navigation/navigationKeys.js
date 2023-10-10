@@ -7,6 +7,10 @@ export const StackNav = {
 
 export const AuthNav = {
   SignUpEmpty: 'SignUpEmpty',
+  PassRecovery: 'PassRecovery',
+  VerifyIdentity: 'VerifyIdentity',
+  ItsYou: 'ItsYou',
+  CreatePass: 'CreatePass'
 };
 
 export const TabNav = {

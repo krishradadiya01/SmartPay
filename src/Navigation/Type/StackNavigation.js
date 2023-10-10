@@ -21,7 +21,8 @@ const StackNavigation = () => {
       <Stack.Screen
         name={StackNav.AuthNavigation}
         component={StackRoute.AuthNavigation}
-        options={{headerShown: false}}></Stack.Screen>
+        options={{headerShown: false}}
+      />
     </Stack.Navigator>
   );
 };

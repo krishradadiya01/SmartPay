@@ -1,8 +1,8 @@
 import React from 'react';
 import {KeyboardAvoidingView, ScrollView} from 'react-native';
 
-import {isIOS, moderateScale} from '../../common/constants';
-import {styles} from '../../themes';
+import {isIOS, moderateScale} from '../../Common/constant';
+import {styles} from '../../Themes';
 
 export default KeyBoardAvoidWrapper = ({
   children,
@@ -11,7 +11,7 @@ export default KeyBoardAvoidWrapper = ({
 }) => {
   return (
     <KeyboardAvoidingView
-      keyboardVerticalOffset={isIOS ? moderateScale(50) : null}
+      // keyboardVerticalOffset={isIOS ? moderateScale(10) : null}
       style={[styles.flex, containerStyle]}
       behavior={isIOS ? 'padding' : null}>
       <ScrollView

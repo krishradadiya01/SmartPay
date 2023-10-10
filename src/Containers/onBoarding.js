@@ -9,7 +9,7 @@ import {deviceWidth, moderateScale} from '../Common/constant';
 import {colors} from '../Themes/colors';
 import CButton from '../Components/Common/CButton';
 import {onBoardingToken} from '../Utils/asyncStorage';
-import {AuthNav, StackNav} from '../Navigation/navigationKeys';
+import {StackNav} from '../Navigation/navigationKeys';
 
 export default function onBoarding({navigation}) {
   const [onBoardingDetails, setonBoardingDetails] = useState(0);
@@ -18,6 +18,12 @@ export default function onBoarding({navigation}) {
   const _setViewableItemsChanged = useCallback(({viewableItems}) => {
     setonBoardingDetails(viewableItems[0]?.index);
   }, []);
+
+  const _viewabilityConfig = {itemVisiblePercentThreshold: 50};
+
+  const skip = () => {
+    navigation.navigate(StackNav.AuthNavigation);
+  };
 
   const onPressRightArrow = () => {
     if (onBoardingDetails === 1) {
@@ -35,10 +41,16 @@ export default function onBoarding({navigation}) {
       <View>
         <View style={localStyles.Parent}>
           <Image source={item.image} style={localStyles.onBoarding1} />
-          <CText type={'B24'} style={localStyles.Title1}>
+          <CText
+            type={'B24'}
+            style={localStyles.Title1}
+            backgroundColor={colors.white}>
             {item.Title}
           </CText>
-          <CText type={'R14'} style={localStyles.DescStyle}>
+          <CText
+            type={'R14'}
+            style={localStyles.DescStyle}
+            backgroundColor={colors.white}>
             {item.Description}
           </CText>
         </View>
@@ -47,13 +59,23 @@ export default function onBoarding({navigation}) {
   };
 
   return (
-    <SafeAreaView style={localStyles.MainParent}>
+    <View style={localStyles.MainParent}>
+      <SafeAreaView style={localStyles.ParentSkipButton}>
+        <CButton
+          text={'Skip'}
+          onPress={skip}
+          ParentLoginBtn={localStyles.SkipButton}
+          ChildLoginBtn={localStyles.ChildSkipBtn}
+        />
+      </SafeAreaView>
       <FlatList
         data={OnBoardingData}
         renderItem={renderItems}
         showsHorizontalScrollIndicator={false}
         horizontal
+        viewabilityConfig={_viewabilityConfig}
         ref={BoardingRef}
+        pagingEnabled
         onViewableItemsChanged={_setViewableItemsChanged}
       />
       <View style={styles.rowCenter}>
@@ -74,14 +96,12 @@ export default function onBoarding({navigation}) {
         ))}
       </View>
 
-      <View style={localStyles.ParentCButton}>
-        <CButton
-          ParentLoginBtn={localStyles.CommonLgnBtn}
-          text={'Get Started'}
-          onPress={onPressRightArrow}
-        />
-      </View>
-    </SafeAreaView>
+      <CButton
+        ParentLoginBtn={localStyles.CommonLgnBtn}
+        text={'Get Started'}
+        onPress={onPressRightArrow}
+      />
+    </View>
   );
 }
 
@@ -95,39 +115,43 @@ const localStyles = StyleSheet.create({
   },
   onBoarding1: {
     width: deviceWidth,
-    height: moderateScale(350),
-    ...styles.mt70,
+    height: moderateScale(340),
+    ...styles.mb20,
   },
   Title1: {
     width: deviceWidth,
     textAlign: 'center',
     ...styles.ph30,
-    ...styles.pt30,
-    backgroundColor: colors.white,
-    width: deviceWidth,
+    ...styles.pt20,
   },
   DescStyle: {
     textAlign: 'center',
     width: moderateScale(350),
     ...styles.ph35,
-    ...styles.pv30,
-    backgroundColor: colors.white,
+    ...styles.pv20,
   },
   IndicatorStyle: {
     height: moderateScale(8),
-    width: moderateScale(10),
     borderRadius: moderateScale(10),
     ...styles.mh5,
     ...styles.mb55,
   },
   CommonLgnBtn: {
-    width: moderateScale(287),
     ...styles.center,
     borderRadius: moderateScale(20),
   },
-  ParentCButton: {
-    ...styles.center,
-    ...styles.mr15,
-    ...styles.mt35,
+  ParentSkipButton: {
+    ...styles.selfEnd,
+    ...styles.mr25,
+  },
+  SkipButton: {
+    width: moderateScale(40),
+    height: moderateScale(30),
+    ...styles.mr40,
+    backgroundColor: colors.white,
+    ...styles.mb30,
+  },
+  ChildSkipBtn: {
+    color: colors.skyBlue,
   },
 });
