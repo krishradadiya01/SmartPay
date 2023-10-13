@@ -19,7 +19,7 @@ import {moderateScale} from '../../Common/constant';
 import images from '../../Assets/Images/index';
 import CBackButton from '../../Components/Common/CBackButton';
 
-export default function SignUpEmpty({navigation}) {
+export default function SignInEmpty({navigation}) {
   const [changeValue, setChangeValue] = useState(changeValue);
 
   const backTo = () => {
@@ -32,6 +32,10 @@ export default function SignUpEmpty({navigation}) {
 
   const moveToPassRec = () => {
     navigation.navigate(AuthNav.PassRecovery);
+  };
+
+  const moveToSignUp = () => {
+    navigation.navigate(AuthNav.SignUpEmpty);
   };
 
   return (
@@ -89,7 +93,8 @@ export default function SignUpEmpty({navigation}) {
 
       <View style={localStyles.NoHaveAcc}>
         <CText type={'B16'}>{strings.NoHaveAcc}</CText>
-        <TouchableOpacity>
+
+        <TouchableOpacity onPress={moveToSignUp}>
           <CText type={'B16'} style={localStyles.SignUpTxt}>
             {strings.SignUp}
           </CText>

@@ -71,14 +71,23 @@ export default StyleSheet.create({
   pl10: {
     paddingLeft: moderateScale(10),
   },
+  pl15: {
+    paddingLeft: moderateScale(15),
+  },
   pl20: {
     paddingLeft: moderateScale(20),
   },
   pr10: {
     paddingRight: moderateScale(10),
   },
+  pr15: {
+    paddingRight: moderateScale(15),
+  },
   pl25: {
     paddingLeft: moderateScale(25),
+  },
+  pl80: {
+    paddingLeft: moderateScale(80),
   },
   pt10: {
     paddingTop: getHeight(10),

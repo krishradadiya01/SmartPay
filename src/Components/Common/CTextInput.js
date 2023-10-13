@@ -17,6 +17,7 @@ function CTextInput({
   mainTxtInp,
   isSecure,
   RightIcon,
+  LeftIcon,
   onChangeText,
   value,
   onPress,
@@ -30,6 +31,7 @@ function CTextInput({
 
   return (
     <View style={[localStyles.main, mainTxtInp]}>
+      {!!LeftIcon && <LeftIcon />}
       <TextInput
         style={[localStyles.local, textInputStyle]}
         placeholder={text}
@@ -59,12 +61,12 @@ const localStyles = StyleSheet.create({
     height: moderateScale(56),
     backgroundColor: colors.white,
     borderRadius: moderateScale(16),
-    ...styles.mt40,
+    ...styles.mt25,
     ...styles.rowCenter,
     ...styles.justifyBetween,
   },
   local: {
-    ...styles.pl10,
+    ...styles.pl15,
     ...styles.flex,
     width: '100%',
   },

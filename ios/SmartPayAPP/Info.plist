@@ -35,8 +35,10 @@
 			</dict>
 		</dict>
 	</dict>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<key>NSCameraUsageDescription</key>
+	<string>For Select Images from Gallary</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>For Capture Images</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>fonts/AROneSans-Bold.ttf</string>

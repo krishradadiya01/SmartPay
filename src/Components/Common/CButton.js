@@ -9,12 +9,12 @@ import typography from '../../Themes/typography';
 import CText from './CText';
 
 const CButton = props => {
-  let {ParentLoginBtn, ChildLoginBtn, text, onPress} = props;
+  let {ParentLoginBtn, ChildLoginBtn, text, onPress, containerStyle} = props;
 
   return (
     <View style={styles.center}>
       <TouchableOpacity
-        style={[localStyles.ParentButton, ParentLoginBtn]}
+        style={[localStyles.ParentButton, ParentLoginBtn, containerStyle]}
         onPress={onPress}>
         <CText style={[localStyles.ChildButton, ChildLoginBtn]}>
           {text || 'Continue'}
@@ -27,16 +27,16 @@ const CButton = props => {
 const localStyles = StyleSheet.create({
   ParentButton: {
     borderRadius: moderateScale(16),
-    width: moderateScale(327),
+    width: moderateScale(333),
     height: moderateScale(54),
     ...styles.center,
-    ...styles.mt25,
+    ...styles.mt30,
     backgroundColor: colors.black,
   },
 
   ChildButton: {
     textAlign: 'center',
-    fontSize: 16,
+    fontSize: moderateScale(16),
     color: 'white',
     ...typography.fontSizes.f16,
     ...typography.fontWeights.Bold,

@@ -18,9 +18,9 @@ export default function ItsYou({navigation}) {
 
   const onOtpChange = otp => setOtp(otp);
 
-  const moveToBack = () => navigation.navigate(AuthNav.SignUpEmpty);
+  const moveToBack = () => navigation.navigate(AuthNav.SignInEmpty);
 
-  const moveToCreatePass = () => navigation.navigate(AuthNav.CreatePass)
+  const moveToCreatePass = () => navigation.navigate(AuthNav.CreatePass);
 
   return (
     <SafeAreaView style={localStyles.main}>
@@ -38,7 +38,6 @@ export default function ItsYou({navigation}) {
             onCodeChanged={onOtpChange}
             autoFocusOnLoad={false}
             codeInputFieldStyle={localStyles.underlineStyleBase}
-            codeInputHighlightStyle={localStyles.underlineStyleHighLighted}
           />
         </View>
 
@@ -49,7 +48,10 @@ export default function ItsYou({navigation}) {
         </TouchableOpacity>
       </View>
 
-      <CButton ParentLoginBtn={localStyles.continue} onPress={moveToCreatePass}/>
+      <CButton
+        ParentLoginBtn={localStyles.continue}
+        onPress={moveToCreatePass}
+      />
     </SafeAreaView>
   );
 }
@@ -58,7 +60,7 @@ const localStyles = StyleSheet.create({
   main: {
     ...styles.mh20,
     ...styles.flex,
-    ...styles.justifyBetween
+    ...styles.justifyBetween,
   },
   VerifyTxt: {
     ...styles.mt30,
@@ -81,9 +83,7 @@ const localStyles = StyleSheet.create({
     ...typography.fontWeights.Bold,
     ...typography.fontSizes.f24,
     color: colors.black,
-  },
-  underlineStyleHighLighted: {
-    borderColor: colors.SignUpTxt,
+    borderColor: colors.SignUpTxt
   },
   ParenOtp: {
     ...styles.mt35,
@@ -93,6 +93,6 @@ const localStyles = StyleSheet.create({
     ...styles.mt25,
   },
   continue: {
-    ...styles.mb30
-  }
+    ...styles.mb30,
+  },
 });

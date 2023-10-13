@@ -15,7 +15,7 @@ import {AuthNav} from '../../Navigation/navigationKeys';
 
 export default function VerifyIdentity({navigation}) {
   const moveToItsYou = () => {
-    navigation.navigate(AuthNav.ItsYou);
+    navigation.navigate(AuthNav.CreatePass);
   };
 
   return (

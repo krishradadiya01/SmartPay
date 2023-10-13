@@ -9,4 +9,6 @@ export const colors = {
   googleBorder: '#E5E7EB',
   SignUpTxt: '#0A6375',
   GreyScale: '#F9FAFB',
+  ShortName: '#6B7280',
+  transparent: '#11182799',
 };

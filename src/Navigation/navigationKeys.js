@@ -6,11 +6,20 @@ export const StackNav = {
 };
 
 export const AuthNav = {
-  SignUpEmpty: 'SignUpEmpty',
+  SignInEmpty: 'SignInEmpty',
   PassRecovery: 'PassRecovery',
+  OtpAuth: 'OtpAuth',
   VerifyIdentity: 'VerifyIdentity',
-  ItsYou: 'ItsYou',
-  CreatePass: 'CreatePass'
+  CreatePass: 'CreatePass',
+  SignUpEmpty: 'SignUpEmpty',
+  CountryRes: 'CountryRes',
+  Reasons: 'Reasons',
+  CreatePin: 'CreatePin',
+  FaceIdentity: 'faceIdentity',
+  ProofRes: 'ProofRes',
+  CardOnBoarding: 'CardOnBoarding',
+  CardStyle: 'CardStyle',
+  NewCard: 'NewCard',
 };
 
 export const TabNav = {

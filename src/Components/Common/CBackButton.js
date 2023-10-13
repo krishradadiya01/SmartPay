@@ -8,10 +8,13 @@ import {styles} from '../../Themes';
 import {moderateScale} from '../../Common/constant';
 
 export default function CBackButton(props) {
-  let {onPress, imgStyle} = props;
+  let {imgStyle, onPress, containerStyle} = props;
   return (
-    <TouchableOpacity onPress={onPress}>
-      <BackButton style={[localStyles.imageStyle, imgStyle]} />
+    <TouchableOpacity onPress={onPress} style={containerStyle}>
+      <BackButton
+        style={[localStyles.imageStyle, imgStyle]}
+        onPress={onPress}
+      />
     </TouchableOpacity>
   );
 }
