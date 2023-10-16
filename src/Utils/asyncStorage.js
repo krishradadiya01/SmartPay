@@ -3,16 +3,16 @@ import { ACCESS_TOKEN, ON_BOARDING } from "./keys"
 
 const StorageValue = async () => {
    let asyncData = await AsyncStorage.multiGet([ON_BOARDING, ACCESS_TOKEN])
-   const onBoardingDataValue = !!asyncData[0][1]
+   const OnBoardingDataValue = !!asyncData[0][1]
    ? asyncData[0][1]
    : false
    const authDataValue = !!asyncData[1][1]
    ? JSON.parse(asyncData[1][1])
    : false
-   return {onBoardingDataValue, authDataValue}
+   return {OnBoardingDataValue, authDataValue}
 }
 
-const onBoardingToken = async value => {
+const OnBoardingToken = async value => {
    const stringData = JSON.stringify(value)
    await AsyncStorage.setItem(ON_BOARDING, stringData)
    return;
@@ -24,4 +24,4 @@ const authToken = async value => {
     return;
 }
 
-export {onBoardingToken, authToken, StorageValue};
+export {OnBoardingToken, authToken, StorageValue};

@@ -1,8 +1,8 @@
 export const StackNav = {
   splash: 'splash',
-  onBoarding: 'onBoarding',
+  OnBoarding: 'OnBoarding',
   AuthNavigation: 'AuthNavigation',
-  TabNavigation: 'TabNavigation'
+  TabNavigation: 'TabNavigation',
 };
 
 export const AuthNav = {
@@ -24,4 +24,8 @@ export const AuthNav = {
 
 export const TabNav = {
   HomeScreen: 'HomeScreen',
+  MyCardScreen: 'MyCardScreen',
+  ScanScreen: 'ScanScreen',
+  ActivityScreen: 'ActivityScreen',
+  ProfileScreen: 'ProfileScreen'
 };

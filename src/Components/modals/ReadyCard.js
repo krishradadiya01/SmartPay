@@ -1,11 +1,6 @@
-import {
-  Modal,
-  StyleSheet,
-  View,
-  TouchableOpacity,
-  Image,
-} from 'react-native';
+import {Modal, StyleSheet, View, TouchableOpacity, Image} from 'react-native';
 import React from 'react';
+import {useNavigation} from '@react-navigation/native';
 
 // Local imports
 import {styles} from '../../Themes';
@@ -15,9 +10,17 @@ import CText from '../Common/CText';
 import strings from '../../I18n/mergeString';
 import CButton from '../Common/CButton';
 import images from '../../Assets/Images/index';
+import {StackNav} from '../../Navigation/navigationKeys';
 
 export default function ReadyCard(props) {
   let {visible, onPressClose} = props;
+
+  const navigation = useNavigation();
+
+  const moveToHome = () => {
+    navigation.navigate(StackNav.TabNavigation);
+    onPressClose();
+  };
 
   return (
     <View style={localStyles.flex}>
@@ -35,7 +38,7 @@ export default function ReadyCard(props) {
             <CButton
               text={'Ok, I’m ready!'}
               ParentLoginBtn={localStyles.ParentLgnBtn}
-              onPress={onPressClose}
+              onPress={moveToHome}
             />
           </TouchableOpacity>
         </TouchableOpacity>

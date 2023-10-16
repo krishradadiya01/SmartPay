@@ -61,4 +61,14 @@ export default {
   CardDetailTxt: 'Card Detail',
   GetReady: 'Great! your card is ready 😎',
   ShopTransfer: 'Now you can shop, transmit and transfer conveniently',
+  WB: 'Welcome back!',
+  Anna: 'Anabella Angela',
+  Deposit: 'Deposit',
+  Transfers: 'Transfers',
+  Withdraw: 'Withdraw',
+  More: 'More',
+  Today: 'Today, Dec 29',
+  Trans: 'All transactions',
+  AllTrans: 'All transactions',
+  
 };

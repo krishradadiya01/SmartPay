@@ -63,7 +63,7 @@ export default function Countries(props) {
         style={[
           localStyles.mainParent,
           {
-            backgroundColor: data == item.id ? colors.GreyScale : colors.white,
+            backgroundColor: data === item.id ? colors.GreyScale : colors.white,
           },
         ]}>
         <TouchableOpacity
@@ -71,7 +71,7 @@ export default function Countries(props) {
             localStyles.main,
             {
               backgroundColor:
-                data == item.id ? colors.GreyScale : colors.white,
+                data === item.id ? colors.GreyScale : colors.white,
             },
           ]}
           onPress={() => onPressCountry(item)}>

@@ -1,6 +1,7 @@
 import splash from '../Containers/splash';
-import onBoarding from '../Containers/onBoarding'
+import OnBoarding from '../Containers/OnBoarding'
 import AuthNavigation from './Type/AuthNavigation';
+import TabNavigation from './Type/TabNavigation';
 import SignInEmpty from '../Containers/Auth/SignInEmpty';
 import PassRecovery from '../Containers/Auth/PassRecovery'
 import OtpAuth from '../Containers/Auth/OtpAuth';
@@ -15,11 +16,17 @@ import ProofRes from '../Containers/Auth/ProofRes';
 import CardOnBoarding from '../Containers/Auth/CardOnBoarding';
 import CardStyle from '../Containers/Auth/CardStyle';
 import NewCard from '../Containers/Auth/NewCard';
+import HomeScreen from '../Containers/Screen/HomeScreen';
+import MyCardScreen from '../Containers/Screen/MyCardScreen';
+import ScanScreen from '../Containers/Screen/ScanScreen'
+import ActivityScreen from '../Containers/Screen/ActivityScreen';
+import ProfileScreen from '../Containers/Screen/ProfileScreen';
 
 export const StackRoute = {
   splash,
-  onBoarding,
+  OnBoarding,
   AuthNavigation,
+  TabNavigation
 };
 
 export const AuthRoute = {
@@ -38,3 +45,11 @@ export const AuthRoute = {
   CardStyle,
   NewCard,
 };
+
+export const TabRoute = {
+  HomeScreen,
+  MyCardScreen,
+  ScanScreen,
+  ActivityScreen,
+  ProfileScreen
+}

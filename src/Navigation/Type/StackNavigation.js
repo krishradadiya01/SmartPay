@@ -14,13 +14,18 @@ const StackNavigation = () => {
         options={{headerShown: false}}
       />
       <Stack.Screen
-        name={StackNav.onBoarding}
-        component={StackRoute.onBoarding}
+        name={StackNav.OnBoarding}
+        component={StackRoute.OnBoarding}
         options={{headerShown: false}}
       />
       <Stack.Screen
         name={StackNav.AuthNavigation}
         component={StackRoute.AuthNavigation}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name={StackNav.TabNavigation}
+        component={StackRoute.TabNavigation}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

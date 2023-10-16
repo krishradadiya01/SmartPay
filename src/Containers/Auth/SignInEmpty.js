@@ -18,12 +18,13 @@ import CButton from '../../Components/Common/CButton';
 import {moderateScale} from '../../Common/constant';
 import images from '../../Assets/Images/index';
 import CBackButton from '../../Components/Common/CBackButton';
+import {authToken} from '../../Utils/asyncStorage';
 
 export default function SignInEmpty({navigation}) {
   const [changeValue, setChangeValue] = useState(changeValue);
 
   const backTo = () => {
-    navigation.navigate(StackNav.onBoarding);
+    navigation.navigate(StackNav.OnBoarding);
   };
 
   const changeText = txt => {
@@ -36,6 +37,11 @@ export default function SignInEmpty({navigation}) {
 
   const moveToSignUp = () => {
     navigation.navigate(AuthNav.SignUpEmpty);
+  };
+
+  const moveToHome = () => {
+    navigation.navigate(StackNav.TabNavigation);
+    authToken(true);
   };
 
   return (
@@ -70,7 +76,11 @@ export default function SignInEmpty({navigation}) {
           </TouchableOpacity>
         </SafeAreaView>
 
-        <CButton text={'Sign In'} ParentLoginBtn={localStyles.ParentSignIn} />
+        <CButton
+          text={'Sign In'}
+          ParentLoginBtn={localStyles.ParentSignIn}
+          onPress={moveToHome}
+        />
 
         <View style={localStyles.mainOr}>
           <View style={localStyles.firstLine} />

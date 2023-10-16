@@ -13,9 +13,19 @@ import Business from './Business';
 import Creditcard from './Creditcard';
 import PieChart from './PieChart';
 import Users from './Users';
-import Passport from './Passport'
-import Card from './Card'
-import DigDoc from './DigDoc'
+import Passport from './Passport';
+import Card from './Card';
+import DigDoc from './DigDoc';
+import BlackHome from './BlackHome';
+import SilverHome from './SilverHome';
+import BlackCreditCard from './BlackCreditCard';
+import SilverCreditCard from './SilverCreditCard';
+import BlackActivity from './BlackActivity';
+import SilverActivity from './SilverActivity';
+import BlackUser from './BlackUser';
+import SilverUser from './SilverUser';
+import Scan from './Scan'
+import NotificationSvg from './NotificationSvg.svg'
 
 export {
   BackButton,
@@ -35,5 +45,15 @@ export {
   Users,
   Passport,
   Card,
-  DigDoc
+  DigDoc,
+  BlackHome,
+  SilverHome,
+  BlackCreditCard,
+  SilverCreditCard,
+  BlackActivity,
+  SilverActivity,
+  BlackUser,
+  SilverUser,
+  Scan,
+  NotificationSvg,
 };

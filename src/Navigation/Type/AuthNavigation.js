@@ -16,7 +16,7 @@ const AuthNavigation = ({navigation}) => {
     navigation.navigate(AuthNav.CardStyle);
   };
   return (
-    <Stack.Navigator initialRouteName={AuthNav.NewCard}>
+    <Stack.Navigator>
       <Stack.Screen
         name={AuthNav.SignInEmpty}
         component={AuthRoute.SignInEmpty}

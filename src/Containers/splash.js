@@ -17,13 +17,13 @@ const Splash = ({navigation}) => {
     try {
       let Data = await StorageValue();
       if (Data) {
-        let {onBoardingDataValue, authDataValue} = Data;
+        let {OnBoardingDataValue, authDataValue} = Data;
         if (!!authDataValue) {
-          navigation.navigate('HomeScreen');
-        } else if (!!onBoardingDataValue) {
+          navigation.navigate(StackNav.TabNavigation);
+        } else if (!!OnBoardingDataValue) {
           navigation.navigate(StackNav.AuthNavigation);
         } else {
-          navigation.navigate(StackNav.onBoarding);
+          navigation.navigate(StackNav.OnBoarding);
         }
       }
     } catch (e) {

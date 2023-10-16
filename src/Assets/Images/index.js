@@ -1,7 +1,7 @@
 export default {
   logo: require('../Images/logo.png'),
-  onBoarding1: require('../Images/onBoarding1.jpg'),
-  onBoarding2: require('../Images/onBoarding2.png'),
+  OnBoarding1: require('../Images/OnBoarding1.jpg'),
+  OnBoarding2: require('../Images/OnBoarding2.png'),
   view: require('../Images/view.png'),
   nonView: require('../Images/nonView.png'),
   Google: require('../Images/Google.png'),
@@ -15,5 +15,13 @@ export default {
   MainCard: require('../Images/MainCard.png'),
   CardColor: require('../Images/CardColor.png'),
   MasterIcon: require('../Images/MasterIcon.png'),
-  PopUp: require('../Images/PopUp.png')
+  PopUp: require('../Images/PopUp.png'),
+  Deposit: require('../Images/Deposit.png'),
+  More: require('../Images/More.png'),
+  Transfer: require('../Images/Transfer.png'),
+  Withdraw: require('../Images/Withdraw.png'),
+  Gym: require('../Images/Gym.png'),
+  Sent: require('../Images/Sent.png'),
+  Deposit2: require('../Images/Deposit2.png'),
+  cardBalance: require('../Images/cardBalance.png')
 };

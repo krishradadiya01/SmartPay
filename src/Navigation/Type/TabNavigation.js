@@ -1,20 +1,90 @@
 import React from 'react';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {AuthNav} from '../navigationKeys';
-import {AuthRoute} from '../navigationRoute';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {TabNav} from '../navigationKeys';
+import {TabRoute} from '../navigationRoute';
+import {
+  BlackActivity,
+  BlackCreditCard,
+  BlackHome,
+  BlackUser,
+  Scan,
+  SilverActivity,
+  SilverCreditCard,
+  SilverHome,
+  SilverUser,
+} from '../../Assets/Svgs';
+import {colors} from '../../Themes/colors';
+import {StyleSheet} from 'react-native';
+import {moderateScale} from '../../Common/constant';
 
-const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 
-const AuthNavigation = () => {
+const TabNavigation = () => {
   return (
-    <Stack.Navigator>
-      <Stack.Screen
-        name={AuthNav.SignUpEmpty}
-        component={AuthRoute.SignUpEmpty}
-        options={{headerShown: false}}
+    <Tab.Navigator>
+      <Tab.Screen
+        name={TabNav.HomeScreen}
+        component={TabRoute.HomeScreen}
+        options={{
+          headerShown: false,
+          tabBarLabel: 'Home',
+          tabBarActiveTintColor: colors.black,
+          tabBarInactiveTintColor: colors.tabColor,
+          tabBarIcon: ({focused}) => (focused ? <BlackHome /> : <SilverHome />),
+        }}
       />
-    </Stack.Navigator>
+      <Tab.Screen
+        name={TabNav.MyCardScreen}
+        component={TabRoute.MyCardScreen}
+        options={{
+          headerShown: false,
+          tabBarLabel: 'My Card',
+          tabBarActiveTintColor: colors.black,
+          tabBarInactiveTintColor: colors.tabColor,
+          tabBarIcon: ({focused}) =>
+            focused ? <BlackCreditCard /> : <SilverCreditCard />,
+        }}
+      />
+      <Tab.Screen
+        name={TabNav.ScanScreen}
+        component={TabRoute.ScanScreen}
+        options={{
+          headerShown: false,
+          tabBarLabel: () => null,
+          tabBarIcon: () => <Scan style={localStyles.ScanImg} />,
+        }}
+      />
+      <Tab.Screen
+        name={TabNav.ActivityScreen}
+        component={TabRoute.ActivityScreen}
+        options={{
+          headerShown: false,
+          tabBarLabel: 'My Card',
+          tabBarActiveTintColor: colors.black,
+          tabBarInactiveTintColor: colors.tabColor,
+          tabBarIcon: ({focused}) =>
+            focused ? <BlackActivity /> : <SilverActivity />,
+        }}
+      />
+      <Tab.Screen
+        name={TabNav.ProfileScreen}
+        component={TabRoute.ProfileScreen}
+        options={{
+          headerShown: false,
+          tabBarLabel: 'My Card',
+          tabBarActiveTintColor: colors.black,
+          tabBarInactiveTintColor: colors.tabColor,
+          tabBarIcon: ({focused}) => (focused ? <BlackUser /> : <SilverUser />),
+        }}
+      />
+    </Tab.Navigator>
   );
 };
 
-export default AuthNavigation;
+const localStyles = StyleSheet.create({
+  ScanImg: {
+    top: moderateScale(10),
+  },
+});
+
+export default TabNavigation;

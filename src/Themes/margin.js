@@ -153,6 +153,12 @@ export default StyleSheet.create({
   mt70: {
     marginTop: getHeight(70),
   },
+  mt80: {
+    marginTop: getHeight(80),
+  },
+  mt85: {
+    marginTop: getHeight(85),
+  },
   mt100: {
     marginTop: getHeight(100),
   },

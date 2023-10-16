@@ -1,16 +1,17 @@
 import Images from '../Assets/Images';
 import {US, UK, Singapore, China, Netherland, Indonesia} from '../Assets/Svgs';
 import {moderateScale} from '../Common/constant';
+import {colors} from '../Themes/colors';
 
 export const OnBoardingData = [
   {
-    image: Images.onBoarding1,
+    image: Images.OnBoarding1,
     Title: 'Finance app the safest and most trusted',
     Description:
       'Your finance work starts here. Our here to help you track and deal with speeding up your transactions.',
   },
   {
-    image: Images.onBoarding2,
+    image: Images.OnBoarding2,
     Title: 'The fastest transaction process only here',
     Description:
       'Get easy to pay all your bills with just a few steps. Paying your bills become fast and efficient.',
@@ -56,4 +57,35 @@ export const CountriesData = [
     FullName: 'Indonesia',
     id: 6,
   },
+];
+
+export const HomeData = [
+  {
+    image: Images.Gym,
+    name: 'Gym',
+    subName: 'Payment',
+    dollars: '- $45.99',
+    color: colors.black,
+  },
+  {
+    image: Images.Deposit2,
+    name: 'Bank of America',
+    subName: 'Deposit',
+    dollars: '+ $1,328.00',
+    color: colors.numbersColor,
+  },
+  {
+    image: Images.Sent,
+    name: 'To Brody Armando',
+    subName: 'Sent',
+    dollars: '- $699.00',
+    color: colors.black,
+  },
+  // {
+  //   image: Images.Gym,
+  //   name: 'Gym',
+  //   subName: 'Payment',
+  //   dollars: '- $45.99',
+  //   color: colors.black,
+  // },
 ];

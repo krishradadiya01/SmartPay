@@ -11,4 +11,7 @@ export const colors = {
   GreyScale: '#F9FAFB',
   ShortName: '#6B7280',
   transparent: '#11182799',
+  tabColor: '#6B7280',
+  Primary: '#0A6375',
+  numbersColor: '#2FA2B9',
 };

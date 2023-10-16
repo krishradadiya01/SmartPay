@@ -10,7 +10,7 @@ export default StyleSheet.create({
     ...flex.flex,
   },
   mainContainerSurface: {
-    backgroundColor: colors.primarySurface,
+    backgroundColor: colors.white,
     ...flex.flex,
   },
   innerContainer: {

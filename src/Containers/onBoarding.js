@@ -8,15 +8,15 @@ import {OnBoardingData} from '../Api/constants';
 import {deviceWidth, moderateScale} from '../Common/constant';
 import {colors} from '../Themes/colors';
 import CButton from '../Components/Common/CButton';
-import {onBoardingToken} from '../Utils/asyncStorage';
+import {OnBoardingToken} from '../Utils/asyncStorage';
 import {StackNav} from '../Navigation/navigationKeys';
 
-export default function onBoarding({navigation}) {
-  const [onBoardingDetails, setonBoardingDetails] = useState(0);
+export default function OnBoarding({navigation}) {
+  const [OnBoardingDetails, setOnBoardingDetails] = useState(0);
   const BoardingRef = useRef(null);
 
   const _setViewableItemsChanged = useCallback(({viewableItems}) => {
-    setonBoardingDetails(viewableItems[0]?.index);
+    setOnBoardingDetails(viewableItems[0]?.index);
   }, []);
 
   const _viewabilityConfig = {itemVisiblePercentThreshold: 50};
@@ -26,12 +26,12 @@ export default function onBoarding({navigation}) {
   };
 
   const onPressRightArrow = () => {
-    if (onBoardingDetails === 1) {
+    if (OnBoardingDetails === 1) {
       navigation.navigate(StackNav.AuthNavigation);
-      onBoardingToken(true);
+      OnBoardingToken(true);
     } else {
       BoardingRef.current._listRef._scrollRef.scrollTo({
-        x: deviceWidth * (onBoardingDetails + 1),
+        x: deviceWidth * (OnBoardingDetails + 1),
       });
     }
   };
@@ -40,7 +40,7 @@ export default function onBoarding({navigation}) {
     return (
       <View>
         <View style={localStyles.Parent}>
-          <Image source={item.image} style={localStyles.onBoarding1} />
+          <Image source={item.image} style={localStyles.OnBoarding1} />
           <CText
             type={'B24'}
             style={localStyles.Title1}
@@ -85,11 +85,11 @@ export default function onBoarding({navigation}) {
               localStyles.IndicatorStyle,
               {
                 width:
-                  index !== onBoardingDetails
+                  index !== OnBoardingDetails
                     ? moderateScale(8)
                     : moderateScale(35),
                 backgroundColor:
-                  index !== onBoardingDetails ? colors.silver : colors.black,
+                  index !== OnBoardingDetails ? colors.silver : colors.black,
               },
             ]}
           />
@@ -113,7 +113,7 @@ const localStyles = StyleSheet.create({
     ...styles.center,
     ...styles.alignCenter,
   },
-  onBoarding1: {
+  OnBoarding1: {
     width: deviceWidth,
     height: moderateScale(340),
     ...styles.mb20,
