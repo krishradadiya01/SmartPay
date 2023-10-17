@@ -3,6 +3,8 @@ export const StackNav = {
   OnBoarding: 'OnBoarding',
   AuthNavigation: 'AuthNavigation',
   TabNavigation: 'TabNavigation',
+  TransferMoney: 'TransferMoney',
+  SendMoney: 'SendMoney'
 };
 
 export const AuthNav = {

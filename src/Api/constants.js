@@ -2,6 +2,7 @@ import Images from '../Assets/Images';
 import {US, UK, Singapore, China, Netherland, Indonesia} from '../Assets/Svgs';
 import {moderateScale} from '../Common/constant';
 import {colors} from '../Themes/colors';
+import strings from '../I18n/mergeString'
 
 export const OnBoardingData = [
   {
@@ -81,11 +82,22 @@ export const HomeData = [
     dollars: '- $699.00',
     color: colors.black,
   },
-  // {
-  //   image: Images.Gym,
-  //   name: 'Gym',
-  //   subName: 'Payment',
-  //   dollars: '- $45.99',
-  //   color: colors.black,
-  // },
+];
+
+export const ContactsData = [
+  {
+    image: Images.Girl,
+    name: strings.GirlName,
+    id: 1,
+  },
+  {
+    image: Images.Boy,
+    name: strings.BoyName,
+    id: 2,
+  },
+  {
+    image: Images.Girl,
+    name: strings.Girl2name,
+    id: 3,
+  },
 ];

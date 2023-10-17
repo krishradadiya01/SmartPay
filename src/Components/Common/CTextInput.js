@@ -11,7 +11,7 @@ import {colors} from '../../Themes/colors';
 import {styles} from '../../Themes';
 import Images from '../../Assets/Images';
 
-function CTextInput({
+export default function CTextInput({
   text,
   textInputStyle,
   mainTxtInp,
@@ -76,5 +76,3 @@ const localStyles = StyleSheet.create({
     height: moderateScale(24),
   },
 });
-
-export default CTextInput;

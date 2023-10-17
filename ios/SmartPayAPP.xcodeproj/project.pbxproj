@@ -13,8 +13,12 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		2B0E12C1BE2245A9A951A965 /* Recursive-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B13750626DF7403AAD59BD5F /* Recursive-Regular.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-SmartPayAPP-SmartPayAPPTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-SmartPayAPP-SmartPayAPPTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		9F9ADEEBED8042168126AC29 /* Recursive-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6461C272F1454C809FA7B02E /* Recursive-Bold.ttf */; };
+		A67C9D8A2AA94E4DAEA2588C /* Recursive-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6D751CFCA7D4F77A01BDE83 /* Recursive-Medium.ttf */; };
+		D37217C958694282B003D66A /* Recursive-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 20C25ABEB0734132950CE271 /* Recursive-SemiBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,12 +44,16 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SmartPayAPP/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = SmartPayAPP/main.m; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-SmartPayAPP-SmartPayAPPTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SmartPayAPP-SmartPayAPPTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		20C25ABEB0734132950CE271 /* Recursive-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Recursive-SemiBold.ttf"; path = "../src/Assets/Fonts/Recursive-SemiBold.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-SmartPayAPP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartPayAPP.debug.xcconfig"; path = "Target Support Files/Pods-SmartPayAPP/Pods-SmartPayAPP.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-SmartPayAPP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartPayAPP.release.xcconfig"; path = "Target Support Files/Pods-SmartPayAPP/Pods-SmartPayAPP.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-SmartPayAPP-SmartPayAPPTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartPayAPP-SmartPayAPPTests.debug.xcconfig"; path = "Target Support Files/Pods-SmartPayAPP-SmartPayAPPTests/Pods-SmartPayAPP-SmartPayAPPTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-SmartPayAPP.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SmartPayAPP.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6461C272F1454C809FA7B02E /* Recursive-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Recursive-Bold.ttf"; path = "../src/Assets/Fonts/Recursive-Bold.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = SmartPayAPP/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-SmartPayAPP-SmartPayAPPTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartPayAPP-SmartPayAPPTests.release.xcconfig"; path = "Target Support Files/Pods-SmartPayAPP-SmartPayAPPTests/Pods-SmartPayAPP-SmartPayAPPTests.release.xcconfig"; sourceTree = "<group>"; };
+		B13750626DF7403AAD59BD5F /* Recursive-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Recursive-Regular.ttf"; path = "../src/Assets/Fonts/Recursive-Regular.ttf"; sourceTree = "<group>"; };
+		E6D751CFCA7D4F77A01BDE83 /* Recursive-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Recursive-Medium.ttf"; path = "../src/Assets/Fonts/Recursive-Medium.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -99,6 +107,18 @@
 			name = SmartPayAPP;
 			sourceTree = "<group>";
 		};
+		2A4701D94C15428691B741CD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6461C272F1454C809FA7B02E /* Recursive-Bold.ttf */,
+				E6D751CFCA7D4F77A01BDE83 /* Recursive-Medium.ttf */,
+				B13750626DF7403AAD59BD5F /* Recursive-Regular.ttf */,
+				20C25ABEB0734132950CE271 /* Recursive-SemiBold.ttf */,
+			);
+			name = Resources;
+			path = "";
+			sourceTree = "<group>";
+		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +147,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				2A4701D94C15428691B741CD /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -250,6 +271,10 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				0759A5702ACE9C00000AF5D5 /* fonts in Resources */,
+				9F9ADEEBED8042168126AC29 /* Recursive-Bold.ttf in Resources */,
+				A67C9D8A2AA94E4DAEA2588C /* Recursive-Medium.ttf in Resources */,
+				2B0E12C1BE2245A9A951A965 /* Recursive-Regular.ttf in Resources */,
+				D37217C958694282B003D66A /* Recursive-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -622,6 +647,7 @@
 					"-ld_classic",
 					"-Wl",
 					"-ld_classic",
+					"-Wl -ld_classic ",
 				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
@@ -708,6 +734,7 @@
 					"-ld_classic",
 					"-Wl",
 					"-ld_classic",
+					"-Wl -ld_classic ",
 				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;

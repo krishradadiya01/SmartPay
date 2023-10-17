@@ -21,6 +21,12 @@ const CText = ({type, style, align, color, children, onPress, ...props}) => {
 
   const fontSize = () => {
     switch (type.slice(1)) {
+      case '12':
+        return Typography.fontSizes.f12;
+      case '14':
+        return Typography.fontSizes.f14;
+      case '16':
+        return Typography.fontSizes.f16;
       case '18':
         return Typography.fontSizes.f18;
       case '20':

@@ -21,12 +21,16 @@ import MyCardScreen from '../Containers/Screen/MyCardScreen';
 import ScanScreen from '../Containers/Screen/ScanScreen'
 import ActivityScreen from '../Containers/Screen/ActivityScreen';
 import ProfileScreen from '../Containers/Screen/ProfileScreen';
+import TransferMoney from '../Components/HomeTab/TransferMoney';
+import SendMoney from '../Components/HomeTab/SendMoney';
 
 export const StackRoute = {
   splash,
   OnBoarding,
   AuthNavigation,
-  TabNavigation
+  TabNavigation,
+  TransferMoney,
+  SendMoney
 };
 
 export const AuthRoute = {

@@ -70,5 +70,9 @@ export default {
   Today: 'Today, Dec 29',
   Trans: 'All transactions',
   AllTrans: 'All transactions',
-  
+  ChooseCards: 'Choose cards',
+  ChooseRec: 'Choose recipients',
+  GirlName: 'Maria Sevchenko',
+  BoyName: 'Andrade AlexanderBase',
+  Girl2name: 'Mary Allen Curry'
 };

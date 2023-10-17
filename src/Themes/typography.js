@@ -2,20 +2,29 @@ import {moderateScale} from '../Common/constant';
 
 const fontWeights = {
   Regular: {
-    fontFamily: 'AROneSans-Regular',
+    fontFamily: 'Recursive-Regular',
   },
   Medium: {
-    fontFamily: 'AROneSans-Medium',
+    fontFamily: 'Recursive-Medium',
   },
   SemiBold: {
-    fontFamily: 'AROneSans-SemiBold',
+    fontFamily: 'Recursive-SemiBold',
   },
   Bold: {
-    fontFamily: 'AROneSans-Bold',
+    fontFamily: 'Recursive-Bold',
   },
 };
 
 const fontSizes = {
+  f12: {
+    fontSize: moderateScale(12),
+  },
+  f14: {
+    fontSize: moderateScale(14),
+  },
+  f16: {
+    fontSize: moderateScale(16),
+  },
   f18: {
     fontSize: moderateScale(18),
   },
