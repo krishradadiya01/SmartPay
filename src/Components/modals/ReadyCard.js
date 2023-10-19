@@ -32,7 +32,7 @@ export default function ReadyCard(props) {
             <Image source={images.PopUp} style={localStyles.imgStyle} />
             <View style={localStyles.getTxtParent}>
               <CText type={'B18'}>{strings.GetReady}</CText>
-              <CText style={localStyles.TransTxt}>{strings.ShopTransfer}</CText>
+              <CText align={'center'} style={localStyles.TransTxt}>{strings.ShopTransfer}</CText>
             </View>
 
             <CButton
@@ -56,7 +56,6 @@ const localStyles = StyleSheet.create({
   imgStyle: {
     width: moderateScale(290),
     height: moderateScale(337),
-    position: 'relative',
   },
   getTxtParent: {
     position: 'absolute',
@@ -66,7 +65,6 @@ const localStyles = StyleSheet.create({
   TransTxt: {
     ...styles.mt25,
     width: moderateScale(300),
-    textAlign: 'center',
   },
   ParentLgnBtn: {
     position: 'absolute',

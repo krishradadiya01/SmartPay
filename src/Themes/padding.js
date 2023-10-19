@@ -56,6 +56,9 @@ export default StyleSheet.create({
   ph20: {
     paddingHorizontal: moderateScale(20),
   },
+  ph24: {
+    paddingHorizontal: moderateScale(24),
+  },
   ph25: {
     paddingHorizontal: moderateScale(25),
   },
@@ -115,6 +118,9 @@ export default StyleSheet.create({
   },
   pv15: {
     paddingVertical: getHeight(15),
+  },
+  pv16: {
+    paddingVertical: getHeight(16),
   },
   pv20: {
     paddingVertical: getHeight(20),

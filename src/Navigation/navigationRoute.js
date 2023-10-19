@@ -23,6 +23,8 @@ import ActivityScreen from '../Containers/Screen/ActivityScreen';
 import ProfileScreen from '../Containers/Screen/ProfileScreen';
 import TransferMoney from '../Components/HomeTab/TransferMoney';
 import SendMoney from '../Components/HomeTab/SendMoney';
+import TransferProof from '../Components/HomeTab/TransferProof';
+import TopUpScreen from '../Components/HomeTab/TopUpScreen';
 
 export const StackRoute = {
   splash,
@@ -30,7 +32,9 @@ export const StackRoute = {
   AuthNavigation,
   TabNavigation,
   TransferMoney,
-  SendMoney
+  SendMoney,
+  TransferProof,
+  TopUpScreen
 };
 
 export const AuthRoute = {

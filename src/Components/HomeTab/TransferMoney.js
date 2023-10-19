@@ -80,7 +80,7 @@ export default function TransferMoney({navigation}) {
             />
           ) : null}
           <Image source={item.image} style={localStyles.imgSty} />
-          <CText type={'B12'} style={localStyles.GirlNameTxt}>
+          <CText align={'center'} type={'B12'} style={localStyles.GirlNameTxt}>
             {item.name}
           </CText>
         </TouchableOpacity>
@@ -173,7 +173,6 @@ const localStyles = StyleSheet.create({
   GirlNameTxt: {
     ...styles.ph20,
     ...styles.pv10,
-    textAlign: 'center',
   },
   ContBtn: {
     ...styles.mb20,

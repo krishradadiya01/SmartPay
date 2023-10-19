@@ -42,12 +42,14 @@ export default function OnBoarding({navigation}) {
         <View style={localStyles.Parent}>
           <Image source={item.image} style={localStyles.OnBoarding1} />
           <CText
+            align={'center'}
             type={'B24'}
             style={localStyles.Title1}
             backgroundColor={colors.white}>
             {item.Title}
           </CText>
           <CText
+            align={'center'}
             type={'R14'}
             style={localStyles.DescStyle}
             backgroundColor={colors.white}>
@@ -120,12 +122,10 @@ const localStyles = StyleSheet.create({
   },
   Title1: {
     width: deviceWidth,
-    textAlign: 'center',
     ...styles.ph30,
     ...styles.pt20,
   },
   DescStyle: {
-    textAlign: 'center',
     width: moderateScale(350),
     ...styles.ph35,
     ...styles.pv20,

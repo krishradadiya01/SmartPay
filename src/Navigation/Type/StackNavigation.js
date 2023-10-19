@@ -1,24 +1,18 @@
 import {StyleSheet} from 'react-native';
 import React from 'react';
-import useNavigation from '@react-navigation/native';
 
 // Local imports
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {StackNav, TabNav} from '../navigationKeys';
+import {StackNav} from '../navigationKeys';
 import {StackRoute} from '../navigationRoute';
 import {styles} from '../../Themes';
 import {moderateScale} from '../../Common/constant';
-import CBackButton from '../../Components/Common/CBackButton';
 
 const Stack = createNativeStackNavigator();
 
 const StackNavigation = () => {
-  const moveToHome = () => {
-    navigation.navigate(TabNav.HomeScreen);
-  };
-
   return (
-    <Stack.Navigator>
+    <Stack.Navigator initialRouteName={StackNav.splash}>
       <Stack.Screen
         name={StackNav.splash}
         component={StackRoute.splash}
@@ -47,6 +41,16 @@ const StackNavigation = () => {
       <Stack.Screen
         name={StackNav.SendMoney}
         component={StackRoute.SendMoney}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name={StackNav.TransferProof}
+        component={StackRoute.TransferProof}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name={StackNav.TopUpScreen}
+        component={StackRoute.TopUpScreen}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

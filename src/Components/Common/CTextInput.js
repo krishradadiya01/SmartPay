@@ -22,6 +22,7 @@ export default function CTextInput({
   value,
   onPress,
   placeColor,
+  keyboardType
 }) {
   const [isSecurePass, setIsSecurePass] = useState(isSecure);
 
@@ -40,6 +41,7 @@ export default function CTextInput({
         value={value}
         onChangeText={onChangeText}
         onPress={onPress}
+        keyboardType={keyboardType}
       />
       {!!RightIcon && <RightIcon />}
       {!!isSecure && (
@@ -61,7 +63,6 @@ const localStyles = StyleSheet.create({
     height: moderateScale(56),
     backgroundColor: colors.white,
     borderRadius: moderateScale(16),
-    ...styles.mt25,
     ...styles.rowCenter,
     ...styles.justifyBetween,
   },

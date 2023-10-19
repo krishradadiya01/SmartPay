@@ -70,7 +70,7 @@ export default function SignUpEmpty({navigation}) {
         </View>
       </View>
 
-      <CText style={localStyles.AlreadyTxt}>
+      <CText align={'center'} style={localStyles.AlreadyTxt}>
         {strings.AlreadyAcc}
         <CText
           type={'B16'}
@@ -129,7 +129,6 @@ const localStyles = StyleSheet.create({
     height: moderateScale(24),
   },
   AlreadyTxt: {
-    textAlign: 'center',
     ...styles.mb10,
   },
   SignInTxt: {

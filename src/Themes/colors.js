@@ -6,7 +6,6 @@ export const colors = {
   red: 'red',
   forgot: '#0A6375',
   google: '#E5E7EB',
-  googleBorder: '#E5E7EB',
   SignUpTxt: '#0A6375',
   GreyScale: '#F9FAFB',
   ShortName: '#6B7280',
@@ -14,4 +13,5 @@ export const colors = {
   tabColor: '#6B7280',
   Primary: '#0A6375',
   numbersColor: '#2FA2B9',
+  bottomBorder: '#F3F4F6',
 };

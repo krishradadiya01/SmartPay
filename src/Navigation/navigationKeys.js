@@ -4,7 +4,9 @@ export const StackNav = {
   AuthNavigation: 'AuthNavigation',
   TabNavigation: 'TabNavigation',
   TransferMoney: 'TransferMoney',
-  SendMoney: 'SendMoney'
+  SendMoney: 'SendMoney',
+  TransferProof: 'TransferProof',
+  TopUpScreen: 'TopUpScreen',
 };
 
 export const AuthNav = {

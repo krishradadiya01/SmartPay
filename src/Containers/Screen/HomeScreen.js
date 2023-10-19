@@ -25,6 +25,10 @@ export default function HomeScreen({navigation}) {
     navigation.navigate(StackNav.TransferMoney);
   };
 
+  const moveToDeposit = () => {
+    navigation.navigate(StackNav.TopUpScreen);
+  };
+
   const ListHeaderComponent = () => {
     return (
       <View>
@@ -51,16 +55,17 @@ export default function HomeScreen({navigation}) {
         </View>
 
         <View style={localStyles.mainImg}>
-          <FirstImage image={images.Deposit} text={strings.Deposit} />
+          <FirstImage
+            image={images.Deposit}
+            text={strings.Deposit}
+            onPress={moveToDeposit}
+          />
           <FirstImage
             image={images.Transfer}
             text={strings.Transfers}
             onPress={moveToTrans}
           />
-          <FirstImage
-            image={images.Withdraw}
-            text={strings.Withdraw}
-          />
+          <FirstImage image={images.Withdraw} text={strings.Withdraw} />
           <FirstImage image={images.More} text={strings.More} />
         </View>
 
@@ -186,7 +191,6 @@ const localStyles = StyleSheet.create({
     ...styles.flexRow,
     ...styles.alignCenter,
     ...styles.justifyBetween,
-    ...styles.ph20,
     ...styles.pv15,
     borderBottomWidth: moderateScale(1),
     borderBottomColor: colors.silver,
