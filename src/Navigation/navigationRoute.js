@@ -27,6 +27,8 @@ import TransferProof from '../Components/HomeTab/TransferProof';
 import TopUpScreen from '../Components/HomeTab/TopUpScreen';
 import Confirmation from '../Components/HomeTab/Confirmation'
 import WithDrawBalance from '../Components/HomeTab/WithDrawBalance';
+import HistoryTrans from '../Components/HomeTab/HistoryTrans';
+import HistoryDetails from '../Components/HomeTab/HistoryDetails';
 
 export const StackRoute = {
   splash,
@@ -38,7 +40,9 @@ export const StackRoute = {
   TransferProof,
   TopUpScreen,
   Confirmation,
-  WithDrawBalance
+  WithDrawBalance,
+  HistoryTrans,
+  HistoryDetails,
 };
 
 export const AuthRoute = {

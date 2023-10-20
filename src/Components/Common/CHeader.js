@@ -4,13 +4,12 @@ import {useNavigation} from '@react-navigation/native';
 
 // Local imports
 import {styles} from '../../Themes';
-import { colors } from '../../Themes/colors';
 import CText from './CText';
 import {moderateScale} from '../../Common/constant';
 import CBackButton from './CBackButton';
 
 export default function CHeader(props) {
-  const {title, onPressBack, isHideBack, rightIcon} = props;
+  const {title, onPressBack, isHideBack, rightIcon, customStyle} = props;
   const navigation = useNavigation();
 
   const goBack = () => navigation.goBack();
@@ -21,7 +20,7 @@ export default function CHeader(props) {
         <TouchableOpacity
           onPress={onPressBack || goBack}
           style={localStyles.backIconSty}>
-          <CBackButton onPress={goBack}/>
+          <CBackButton onPress={goBack} />
         </TouchableOpacity>
       )}
       <View style={[styles.flex, styles.mh40]}>
@@ -37,7 +36,6 @@ export default function CHeader(props) {
 const localStyles = StyleSheet.create({
   container: {
     ...styles.rowSpaceBetween,
-    ...styles.ph20,
     ...styles.pv15,
     height: moderateScale(60),
   },
@@ -46,5 +44,5 @@ const localStyles = StyleSheet.create({
     borderRadius: moderateScale(20),
     position: 'absolute',
     zIndex: 1,
-  },
+  }
 });

@@ -32,6 +32,10 @@ export default function HomeScreen({navigation}) {
   const moveToWith = () => {
     navigation.navigate(StackNav.WithDrawBalance);
   };
+
+  const moveToAllTrans = () => {
+    navigation.navigate(StackNav.HistoryTrans);
+  };
   const ListHeaderComponent = () => {
     return (
       <View>
@@ -81,7 +85,7 @@ export default function HomeScreen({navigation}) {
             {strings.Today}
           </CText>
 
-          <TouchableOpacity style={localStyles.parent}>
+          <TouchableOpacity style={localStyles.parent} onPress={moveToAllTrans}>
             <CText type={'M14'}>{strings.AllTrans}</CText>
             <Material
               name={'navigate-next'}

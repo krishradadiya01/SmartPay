@@ -12,7 +12,7 @@ const Stack = createNativeStackNavigator();
 
 const StackNavigation = () => {
   return (
-    <Stack.Navigator >
+    <Stack.Navigator initialRouteName={StackNav.HistoryTrans}>
       <Stack.Screen
         name={StackNav.splash}
         component={StackRoute.splash}
@@ -61,6 +61,16 @@ const StackNavigation = () => {
       <Stack.Screen
         name={StackNav.WithDrawBalance}
         component={StackRoute.WithDrawBalance}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name={StackNav.HistoryTrans}
+        component={StackRoute.HistoryTrans}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name={StackNav.HistoryDetails}
+        component={StackRoute.HistoryDetails}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

@@ -110,3 +110,49 @@ export const percentageData = [
   strings.per70,
   strings.per100,
 ];
+
+export const TodayData = [
+  {
+    image: Images.UiKit,
+    mainName: strings.SmartPayUi,
+    subName: strings.UiNet,
+    payments: strings.NineNine,
+  },
+  {
+    image: Images.Gym,
+    mainName: strings.Gym,
+    subName: strings.Payment,
+    payments: strings.FourFive,
+  },
+  {
+    image: Images.Deposit2,
+    mainName: strings.BOA,
+    subName: strings.Deposit,
+    payments: strings.OneThreeTwoEight,
+    color: colors.numbersColor
+  },
+];
+
+export const YesterdayData = [
+  {
+    image: Images.BitCoin,
+    mainName: strings.Bitcoin,
+    subName: strings.Deposit,
+    payments: strings.TwoFiveFIveZero,
+  },
+  {
+    image: Images.Deposit2,
+    mainName: strings.BOA,
+    subName: strings.Deposit,
+    payments: strings.OneThreeTwoEight,
+    color: colors.numbersColor
+  },
+  {
+    image: Images.Gym,
+    mainName: strings.Gym,
+    subName: strings.Payment,
+    payments: strings.FourFive,
+    // color: colors.black,
+  },
+];
+

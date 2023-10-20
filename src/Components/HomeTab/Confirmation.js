@@ -66,7 +66,7 @@ export default function Confirmation({route}) {
         </View>
       </View>
 
-      <CButton containerStyle={localStyles.parentButton} onPress={onPress} />
+      <CButton text={'Confirm Top Up'} containerStyle={localStyles.parentButton} onPress={onPress} />
       <TopUpSuccess sheetRef={successRef} />
     </SafeAreaView>
   );

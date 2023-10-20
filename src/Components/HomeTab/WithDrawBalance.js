@@ -27,7 +27,7 @@ import {CommonBOA} from '../Common/CommonBOA';
 export default function WithDrawBalance() {
   const [val, setVal] = useState('$');
   const [data, setData] = useState('');
-  const BankRef = useRef();
+  const BankRef = useRef(null);
 
   const onChangeColor = item => {
     setData(item);

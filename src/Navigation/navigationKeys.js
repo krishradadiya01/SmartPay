@@ -9,6 +9,8 @@ export const StackNav = {
   TopUpScreen: 'TopUpScreen',
   Confirmation: 'Confirmation',
   WithDrawBalance: 'WithDrawBalance',
+  HistoryTrans: 'HistoryTrans',
+  HistoryDetails: 'HistoryDetails',
 };
 
 export const AuthNav = {

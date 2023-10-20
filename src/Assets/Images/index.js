@@ -29,5 +29,10 @@ export default {
   TransferPopUp: require('../Images/TransferPopUp.png'),
   Congratulation: require('../Images/Congratulation.png'),
   TopUpComplete: require('../Images/TopUpComplete.png'),
-  BankAmerica: require('../Images/BankAmerica.png')
+  BankAmerica: require('../Images/BankAmerica.png'),
+  Switch: require('../Images/Switch.png'),
+  UiKit: require('../Images/UiKit.png'),
+  BitCoin: require('../Images/BitCoin.png'),
+  graph: require('../Images/graph.png'),
+  graph2: require('../Images/graph2.png'),
 };
