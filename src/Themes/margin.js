@@ -75,6 +75,9 @@ export default StyleSheet.create({
   mh5: {
     marginHorizontal: moderateScale(5),
   },
+  mh9: {
+    marginHorizontal: moderateScale(9.2),
+  },
   ml10: {
     marginLeft: moderateScale(10),
   },
@@ -104,6 +107,9 @@ export default StyleSheet.create({
   },
   mr20: {
     marginRight: moderateScale(20),
+  },
+  mr22: {
+    marginRight: moderateScale(22),
   },
   mr25: {
     marginRight: moderateScale(25),

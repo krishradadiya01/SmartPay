@@ -25,12 +25,12 @@ export default function SendMoney() {
   };
 
   const onChangeAmount = txt => {
-    setAmount(txt);
+    setAmount(parseFloat(txt));
   };
 
   return (
     <SafeAreaView style={localStyles.main}>
-      <KeyBoardAvoidWrapper containerStyle={styles.ph20}>
+      <KeyBoardAvoidWrapper containerStyle={localStyles.keyBoardSty}>
         <View>
           <CHeader title={'Send Money'} />
           <View style={localStyles.mainImg}>
@@ -96,7 +96,6 @@ const localStyles = StyleSheet.create({
   main: {
     ...styles.flex,
     ...styles.justifyBetween,
-    backgroundColor: colors.white,
   },
   mainImg: {
     borderWidth: moderateScale(1.5),
@@ -156,5 +155,10 @@ const localStyles = StyleSheet.create({
   mainCButton: {
     ...styles.mv30,
     width: '90%',
+  },
+  keyBoardSty: {
+    ...styles.ph20,
+    ...styles.flexGrow1,
+    ...styles.mainContainerSurface
   },
 });

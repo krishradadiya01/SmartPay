@@ -38,7 +38,7 @@ export default function TransferProof({route, navigation}) {
         </CText>
         <View style={localStyles.parentAmount}>
           <CText align={'center'} type={'B32'} style={localStyles.amountTxt}>
-            {'$' + amount}
+            {'$' + parseFloat(amount).toFixed(2)}
           </CText>
         </View>
       </View>

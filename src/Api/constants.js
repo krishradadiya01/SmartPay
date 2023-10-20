@@ -2,7 +2,7 @@ import Images from '../Assets/Images';
 import {US, UK, Singapore, China, Netherland, Indonesia} from '../Assets/Svgs';
 import {moderateScale} from '../Common/constant';
 import {colors} from '../Themes/colors';
-import strings from '../I18n/mergeString'
+import strings from '../I18n/mergeString';
 
 export const OnBoardingData = [
   {
@@ -100,4 +100,13 @@ export const ContactsData = [
     name: strings.Girl2name,
     id: 3,
   },
+];
+
+export const DollarsData = [strings.$1000, strings.$2000, strings.$3000];
+
+export const percentageData = [
+  strings.per10,
+  strings.per50,
+  strings.per70,
+  strings.per100,
 ];

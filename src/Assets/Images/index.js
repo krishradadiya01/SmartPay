@@ -28,4 +28,6 @@ export default {
   Girl: require('../Images/Girl.png'),
   TransferPopUp: require('../Images/TransferPopUp.png'),
   Congratulation: require('../Images/Congratulation.png'),
+  TopUpComplete: require('../Images/TopUpComplete.png'),
+  BankAmerica: require('../Images/BankAmerica.png')
 };

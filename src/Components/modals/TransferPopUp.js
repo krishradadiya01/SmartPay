@@ -101,7 +101,7 @@ export default function TransferPopUp(props) {
                   <Detail
                     isTotal={true}
                     total={strings.Total}
-                    prize={'$' + amount}
+                    prize={'$' + parseFloat(amount).toFixed(2)}
                   />
                 </View>
                 <CButton
@@ -157,6 +157,6 @@ const localStyles = StyleSheet.create({
   },
   totalPrize: {
     ...styles.rowSpaceBetween,
-    ...styles.mv20
+    ...styles.mv20,
   },
 });

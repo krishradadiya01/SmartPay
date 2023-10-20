@@ -62,6 +62,9 @@ export default StyleSheet.create({
   ph25: {
     paddingHorizontal: moderateScale(25),
   },
+  ph26: {
+    paddingHorizontal: moderateScale(26),
+  },
   ph30: {
     paddingHorizontal: moderateScale(30),
   },

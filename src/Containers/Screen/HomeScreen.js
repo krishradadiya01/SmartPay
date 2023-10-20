@@ -29,6 +29,9 @@ export default function HomeScreen({navigation}) {
     navigation.navigate(StackNav.TopUpScreen);
   };
 
+  const moveToWith = () => {
+    navigation.navigate(StackNav.WithDrawBalance);
+  };
   const ListHeaderComponent = () => {
     return (
       <View>
@@ -65,7 +68,11 @@ export default function HomeScreen({navigation}) {
             text={strings.Transfers}
             onPress={moveToTrans}
           />
-          <FirstImage image={images.Withdraw} text={strings.Withdraw} />
+          <FirstImage
+            image={images.Withdraw}
+            text={strings.Withdraw}
+            onPress={moveToWith}
+          />
           <FirstImage image={images.More} text={strings.More} />
         </View>
 

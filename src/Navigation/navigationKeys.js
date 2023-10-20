@@ -7,6 +7,8 @@ export const StackNav = {
   SendMoney: 'SendMoney',
   TransferProof: 'TransferProof',
   TopUpScreen: 'TopUpScreen',
+  Confirmation: 'Confirmation',
+  WithDrawBalance: 'WithDrawBalance',
 };
 
 export const AuthNav = {

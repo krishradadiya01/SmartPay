@@ -25,6 +25,8 @@ import TransferMoney from '../Components/HomeTab/TransferMoney';
 import SendMoney from '../Components/HomeTab/SendMoney';
 import TransferProof from '../Components/HomeTab/TransferProof';
 import TopUpScreen from '../Components/HomeTab/TopUpScreen';
+import Confirmation from '../Components/HomeTab/Confirmation'
+import WithDrawBalance from '../Components/HomeTab/WithDrawBalance';
 
 export const StackRoute = {
   splash,
@@ -34,7 +36,9 @@ export const StackRoute = {
   TransferMoney,
   SendMoney,
   TransferProof,
-  TopUpScreen
+  TopUpScreen,
+  Confirmation,
+  WithDrawBalance
 };
 
 export const AuthRoute = {

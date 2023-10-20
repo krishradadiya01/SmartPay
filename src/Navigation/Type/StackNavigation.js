@@ -12,7 +12,7 @@ const Stack = createNativeStackNavigator();
 
 const StackNavigation = () => {
   return (
-    <Stack.Navigator initialRouteName={StackNav.splash}>
+    <Stack.Navigator >
       <Stack.Screen
         name={StackNav.splash}
         component={StackRoute.splash}
@@ -51,6 +51,16 @@ const StackNavigation = () => {
       <Stack.Screen
         name={StackNav.TopUpScreen}
         component={StackRoute.TopUpScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name={StackNav.Confirmation}
+        component={StackRoute.Confirmation}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name={StackNav.WithDrawBalance}
+        component={StackRoute.WithDrawBalance}
         options={{headerShown: false}}
       />
     </Stack.Navigator>
