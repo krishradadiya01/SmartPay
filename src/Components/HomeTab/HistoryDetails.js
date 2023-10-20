@@ -7,7 +7,6 @@ import {
 } from 'react-native';
 import React from 'react';
 import Feather from 'react-native-vector-icons/Feather';
-import {VictoryBar, VictoryChart, VictoryTheme} from 'victory-native';
 
 // Local imports
 import CHeader from '../Common/CHeader';
@@ -29,21 +28,20 @@ export default function HistoryDetails() {
     <SafeAreaView style={localStyles.main}>
       <CHeader title={'Spotify'} rightIcon={<RightIcon />} />
 
-  
-        <View style={localStyles.mainView}>
-          <View style={localStyles.mainPayment}>
-            <CText type={'B24'}>{strings.Amount}</CText>
-            <CText>
-              <CText color={colors.red}> {strings.ThreeFive}</CText>
-              {strings.ago}
-            </CText>
-          </View>
-
-          <View style={localStyles.outerComponent}>
-            <Image source={images.graph} style={localStyles.imgSty} />
-            <Image source={images.graph2} style={localStyles.imgSty} />
-          </View>
+      <View style={localStyles.mainView}>
+        <View style={localStyles.mainPayment}>
+          <CText type={'B24'}>{strings.Amount}</CText>
+          <CText>
+            <CText color={colors.red}> {strings.ThreeFive}</CText>
+            {strings.ago}
+          </CText>
         </View>
+
+        <View style={localStyles.outerComponent}>
+          <Image source={images.graph} style={localStyles.imgSty} />
+          <Image source={images.graph2} style={localStyles.imgSty} />
+        </View>
+      </View>
     </SafeAreaView>
   );
 }
