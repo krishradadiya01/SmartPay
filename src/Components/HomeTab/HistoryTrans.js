@@ -54,7 +54,7 @@ export default function HistoryTrans({navigation}) {
   };
 
   return (
-    <ScrollView>
+    <ScrollView showsVerticalScrollIndicator={false}>
       <View style={localStyles.forColor}>
         <SafeAreaView>
           <View style={localStyles.forGap}>
@@ -116,7 +116,6 @@ export default function HistoryTrans({navigation}) {
           <CText color={colors.tabColor} type={'M14'}>
             {strings.Date}
           </CText>
-
           <FlatList
             data={TodayData}
             renderItem={renderData}
@@ -130,11 +129,7 @@ export default function HistoryTrans({navigation}) {
             {strings.Yesterday}
           </CText>
 
-          <FlatList
-            data={YesterdayData}
-            renderItem={renderData}
-            showsVerticalScrollIndicator={false}
-          />
+          <FlatList data={YesterdayData} renderItem={renderData} />
         </View>
       </View>
     </ScrollView>

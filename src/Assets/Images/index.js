@@ -35,4 +35,5 @@ export default {
   BitCoin: require('../Images/BitCoin.png'),
   graph: require('../Images/graph.png'),
   graph2: require('../Images/graph2.png'),
+  Spotify: require('../Images/Spotify.png')
 };

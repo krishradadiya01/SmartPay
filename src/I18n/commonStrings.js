@@ -133,4 +133,10 @@ export default {
   TowFour: '- $24.00',
   OneTwoFour: '- $124.00',
   fiveFour: '- $54.00',
+  SpotifyPremium: 'Spotify premium',
+  TwoFour: '- $24.00',
+  SixFive: '- $65.00',
+  Dec28: 'December 28',
+  Nov28: 'November 28',
+  Oct28: 'October 28',
 };

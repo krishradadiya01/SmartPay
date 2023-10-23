@@ -4,9 +4,17 @@ import {
   View,
   TouchableOpacity,
   Image,
+  FlatList,
 } from 'react-native';
 import React from 'react';
 import Feather from 'react-native-vector-icons/Feather';
+import Octicons from 'react-native-vector-icons/Octicons';
+import {
+  VictoryChart,
+  VictoryBar,
+  VictoryTheme,
+  VictoryAxis,
+} from 'victory-native';
 
 // Local imports
 import CHeader from '../Common/CHeader';
@@ -16,7 +24,9 @@ import {moderateScale} from '../../Common/constant';
 import CText from '../Common/CText';
 import strings from '../../I18n/mergeString';
 import images from '../../Assets/Images/index';
-export default function HistoryDetails() {
+import {SpotifyData} from '../../Api/constants';
+
+const HeaderComponent = () => {
   const RightIcon = () => {
     return (
       <TouchableOpacity style={localStyles.parentMore}>
@@ -25,9 +35,8 @@ export default function HistoryDetails() {
     );
   };
   return (
-    <SafeAreaView style={localStyles.main}>
+    <View>
       <CHeader title={'Spotify'} rightIcon={<RightIcon />} />
-
       <View style={localStyles.mainView}>
         <View style={localStyles.mainPayment}>
           <CText type={'B24'}>{strings.Amount}</CText>
@@ -42,13 +51,99 @@ export default function HistoryDetails() {
           <Image source={images.graph2} style={localStyles.imgSty} />
         </View>
       </View>
+
+      <View style={styles.center}>
+        <VictoryChart theme={VictoryTheme.material} domainPadding={20}>
+          <VictoryAxis
+            tickValues={['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']}
+          />
+          <VictoryAxis
+            dependentAxis
+            tickValues={[0, 30, 50, 70, 100]}
+            tickFormat={t => `$${Math.round(t)}`}
+            orientation="right"
+          />
+          <VictoryBar
+            cornerRadius={{topLeft: 8, topRight: 8}}
+            style={{data: {fill: colors.numbersColor, width: 24}}}
+            animate={{
+              onExit: {
+                duration: 500,
+                before: () => ({
+                  _y: 0,
+                }),
+              },
+            }}
+            data={[
+              {x: 'Jul', y: 55},
+              {x: 'Aug', y: 40},
+              {x: 'Sep', y: 65},
+              {x: 'Oct', y: 55},
+              {x: 'Nov', y: 85},
+              {x: 'Dec', y: 35},
+            ]}
+          />
+        </VictoryChart>
+      </View>
+
+      <View style={localStyles.outerContainer}>
+        <CText type={'B18'}>{strings.AllTrans}</CText>
+        <Octicons name={'search'} color={colors.numbersColor} size={24} />
+      </View>
+    </View>
+  );
+};
+
+export default function HistoryDetails() {
+  const renderSpotify = ({item}) => {
+    return (
+      <View>
+        <TouchableOpacity style={localStyles.outerImgTxt}>
+          <Image source={item.image} style={localStyles.UiKitSty} />
+          <View style={localStyles.outerCOntainer}>
+            <View style={localStyles.parentUi}>
+              <CText type={'B14'}>{item.mainName}</CText>
+              <CText type={'M12'} color={colors.tabColor}>
+                {item.subName}
+              </CText>
+            </View>
+
+            <View style={localStyles.viewOfPayment}>
+              <CText
+                style={localStyles.dateTxt}
+                color={item.color}
+                type={'B14'}>
+                {item.payments}
+              </CText>
+              <CText color={colors.tabColor}>{item.date}</CText>
+            </View>
+          </View>
+        </TouchableOpacity>
+        <View style={localStyles.forBorder}></View>
+      </View>
+    );
+  };
+
+  return (
+    <SafeAreaView style={localStyles.main}>
+      <FlatList
+        ListHeaderComponent={<HeaderComponent />}
+        data={SpotifyData}
+        renderItem={renderSpotify}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={localStyles.listStyle}
+      />
     </SafeAreaView>
   );
 }
 
 const localStyles = StyleSheet.create({
   main: {
-    ...styles.mh20,
+    ...styles.flex,
+    backgroundColor: colors.white,
+  },
+  listStyle: {
+    ...styles.ph20,
   },
   parentMore: {
     width: moderateScale(38),
@@ -82,5 +177,40 @@ const localStyles = StyleSheet.create({
   outerComponent: {
     ...styles.flexRow,
     gap: moderateScale(10),
+  },
+  container: {
+    ...styles.flex,
+    ...styles.justifyCenter,
+    ...styles.alignCenter,
+  },
+  outerContainer: {
+    ...styles.flexRow,
+    ...styles.justifyBetween,
+  },
+  outerImgTxt: {
+    ...styles.flexRow,
+    ...styles.alignCenter,
+    ...styles.mv20,
+    gap: moderateScale(12),
+  },
+  UiKitSty: {
+    width: moderateScale(48),
+    height: moderateScale(48),
+  },
+  outerCOntainer: {
+    ...styles.flex,
+    ...styles.flexRow,
+    ...styles.justifyBetween,
+  },
+  parentUi: {
+    gap: moderateScale(5),
+  },
+  forBorder: {
+    borderBottomWidth: moderateScale(1),
+    borderBottomColor: colors.bottomBorder,
+  },
+  viewOfPayment: {
+    gap: moderateScale(5),
+    alignItems: 'flex-end',
   },
 });

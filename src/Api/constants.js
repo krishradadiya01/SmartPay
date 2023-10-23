@@ -129,7 +129,7 @@ export const TodayData = [
     mainName: strings.BOA,
     subName: strings.Deposit,
     payments: strings.OneThreeTwoEight,
-    color: colors.numbersColor
+    color: colors.numbersColor,
   },
 ];
 
@@ -145,14 +145,50 @@ export const YesterdayData = [
     mainName: strings.BOA,
     subName: strings.Deposit,
     payments: strings.OneThreeTwoEight,
-    color: colors.numbersColor
+    color: colors.numbersColor,
   },
   {
     image: Images.Gym,
     mainName: strings.Gym,
     subName: strings.Payment,
     payments: strings.FourFive,
-    // color: colors.black,
   },
 ];
 
+export const SpotifyData = [
+  {
+    image: Images.Spotify,
+    mainName: strings.SpotifyPremium,
+    subName: strings.Payment,
+    payments: strings.TwoFour,
+    date: strings.Dec28,
+  },
+  {
+    image: Images.Spotify,
+    mainName: strings.SpotifyPremium,
+    subName: strings.Payment,
+    payments: strings.OneTwoFour,
+    date: strings.Nov28,
+  },
+  {
+    image: Images.Spotify,
+    mainName: strings.SpotifyPremium,
+    subName: strings.Payment,
+    payments: strings.fiveFour,
+    date: strings.Oct28,
+  },
+  {
+    image: Images.Spotify,
+    mainName: strings.SpotifyPremium,
+    subName: strings.Payment,
+    payments: strings.TwoFour,
+    date: strings.Dec28,
+  },
+  {
+    image: Images.Spotify,
+    mainName: strings.SpotifyPremium,
+    subName: strings.Payment,
+    payments: strings.OneTwoFour,
+    date: strings.Nov28,
+  },
+];
