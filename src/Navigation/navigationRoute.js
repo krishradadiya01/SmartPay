@@ -29,6 +29,8 @@ import Confirmation from '../Components/HomeTab/Confirmation'
 import WithDrawBalance from '../Components/HomeTab/WithDrawBalance';
 import HistoryTrans from '../Components/HomeTab/HistoryTrans';
 import HistoryDetails from '../Components/HomeTab/HistoryDetails';
+import SeeMyCard from '../Components/MyCardTab/SeeMyCard';
+import EditCard from '../Components/MyCardTab/EditCard';
 
 export const StackRoute = {
   splash,
@@ -43,6 +45,8 @@ export const StackRoute = {
   WithDrawBalance,
   HistoryTrans,
   HistoryDetails,
+  SeeMyCard,
+  EditCard
 };
 
 export const AuthRoute = {

@@ -115,9 +115,10 @@ const localStyles = StyleSheet.create({
   parentGoogle: {
     width: moderateScale(155),
     height: moderateScale(56),
+    borderRadius: moderateScale(16),
     backgroundColor: colors.google,
     borderWidth: moderateScale(1),
-    borderColor: colors.googleBorder,
+    borderColor: colors.google,
     ...styles.center,
   },
   google: {

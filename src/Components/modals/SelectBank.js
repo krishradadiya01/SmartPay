@@ -16,6 +16,8 @@ import {moderateScale} from '../../Common/constant';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import CButton from '../Common/CButton';
 import {StackNav} from '../../Navigation/navigationKeys';
+import images from '../../Assets/Images/index';
+import CAddNewBank from '../Common/CAddNewBank';
 
 export default function SelectBank(props) {
   let {sheetRef} = props;
@@ -37,6 +39,7 @@ export default function SelectBank(props) {
         </CText>
       </View>
       <CommonBOA
+        source={images.BankAmerica}
         ParentContainer={localStyles.parentComponent}
         Icon={
           <AntDesign name={'checkcircle'} size={24} color={colors.Primary} />
@@ -44,15 +47,7 @@ export default function SelectBank(props) {
       />
 
       <View style={localStyles.forGap}>
-        <TouchableOpacity style={localStyles.parentNewBank}>
-          <MaterialCommunity name={'bank-outline'} size={20} />
-
-          <View style={localStyles.outerAddBank}>
-            <CText type={'B16'}>{strings.AddNewBank}</CText>
-            <Material name={'navigate-next'} size={20} />
-          </View>
-        </TouchableOpacity>
-
+        <CAddNewBank />
         <CButton
           containerStyle={localStyles.parentCButton}
           onPress={backToHome}

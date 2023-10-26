@@ -192,3 +192,98 @@ export const SpotifyData = [
     date: strings.Nov28,
   },
 ];
+
+export const miniCardDetails = [
+  {
+    name: strings.SmartPayCards,
+    number: strings.AnnaNumber,
+    image: Images.twoRound,
+    backgroundColor: colors.Primary,
+    color: colors.white,
+  },
+  {
+    name: strings.SmartPayCards,
+    number: strings.AnnaNumber,
+    image: Images.twoRound,
+    backgroundColor: colors.black,
+    color: colors.white,
+  },
+  {
+    name: strings.SmartPayCards,
+    number: strings.AnnaNumber,
+    image: Images.twoRound,
+    backgroundColor: colors.Primary,
+    color: colors.white,
+  },
+];
+
+export const switchData = [strings.Personal, strings.Manage, strings.Detail];
+
+export const ManageData = [
+  {
+    id: 1,
+    image: Images.PhysicalCard,
+    name: 'Freeze physical card',
+    selected: false,
+  },
+  {
+    id: 2,
+    image: Images.Contactless,
+    name: 'Disable contactless',
+    selected: false,
+  },
+  {
+    id: 3,
+    image: Images.MagStripe,
+    name: 'Disable magstripe',
+    selected: false,
+  },
+];
+
+export const BankList = [
+  {
+    id: 0,
+    name: 'Bank Of America',
+    description: 'Anabella Angela',
+    card: [
+      {
+        id: 0,
+        image: Images.card1,
+      },
+      {
+        id: 1,
+        image: Images.card3,
+      },
+      {
+        id: 2,
+        image: Images.card2,
+      },
+    ],
+  },
+  {
+    id: 0,
+    name: 'U.S. Bank',
+    description: 'Anabella Angela',
+    card: [
+      {
+        id: 0,
+        image: Images.card1,
+      },
+      {
+        id: 1,
+        image: Images.card2,
+      },
+    ],
+  },
+  {
+    id: 0,
+    name: 'U.S. Bank',
+    description: 'Anabella Angela',
+    card: [
+      {
+        id: 0,
+        image: Images.card1,
+      },
+    ],
+  },
+];

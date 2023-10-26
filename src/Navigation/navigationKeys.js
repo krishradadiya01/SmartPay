@@ -11,6 +11,8 @@ export const StackNav = {
   WithDrawBalance: 'WithDrawBalance',
   HistoryTrans: 'HistoryTrans',
   HistoryDetails: 'HistoryDetails',
+  SeeMyCard: 'SeeMyCard',
+  EditCard: 'EditCard'
 };
 
 export const AuthNav = {

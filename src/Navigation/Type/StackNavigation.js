@@ -12,7 +12,7 @@ const Stack = createNativeStackNavigator();
 
 const StackNavigation = () => {
   return (
-    <Stack.Navigator initialRouteName={StackNav.HistoryTrans}>
+    <Stack.Navigator>
       <Stack.Screen
         name={StackNav.splash}
         component={StackRoute.splash}
@@ -71,6 +71,16 @@ const StackNavigation = () => {
       <Stack.Screen
         name={StackNav.HistoryDetails}
         component={StackRoute.HistoryDetails}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name={StackNav.SeeMyCard}
+        component={StackRoute.SeeMyCard}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name={StackNav.EditCard}
+        component={StackRoute.EditCard}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

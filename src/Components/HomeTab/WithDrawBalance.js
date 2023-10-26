@@ -23,6 +23,7 @@ import CButton from '../Common/CButton';
 import KeyBoardAvoidWrapper from '../Common/KeyBoardAvoidWrapper';
 import SelectBank from '../modals/SelectBank';
 import {CommonBOA} from '../Common/CommonBOA';
+import images from '../../Assets/Images/index';
 
 export default function WithDrawBalance() {
   const [val, setVal] = useState('$');
@@ -66,7 +67,10 @@ export default function WithDrawBalance() {
       <KeyBoardAvoidWrapper>
         <View style={localStyles.parent}>
           <CHeader title={'WithDraw'} />
-          <CommonBOA Icon={<Feather name={'chevron-down'} size={20} />} />
+          <CommonBOA
+            source={images.BankAmerica}
+            Icon={<Feather name={'chevron-down'} size={20} />}
+          />
         </View>
 
         <CTextInput

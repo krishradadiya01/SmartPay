@@ -16,7 +16,6 @@ import CText from '../../Components/Common/CText';
 import CNotification from '../../Components/Common/CNotification';
 import images from '../../Assets/Images/index';
 import {moderateScale} from '../../Common/constant';
-import Material from 'react-native-vector-icons/MaterialIcons';
 import {HomeData} from '../../Api/constants';
 import {StackNav} from '../../Navigation/navigationKeys';
 
@@ -84,15 +83,6 @@ export default function HomeScreen({navigation}) {
           <CText type={'B14'} color={colors.tabColor}>
             {strings.Today}
           </CText>
-
-          <TouchableOpacity style={localStyles.parent} onPress={moveToAllTrans}>
-            <CText type={'M14'}>{strings.AllTrans}</CText>
-            <Material
-              name={'navigate-next'}
-              color={colors.numbersColor}
-              size={moderateScale(18)}
-            />
-          </TouchableOpacity>
         </View>
       </View>
     );

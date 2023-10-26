@@ -35,5 +35,10 @@ export default {
   BitCoin: require('../Images/BitCoin.png'),
   graph: require('../Images/graph.png'),
   graph2: require('../Images/graph2.png'),
-  Spotify: require('../Images/Spotify.png')
+  Spotify: require('../Images/Spotify.png'),
+  twoRound: require('../Images/twoRound.png'),
+  BlueTick: require('../Images/BlueTick.png'),
+  PhysicalCard: require('../Images/PhysicalCard.png'),
+  Contactless: require('../Images/Contactless.png'),
+  MagStripe: require('../Images/MagStripe.png'),
 };

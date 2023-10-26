@@ -48,7 +48,7 @@ export default function NewCard() {
         </View>
 
         <View style={localStyles.parentColor}>
-          <Image style={localStyles.imgCardColor} source={images.CardColor} />
+          <Image source={images.CardColor} />
         </View>
 
         <CText type={'B24'}>{strings.CardDetailTxt}</CText>

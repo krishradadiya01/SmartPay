@@ -158,8 +158,9 @@ const localStyles = StyleSheet.create({
     width: moderateScale(155),
     height: moderateScale(56),
     backgroundColor: colors.google,
+    borderRadius: moderateScale(16),
     borderWidth: moderateScale(1),
-    borderColor: colors.googleBorder,
+    borderColor: colors.google,
     ...styles.center,
   },
   AppleStyle: {
@@ -169,9 +170,10 @@ const localStyles = StyleSheet.create({
   mainApple: {
     width: moderateScale(155),
     height: moderateScale(56),
+    borderRadius: moderateScale(16),
     backgroundColor: colors.google,
     borderWidth: moderateScale(1),
-    borderColor: colors.googleBorder,
+    borderColor: colors.google,
     ...styles.center,
   },
   mainButton: {

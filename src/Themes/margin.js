@@ -177,6 +177,9 @@ export default StyleSheet.create({
   mv20: {
     marginVertical: getHeight(20),
   },
+  mv22: {
+    marginVertical: getHeight(22),
+  },
   mv25: {
     marginVertical: getHeight(25),
   },
@@ -191,5 +194,8 @@ export default StyleSheet.create({
   },
   mv5: {
     marginVertical: getHeight(5),
+  },
+  mv0: {
+    marginVertical: getHeight(0),
   },
 });

@@ -14,4 +14,7 @@ export const colors = {
   Primary: '#0A6375',
   numbersColor: '#2FA2B9',
   bottomBorder: '#F3F4F6',
+  tomato: '#F75555',
+  secondary: '#FFF8F7',
+  Toggle: '#0A6375',
 };
