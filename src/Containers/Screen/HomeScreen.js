@@ -31,10 +31,6 @@ export default function HomeScreen({navigation}) {
   const moveToWith = () => {
     navigation.navigate(StackNav.WithDrawBalance);
   };
-
-  const moveToAllTrans = () => {
-    navigation.navigate(StackNav.HistoryTrans);
-  };
   const ListHeaderComponent = () => {
     return (
       <View>
@@ -76,7 +72,10 @@ export default function HomeScreen({navigation}) {
             text={strings.Withdraw}
             onPress={moveToWith}
           />
-          <FirstImage image={images.More} text={strings.More} />
+          <FirstImage
+            image={images.More}
+            text={strings.More}
+          />
         </View>
 
         <View style={localStyles.parentTodayTxt}>

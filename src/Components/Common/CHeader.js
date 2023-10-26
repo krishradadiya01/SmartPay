@@ -40,7 +40,6 @@ const localStyles = StyleSheet.create({
     height: moderateScale(60),
   },
   backIconSty: {
-    ...styles.p5,
     borderRadius: moderateScale(20),
     position: 'absolute',
     zIndex: 1,

@@ -41,4 +41,15 @@ export default {
   PhysicalCard: require('../Images/PhysicalCard.png'),
   Contactless: require('../Images/Contactless.png'),
   MagStripe: require('../Images/MagStripe.png'),
+  ProfileImg: require('../Images/ProfileImg.png'),
+  Refer: require('../Images/Refer.png'),
+  user: require('../Images/user.png'),
+  userGroup: require('../Images/userGroup.png'),
+  Language: require('../Images/Language.png'),
+  Setting: require('../Images/Setting.png'),
+  Lock: require('../Images/Lock.png'),
+  FQA: require('../Images/FQA.png'),
+  RateUs: require('../Images/RateUs.png'),
+  Scan: require('../Images/Scan.png'),
+  EditPhoto: require('../Images/EditPhoto.png')
 };

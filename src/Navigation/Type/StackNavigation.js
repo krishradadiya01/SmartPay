@@ -1,18 +1,15 @@
-import {StyleSheet} from 'react-native';
 import React from 'react';
 
 // Local imports
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {StackNav} from '../navigationKeys';
 import {StackRoute} from '../navigationRoute';
-import {styles} from '../../Themes';
-import {moderateScale} from '../../Common/constant';
 
 const Stack = createNativeStackNavigator();
 
 const StackNavigation = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator initialRouteName={StackNav.EditAccount}>
       <Stack.Screen
         name={StackNav.splash}
         component={StackRoute.splash}
@@ -83,15 +80,23 @@ const StackNavigation = () => {
         component={StackRoute.EditCard}
         options={{headerShown: false}}
       />
+      <Stack.Screen
+        name={StackNav.AccountInfo}
+        component={StackRoute.AccountInfo}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name={StackNav.EditAccount}
+        component={StackRoute.EditAccount}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name={StackNav.SelectLanguage}
+        component={StackRoute.SelectLanguage}
+        options={{headerShown: false}}
+      />
     </Stack.Navigator>
   );
 };
-
-const localStyle = StyleSheet.create({
-  CBackButton: {
-    ...styles.mb15,
-    bottom: moderateScale(10),
-  },
-});
 
 export default StackNavigation;

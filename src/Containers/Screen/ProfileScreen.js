@@ -1,12 +1,131 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import {
+  SafeAreaView,
+  StyleSheet,
+  Image,
+  View,
+  TouchableOpacity,
+  ScrollView,
+} from 'react-native';
+import React from 'react';
 
-export default function ProfileScreen() {
+// Local imports
+import images from '../../Assets/Images/index';
+import {moderateScale} from '../../Common/constant';
+import {styles} from '../../Themes';
+import CText from '../../Components/Common/CText';
+import {colors} from '../../Themes/colors';
+import strings from '../../I18n/mergeString';
+import CHeader from '../../Components/Common/CHeader';
+import Material from 'react-native-vector-icons/MaterialIcons';
+import {StackNav} from '../../Navigation/navigationKeys';
+
+export default function MyProfileScreen({navigation}) {
+  const moveToAcc = () => {
+    navigation.navigate(StackNav.AccountInfo);
+  };
+  const RenderData = ({image, name, onPress}) => {
+    return (
+      <View>
+        <TouchableOpacity style={localStyles.outerContainer} onPress={onPress}>
+          <View style={localStyles.parentCompo}>
+            <Image source={image} style={localStyles.iconSty} />
+            <CText type={'M14'}>{name}</CText>
+          </View>
+          <Material name={'navigate-next'} size={16} />
+        </TouchableOpacity>
+      </View>
+    );
+  };
+  
+
+  const RenderHeaderComponent = () => {
+    return (
+      <View>
+        <Image source={images.ProfileImg} style={localStyles.imgSty} />
+
+        <View style={localStyles.outerComponent}>
+          <CText type={'B20'}>{strings.Anna}</CText>
+          <CText type={'R12'} color={colors.tabColor}>
+            {strings.AnnaEmail}
+          </CText>
+        </View>
+      </View>
+    );
+  };
+
   return (
-    <View>
-      <Text>ProfileScreen</Text>
-    </View>
-  )
+    <SafeAreaView style={localStyles.main}>
+      <ScrollView
+        style={styles.mh20}
+        showsVerticalScrollIndicator={false}
+        bounces={false}>
+        <CHeader title={'Profile'} />
+        <RenderHeaderComponent />
+
+        <View style={styles.mv20}>
+          <RenderData name={strings.RC} image={images.Refer} />
+          <RenderData
+            name={strings.AccInfo}
+            image={images.user}
+            onPress={moveToAcc}
+          />
+          <RenderData name={strings.ContactList} image={images.userGroup} />
+          <RenderData name={strings.Language} image={images.Language} />
+
+          <View style={localStyles.bottomLine} />
+          <RenderData name={strings.GS} image={images.Setting} />
+          <RenderData name={strings.ChangePass} image={images.Lock} />
+          <RenderData name={strings.ChangePin} image={images.Scan} />
+
+          <View style={localStyles.bottomLine} />
+          <RenderData name={strings.FQA} image={images.FQA} />
+          <RenderData name={strings.Rate} image={images.RateUs} />
+        </View>
+      </ScrollView>
+    </SafeAreaView>
+  );
 }
 
-const styles = StyleSheet.create({});
+const localStyles = StyleSheet.create({
+  main: {
+    backgroundColor: colors.white,
+    height: '100%',
+  },
+  imgSty: {
+    width: moderateScale(258),
+    height: moderateScale(206),
+    ...styles.selfCenter,
+  },
+  parentImg: {
+    ...styles.center,
+  },
+  outerComponent: {
+    ...styles.center,
+    gap: moderateScale(7),
+    position: 'absolute',
+    top: moderateScale(165),
+    left: moderateScale(90),
+  },
+  iconSty: {
+    width: moderateScale(40),
+    height: moderateScale(40),
+  },
+  parentCompo: {
+    ...styles.flexRow,
+    ...styles.alignCenter,
+    ...styles.mv10,
+    gap: moderateScale(20),
+  },
+  outerContainer: {
+    ...styles.mt10,
+    ...styles.flex,
+    ...styles.flexRow,
+    ...styles.alignCenter,
+    ...styles.justifyBetween,
+  },
+  bottomLine: {
+    ...styles.mv15,
+    borderBottomWidth: moderateScale(1),
+    borderBottomColor: colors.bottomBorder,
+  },
+});

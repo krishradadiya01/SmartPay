@@ -12,7 +12,10 @@ export const StackNav = {
   HistoryTrans: 'HistoryTrans',
   HistoryDetails: 'HistoryDetails',
   SeeMyCard: 'SeeMyCard',
-  EditCard: 'EditCard'
+  EditCard: 'EditCard',
+  AccountInfo: 'AccountInfo',
+  EditAccount: 'EditAccount',
+  SelectLanguage: 'SelectLanguage'
 };
 
 export const AuthNav = {

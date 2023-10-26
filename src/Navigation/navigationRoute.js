@@ -31,6 +31,9 @@ import HistoryTrans from '../Components/HomeTab/HistoryTrans';
 import HistoryDetails from '../Components/HomeTab/HistoryDetails';
 import SeeMyCard from '../Components/MyCardTab/SeeMyCard';
 import EditCard from '../Components/MyCardTab/EditCard';
+import AccountInfo from '../Components/ProfileTab/AccountInfo';
+import EditAccount from '../Components/ProfileTab/EditAccount';
+import SelectLanguage from '../Components/ProfileTab/SelectLanguage';
 
 export const StackRoute = {
   splash,
@@ -46,7 +49,10 @@ export const StackRoute = {
   HistoryTrans,
   HistoryDetails,
   SeeMyCard,
-  EditCard
+  EditCard,
+  AccountInfo,
+  EditAccount,
+  SelectLanguage
 };
 
 export const AuthRoute = {
