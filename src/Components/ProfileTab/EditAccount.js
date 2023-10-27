@@ -17,7 +17,7 @@ import {StackNav} from '../../Navigation/navigationKeys';
 
 export default function EditAccount({navigation}) {
   const moveToLang = () => {
-    navigation.navigate(StackNav.SelectLanguage);
+    navigation.navigate(StackNav.TabNavigation);
   };
 
   const TxtInputData = ({name, inpTxt}) => {

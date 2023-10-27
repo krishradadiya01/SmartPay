@@ -19,24 +19,38 @@ import CHeader from '../../Components/Common/CHeader';
 import Material from 'react-native-vector-icons/MaterialIcons';
 import {StackNav} from '../../Navigation/navigationKeys';
 
-export default function MyProfileScreen({navigation}) {
+export default function ProfileScreen({navigation}) {
   const moveToAcc = () => {
     navigation.navigate(StackNav.AccountInfo);
   };
+
+  const moveToLang = () => {
+    navigation.navigate(StackNav.SelectLanguage);
+  };
+
+  const moveToGs = () => {
+    navigation.navigate(StackNav.GeneralSetting);
+  };
+
+  const moveToRefer = () => {
+    navigation.navigate(StackNav.ReferralCode);
+  };
+
+  const moveToContact = () => {
+    navigation.navigate(StackNav.ContactsList)
+  }
+
   const RenderData = ({image, name, onPress}) => {
     return (
-      <View>
-        <TouchableOpacity style={localStyles.outerContainer} onPress={onPress}>
-          <View style={localStyles.parentCompo}>
-            <Image source={image} style={localStyles.iconSty} />
-            <CText type={'M14'}>{name}</CText>
-          </View>
-          <Material name={'navigate-next'} size={16} />
-        </TouchableOpacity>
-      </View>
+      <TouchableOpacity style={localStyles.outerContainer} onPress={onPress}>
+        <View style={localStyles.parentCompo}>
+          <Image source={image} style={localStyles.iconSty} />
+          <CText type={'M14'}>{name}</CText>
+        </View>
+        <Material name={'navigate-next'} size={16} />
+      </TouchableOpacity>
     );
   };
-  
 
   const RenderHeaderComponent = () => {
     return (
@@ -63,17 +77,33 @@ export default function MyProfileScreen({navigation}) {
         <RenderHeaderComponent />
 
         <View style={styles.mv20}>
-          <RenderData name={strings.RC} image={images.Refer} />
+          <RenderData
+            name={strings.RC}
+            image={images.Refer}
+            onPress={moveToRefer}
+          />
           <RenderData
             name={strings.AccInfo}
             image={images.user}
             onPress={moveToAcc}
           />
-          <RenderData name={strings.ContactList} image={images.userGroup} />
-          <RenderData name={strings.Language} image={images.Language} />
+          <RenderData
+            name={strings.ContactList}
+            image={images.userGroup}
+            onPress={moveToContact}
+          />
+          <RenderData
+            name={strings.Language}
+            image={images.Language}
+            onPress={moveToLang}
+          />
 
           <View style={localStyles.bottomLine} />
-          <RenderData name={strings.GS} image={images.Setting} />
+          <RenderData
+            name={strings.GS}
+            image={images.Setting}
+            onPress={moveToGs}
+          />
           <RenderData name={strings.ChangePass} image={images.Lock} />
           <RenderData name={strings.ChangePin} image={images.Scan} />
 

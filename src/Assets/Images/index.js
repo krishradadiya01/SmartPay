@@ -51,5 +51,11 @@ export default {
   FQA: require('../Images/FQA.png'),
   RateUs: require('../Images/RateUs.png'),
   Scan: require('../Images/Scan.png'),
-  EditPhoto: require('../Images/EditPhoto.png')
+  EditPhoto: require('../Images/EditPhoto.png'),
+  Notification: require('../Images/Notification.png'),
+  DollarsBank: require('../Images/DollarsBank.png'),
+  avatar1: require('../Images/avatar1.png'),
+  avatar2: require('../Images/avatar2.png'),
+  avatar3: require('../Images/avatar3.png'),
+  avatar4: require('../Images/avatar4.png'),
 };

@@ -22,7 +22,8 @@ export default function CTextInput({
   value,
   onPress,
   placeColor,
-  keyboardType
+  keyboardType,
+  align
 }) {
   const [isSecurePass, setIsSecurePass] = useState(isSecure);
 
@@ -39,6 +40,7 @@ export default function CTextInput({
         placeholderTextColor={placeColor}
         secureTextEntry={isSecurePass}
         value={value}
+        textAlign={align}
         onChangeText={onChangeText}
         onPress={onPress}
         keyboardType={keyboardType}

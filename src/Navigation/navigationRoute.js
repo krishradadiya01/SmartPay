@@ -34,6 +34,9 @@ import EditCard from '../Components/MyCardTab/EditCard';
 import AccountInfo from '../Components/ProfileTab/AccountInfo';
 import EditAccount from '../Components/ProfileTab/EditAccount';
 import SelectLanguage from '../Components/ProfileTab/SelectLanguage';
+import GeneralSetting from '../Components/ProfileTab/GeneralSetting';
+import ReferralCode from '../Components/ProfileTab/ReferralCode';
+import ContactsList from '../Components/ProfileTab/ContactsList';
 
 export const StackRoute = {
   splash,
@@ -52,7 +55,10 @@ export const StackRoute = {
   EditCard,
   AccountInfo,
   EditAccount,
-  SelectLanguage
+  SelectLanguage,
+  GeneralSetting,
+  ReferralCode,
+  ContactsList
 };
 
 export const AuthRoute = {

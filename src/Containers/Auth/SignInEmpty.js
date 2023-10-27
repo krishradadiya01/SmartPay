@@ -95,7 +95,7 @@ export default function SignInEmpty({navigation}) {
             <Image style={localStyles.GoogleStyle} source={images.Google} />
           </TouchableOpacity>
 
-          <TouchableOpacity style={localStyles.mainApple}>
+          <TouchableOpacity style={localStyles.mainGoogle}>
             <Image style={localStyles.AppleStyle} source={images.Apple} />
           </TouchableOpacity>
         </View>
@@ -166,15 +166,6 @@ const localStyles = StyleSheet.create({
   AppleStyle: {
     width: moderateScale(20),
     height: moderateScale(24),
-  },
-  mainApple: {
-    width: moderateScale(155),
-    height: moderateScale(56),
-    borderRadius: moderateScale(16),
-    backgroundColor: colors.google,
-    borderWidth: moderateScale(1),
-    borderColor: colors.google,
-    ...styles.center,
   },
   mainButton: {
     ...styles.flexRow,

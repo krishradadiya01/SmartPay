@@ -9,7 +9,7 @@ const Stack = createNativeStackNavigator();
 
 const StackNavigation = () => {
   return (
-    <Stack.Navigator initialRouteName={StackNav.EditAccount}>
+    <Stack.Navigator initialRouteName={StackNav.ContactsList}>
       <Stack.Screen
         name={StackNav.splash}
         component={StackRoute.splash}
@@ -93,6 +93,21 @@ const StackNavigation = () => {
       <Stack.Screen
         name={StackNav.SelectLanguage}
         component={StackRoute.SelectLanguage}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name={StackNav.GeneralSetting}
+        component={StackRoute.GeneralSetting}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name={StackNav.ReferralCode}
+        component={StackRoute.ReferralCode}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name={StackNav.ContactsList}
+        component={StackRoute.ContactsList}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

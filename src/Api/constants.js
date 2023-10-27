@@ -1,5 +1,16 @@
 import Images from '../Assets/Images';
-import {US, UK, Singapore, China, Netherland, Indonesia} from '../Assets/Svgs';
+import {
+  US,
+  UK,
+  Singapore,
+  China,
+  Netherland,
+  Indonesia,
+  Japan,
+  France,
+  Germany,
+  Russia,
+} from '../Assets/Svgs';
 import {moderateScale} from '../Common/constant';
 import {colors} from '../Themes/colors';
 import strings from '../I18n/mergeString';
@@ -285,5 +296,94 @@ export const BankList = [
         image: Images.card1,
       },
     ],
+  },
+];
+
+export const LanguageData = [
+  {
+    id: 1,
+    svgIcon: <US height={moderateScale(15)} width={moderateScale(20)} />,
+    name: strings.EnglishUs,
+  },
+  {
+    id: 2,
+    svgIcon: <UK height={moderateScale(15)} width={moderateScale(20)} />,
+    name: strings.EnglishENG,
+  },
+  {
+    id: 3,
+    svgIcon: <Indonesia height={moderateScale(15)} width={moderateScale(20)} />,
+    name: strings.Indonesian,
+  },
+  {
+    id: 4,
+    svgIcon: <Russia height={moderateScale(15)} width={moderateScale(20)} />,
+    name: strings.Russia,
+  },
+  {
+    id: 5,
+    svgIcon: <France height={moderateScale(15)} width={moderateScale(20)} />,
+    name: strings.French,
+  },
+  {
+    id: 6,
+    svgIcon: <China height={moderateScale(15)} width={moderateScale(20)} />,
+    name: strings.Chinese,
+  },
+  {
+    id: 7,
+    svgIcon: <Japan height={moderateScale(15)} width={moderateScale(20)} />,
+    name: strings.Japanese,
+  },
+  {
+    id: 8,
+    svgIcon: <Germany height={moderateScale(15)} width={moderateScale(20)} />,
+    name: strings.Germany,
+  },
+  {
+    id: 9,
+    svgIcon: (
+      <Netherland height={moderateScale(15)} width={moderateScale(20)} />
+    ),
+    name: strings.Netherland,
+  },
+];
+
+export const contactList = [
+  {
+    id: 1,
+    image: Images.Girl,
+    name: strings.MariaSev,
+    number: strings.MariaNum,
+  },
+  {
+    id: 2,
+    image: Images.Boy,
+    name: strings.AndAlex,
+    number: strings.AndNum,
+  },
+  {
+    id: 3,
+    image: Images.avatar1,
+    name: strings.MitchellPri,
+    number: strings.MitchellNum,
+  },
+  {
+    id: 4,
+    image: Images.avatar2,
+    name: strings.GladysChou,
+    number: strings.GladysNum,
+  },
+  {
+    id: 5,
+    image: Images.avatar3,
+    name: strings.MitchellAngela,
+    number: strings.AngelaNum,
+  },
+  {
+    id: 6,
+    image: Images.avatar4,
+    name: strings.XiaChangLing,
+    number: strings.XiaNum,
   },
 ];

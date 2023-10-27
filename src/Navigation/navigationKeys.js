@@ -15,7 +15,10 @@ export const StackNav = {
   EditCard: 'EditCard',
   AccountInfo: 'AccountInfo',
   EditAccount: 'EditAccount',
-  SelectLanguage: 'SelectLanguage'
+  SelectLanguage: 'SelectLanguage',
+  GeneralSetting: 'GeneralSetting',
+  ReferralCode: 'ReferralCode',
+  ContactsList: 'ContactsList'
 };
 
 export const AuthNav = {

@@ -24,8 +24,12 @@ import BlackActivity from './BlackActivity';
 import SilverActivity from './SilverActivity';
 import BlackUser from './BlackUser';
 import SilverUser from './SilverUser';
-import Scan from './Scan'
-import NotificationSvg from './NotificationSvg.svg'
+import Scan from './Scan';
+import NotificationSvg from './NotificationSvg.svg';
+import France from './France.svg';
+import Germany from './Germany.svg';
+import Japan from './Japan.svg';
+import Russia from './Russia.svg';
 
 export {
   BackButton,
@@ -56,4 +60,8 @@ export {
   SilverUser,
   Scan,
   NotificationSvg,
+  France,
+  Germany,
+  Japan,
+  Russia,
 };
