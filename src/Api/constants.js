@@ -387,3 +387,58 @@ export const contactList = [
     number: strings.XiaNum,
   },
 ];
+
+export const NotificationData1 = [
+  {
+    id: 1,
+    image: Images.Rewards,
+    name: strings.Rewards,
+    subName: strings.RewardsLine,
+    Time: strings.RewardsTime,
+  },
+  {
+    id: 2,
+    image: Images.MoneyTransfer,
+    name: strings.MoneyTransfer,
+    subName: strings.MoneyTransferLine,
+    Time: strings.MoneyTransTime,
+  },
+];
+
+export const NotificationData2 = [
+  {
+    id: 1,
+    image: Images.PaymentNotification,
+    name: strings.PaymentNot,
+    subName: strings.SuccessPaid,
+    Time: strings.Dec23,
+  },
+  {
+    id: 2,
+    image: Images.Deposit2,
+    name: strings.TopUp,
+    subName: strings.SuccessTopUp,
+    Time: strings.Dec20,
+  },
+  {
+    id: 3,
+    image: Images.MoneyTransfer,
+    name: strings.MoneyTransfer,
+    subName: strings.SuccessSent,
+    Time: strings.Dec20,
+  },
+  {
+    id: 4,
+    image: Images.Cashback,
+    name: strings.Cashback25,
+    subName: strings.SuccessSent,
+    Time: strings.Dec20,
+  },
+  {
+    id: 5,
+    image: Images.PaymentNotification,
+    name: strings.PaymentNot,
+    subName: strings.SuccessPaid,
+    Time: strings.Dec19,
+  },
+];

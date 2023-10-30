@@ -23,7 +23,7 @@ export default function CHeader(props) {
           <CBackButton onPress={goBack} />
         </TouchableOpacity>
       )}
-      <View style={[styles.flex, styles.mh40]}>
+      <View style={[styles.flex, styles.mh40, customStyle]}>
         <CText align={'center'} type={'B18'} numberOfLines={1}>
           {title}
         </CText>

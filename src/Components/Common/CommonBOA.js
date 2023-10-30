@@ -6,9 +6,10 @@ import {moderateScale} from '../../Common/constant';
 import CText from '../Common/CText';
 import {styles} from '../../Themes';
 import {colors} from '../../Themes/colors';
+import strings from '../../I18n/mergeString';
 
 export const CommonBOA = props => {
-  let {ParentContainer, Icon, source, onPress, item} = props;
+  let {ParentContainer, Icon, source, onPress} = props;
   return (
     <TouchableOpacity
       style={[localStyles.parentBOA, ParentContainer]}
@@ -16,9 +17,9 @@ export const CommonBOA = props => {
       <Image source={source} style={localStyles.AmericaPng} />
       <View style={localStyles.forIcon}>
         <View style={localStyles.BOATxt}>
-          <CText type={'S16'}>{item?.name}</CText>
+          <CText type={'S16'}>{strings.BOA}</CText>
           <CText color={colors.tabColor} type={'M12'}>
-            {item?.description}
+            {strings.AnnaNumber}
           </CText>
         </View>
       </View>

@@ -9,7 +9,7 @@ const Stack = createNativeStackNavigator();
 
 const StackNavigation = () => {
   return (
-    <Stack.Navigator initialRouteName={StackNav.ContactsList}>
+    <Stack.Navigator>
       <Stack.Screen
         name={StackNav.splash}
         component={StackRoute.splash}
@@ -108,6 +108,16 @@ const StackNavigation = () => {
       <Stack.Screen
         name={StackNav.ContactsList}
         component={StackRoute.ContactsList}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name={StackNav.Notification}
+        component={StackRoute.Notification}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name={StackNav.FQA}
+        component={StackRoute.FQA}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

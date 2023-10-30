@@ -5,6 +5,7 @@ import {moderateScale} from '../Common/constant';
 import {styles} from '../Themes';
 import {StorageValue} from '../Utils/asyncStorage';
 import {StackNav} from '../Navigation/navigationKeys';
+import {colors} from '../Themes/colors';
 
 const Splash = ({navigation}) => {
   useEffect(() => {
@@ -40,6 +41,7 @@ const Splash = ({navigation}) => {
 
 const localStyles = StyleSheet.create({
   ParentSplash: {
+    backgroundColor: colors.white,
     ...styles.flex,
     ...styles.center,
   },

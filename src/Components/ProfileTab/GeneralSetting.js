@@ -1,4 +1,11 @@
-import {SafeAreaView, StyleSheet, View, Image, Switch} from 'react-native';
+import {
+  SafeAreaView,
+  StyleSheet,
+  View,
+  Image,
+  Switch,
+  TouchableOpacity,
+} from 'react-native';
 import React, {useState} from 'react';
 import Material from 'react-native-vector-icons/MaterialIcons';
 
@@ -11,7 +18,7 @@ import strings from '../../I18n/mergeString';
 import CHeader from '../Common/CHeader';
 import {colors} from '../../Themes/colors';
 
-export default function GeneralSetting() {
+export default function GeneralSetting({navigation}) {
   const [close, open] = useState(false);
   const [close1, open1] = useState(false);
   const [close2, open2] = useState(false);
@@ -67,8 +74,15 @@ export default function GeneralSetting() {
     <SafeAreaView style={localStyles.main}>
       <View style={styles.mh20}>
         <CHeader title={'General Setting'} />
-        <CommonCom source={images.Notification} strings={strings.DNA} />
-        <CommonCom source={images.Setting} strings={strings.MangeNot} />
+
+        <TouchableOpacity>
+          <CommonCom source={images.Notification} strings={strings.DNA} />
+        </TouchableOpacity>
+
+        <TouchableOpacity>
+          <CommonCom source={images.Setting} strings={strings.MangeNot} />
+        </TouchableOpacity>
+
         <View style={localStyles.line} />
 
         <SettingComponent
@@ -97,7 +111,7 @@ export default function GeneralSetting() {
 const localStyles = StyleSheet.create({
   main: {
     backgroundColor: colors.white,
-    height: '100%',
+    ...styles.flex,
   },
   imgSty: {
     width: moderateScale(40),

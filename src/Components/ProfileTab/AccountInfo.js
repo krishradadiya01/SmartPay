@@ -105,7 +105,7 @@ export default function AccountInfo({navigation}) {
 const localStyles = StyleSheet.create({
   main: {
     backgroundColor: colors.white,
-    height: '100%',
+    ...styles.flex
   },
   imgSty: {
     width: moderateScale(200),

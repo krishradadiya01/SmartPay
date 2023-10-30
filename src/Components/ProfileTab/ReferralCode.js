@@ -18,12 +18,14 @@ import {colors} from '../../Themes/colors';
 import CTextInput from '../Common/CTextInput';
 import typography from '../../Themes/typography';
 import KeyBoardAvoidWrapper from '../Common/KeyBoardAvoidWrapper';
+import CHeader from '../../Components/Common/CHeader';
 
 export default function ReferralCode() {
   return (
     <SafeAreaView style={localStyles.main}>
       <KeyBoardAvoidWrapper>
         <View style={localStyles.mainView}>
+          <CHeader />
           <Image source={images.DollarsBank} style={localStyles.imgSty} />
 
           <View style={localStyles.parentComponent}>
@@ -66,7 +68,7 @@ export default function ReferralCode() {
 
           <View style={localStyles.bottomBorder} />
 
-          <View style={{gap: moderateScale(50)}}>
+          <View style={{gap: moderateScale(40)}}>
             <View style={{gap: moderateScale(10)}}>
               <CText type={'B24'} align={'center'}>
                 {strings.GetFree}
@@ -97,7 +99,7 @@ export default function ReferralCode() {
 const localStyles = StyleSheet.create({
   main: {
     backgroundColor: colors.white,
-    height: '100%',
+    ...styles.flex,
   },
   imgSty: {
     width: moderateScale(246),
@@ -122,7 +124,7 @@ const localStyles = StyleSheet.create({
     ...styles.mh20,
   },
   bottomBorder: {
-    ...styles.mv70,
+    ...styles.mv50,
     borderBottomWidth: moderateScale(1),
     borderBottomColor: colors.bottomBorder,
   },

@@ -50,8 +50,8 @@ export default function MyCardScreen() {
   };
 
   return (
-    <SafeAreaView style={{backgroundColor: colors.white}}>
-      <View style={localStyles.main}>
+    <SafeAreaView style={styles.main}>
+      <View style={styles.mh20}>
         <CHeader title={'Activity'} rightIcon={<RightIcon />} />
         <FlatList
           data={miniCardDetails}
@@ -90,8 +90,6 @@ export default function MyCardScreen() {
               {strings.TotalDollars}
             </CText>
           </View>
-
-          <View style={localStyles.outerContainer}></View>
         </View>
       </View>
     </SafeAreaView>
@@ -100,7 +98,8 @@ export default function MyCardScreen() {
 
 const localStyles = StyleSheet.create({
   main: {
-    ...styles.mh20,
+    backgroundColor: colors.white,
+    ...styles.flex,
   },
   parentMore: {
     width: moderateScale(38),
@@ -143,10 +142,5 @@ const localStyles = StyleSheet.create({
     borderWidth: moderateScale(1),
     borderRadius: moderateScale(16),
     borderColor: colors.bottomBorder,
-  },
-  outerContainer: {
-    ...styles.flexRow,
-    ...styles.justifyEvenly,
-    backgroundColor: colors.red,
   },
 });

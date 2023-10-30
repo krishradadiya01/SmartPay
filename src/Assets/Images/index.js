@@ -58,4 +58,9 @@ export default {
   avatar2: require('../Images/avatar2.png'),
   avatar3: require('../Images/avatar3.png'),
   avatar4: require('../Images/avatar4.png'),
+  RightIcon: require('../Images/RightIcon.png'),
+  Rewards: require('../Images/Rewards.png'),
+  Cashback: require('../Images/Cashback.png'),
+  MoneyTransfer: require('../Images/MoneyTransfer.png'),
+  PaymentNotification: require('../Images/PaymentNotification.png'),
 };

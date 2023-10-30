@@ -74,6 +74,7 @@ export default function WithDrawBalance() {
         </View>
 
         <CTextInput
+          align={'center'}
           keyboardType={'numeric'}
           value={val}
           onChangeText={onChangeText}

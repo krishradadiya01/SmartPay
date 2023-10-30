@@ -31,6 +31,14 @@ export default function HomeScreen({navigation}) {
   const moveToWith = () => {
     navigation.navigate(StackNav.WithDrawBalance);
   };
+
+  const moveToAll = () => {
+    navigation.navigate(StackNav.HistoryTrans);
+  };
+
+  const moveToNot = () => {
+    navigation.navigate(StackNav.Notification);
+  };
   const ListHeaderComponent = () => {
     return (
       <View>
@@ -48,7 +56,7 @@ export default function HomeScreen({navigation}) {
               </CText>
             </View>
 
-            <CNotification />
+            <CNotification onPress={moveToNot} />
           </View>
 
           <View style={localStyles.ParentImg}>
@@ -72,16 +80,17 @@ export default function HomeScreen({navigation}) {
             text={strings.Withdraw}
             onPress={moveToWith}
           />
-          <FirstImage
-            image={images.More}
-            text={strings.More}
-          />
+          <FirstImage image={images.More} text={strings.More} />
         </View>
 
         <View style={localStyles.parentTodayTxt}>
           <CText type={'B14'} color={colors.tabColor}>
             {strings.Today}
           </CText>
+
+          <TouchableOpacity onPress={moveToAll}>
+            <CText type={'M14'}>{strings.AllTrans}</CText>
+          </TouchableOpacity>
         </View>
       </View>
     );

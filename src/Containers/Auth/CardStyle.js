@@ -52,7 +52,7 @@ const localStyles = StyleSheet.create({
   main: {
     ...styles.mh20,
     ...styles.justifyBetween,
-    height: '100%',
+    ...styles.flex
   },
   card1: {
     width: moderateScale(333),

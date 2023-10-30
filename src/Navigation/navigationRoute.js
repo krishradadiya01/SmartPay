@@ -37,6 +37,8 @@ import SelectLanguage from '../Components/ProfileTab/SelectLanguage';
 import GeneralSetting from '../Components/ProfileTab/GeneralSetting';
 import ReferralCode from '../Components/ProfileTab/ReferralCode';
 import ContactsList from '../Components/ProfileTab/ContactsList';
+import Notification from '../Components/ProfileTab/Notification';
+import FQA from '../Components/ProfileTab/FQA';
 
 export const StackRoute = {
   splash,
@@ -58,7 +60,9 @@ export const StackRoute = {
   SelectLanguage,
   GeneralSetting,
   ReferralCode,
-  ContactsList
+  ContactsList,
+  Notification,
+  FQA
 };
 
 export const AuthRoute = {

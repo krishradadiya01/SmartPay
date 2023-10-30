@@ -18,7 +18,9 @@ export const StackNav = {
   SelectLanguage: 'SelectLanguage',
   GeneralSetting: 'GeneralSetting',
   ReferralCode: 'ReferralCode',
-  ContactsList: 'ContactsList'
+  ContactsList: 'ContactsList',
+  Notification: 'Notification',
+  FQA: 'FQA'
 };
 
 export const AuthNav = {

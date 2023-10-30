@@ -37,8 +37,12 @@ export default function ProfileScreen({navigation}) {
   };
 
   const moveToContact = () => {
-    navigation.navigate(StackNav.ContactsList)
-  }
+    navigation.navigate(StackNav.ContactsList);
+  };
+
+  const moveToFQA = () => {
+    navigation.navigate(StackNav.FQA);
+  };
 
   const RenderData = ({image, name, onPress}) => {
     return (
@@ -108,7 +112,11 @@ export default function ProfileScreen({navigation}) {
           <RenderData name={strings.ChangePin} image={images.Scan} />
 
           <View style={localStyles.bottomLine} />
-          <RenderData name={strings.FQA} image={images.FQA} />
+          <RenderData
+            name={strings.FQA}
+            image={images.FQA}
+            onPress={moveToFQA}
+          />
           <RenderData name={strings.Rate} image={images.RateUs} />
         </View>
       </ScrollView>
@@ -119,7 +127,7 @@ export default function ProfileScreen({navigation}) {
 const localStyles = StyleSheet.create({
   main: {
     backgroundColor: colors.white,
-    height: '100%',
+    ...styles.flex,
   },
   imgSty: {
     width: moderateScale(258),
