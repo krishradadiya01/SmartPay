@@ -140,4 +140,7 @@ export default StyleSheet.create({
   pv5: {
     paddingVertical: getHeight(5),
   },
+  pv8: {
+    paddingVertical: getHeight(8),
+  },
 });

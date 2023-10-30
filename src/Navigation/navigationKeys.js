@@ -20,7 +20,8 @@ export const StackNav = {
   ReferralCode: 'ReferralCode',
   ContactsList: 'ContactsList',
   Notification: 'Notification',
-  FQA: 'FQA'
+  FQA: 'FQA',
+  ActivityGraph: 'ActivityGraph'
 };
 
 export const AuthNav = {

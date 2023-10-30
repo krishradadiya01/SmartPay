@@ -39,6 +39,7 @@ import ReferralCode from '../Components/ProfileTab/ReferralCode';
 import ContactsList from '../Components/ProfileTab/ContactsList';
 import Notification from '../Components/ProfileTab/Notification';
 import FQA from '../Components/ProfileTab/FQA';
+import ActivityGraph from '../Components/ActivityTab/ActivityGraph';
 
 export const StackRoute = {
   splash,
@@ -62,7 +63,8 @@ export const StackRoute = {
   ReferralCode,
   ContactsList,
   Notification,
-  FQA
+  FQA,
+  ActivityGraph
 };
 
 export const AuthRoute = {

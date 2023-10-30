@@ -15,6 +15,9 @@ export default StyleSheet.create({
   m11: {
     margin: moderateScale(11),
   },
+  m15: {
+    margin: moderateScale(15),
+  },
   m20: {
     margin: moderateScale(20),
   },
@@ -65,6 +68,9 @@ export default StyleSheet.create({
   },
   mh20: {
     marginHorizontal: moderateScale(20),
+  },
+  mh23: {
+    marginHorizontal: moderateScale(23),
   },
   mh25: {
     marginHorizontal: moderateScale(25),

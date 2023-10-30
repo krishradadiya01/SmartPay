@@ -63,4 +63,7 @@ export default {
   Cashback: require('../Images/Cashback.png'),
   MoneyTransfer: require('../Images/MoneyTransfer.png'),
   PaymentNotification: require('../Images/PaymentNotification.png'),
+  Car: require('../Images/Car.png'),
+  Crown: require('../Images/Crown.png'),
+  Bank: require('../Images/Bank.png'),
 };

@@ -242,4 +242,16 @@ export default {
   TopUpSolution:
     'Click the Top Up menu then select the amount of money and the method then click the "top up now" button...',
   LoadMore: 'Load more',
+  TotalSpending: 'Total spending',
+  OneFourNineEight: '$1,498.66',
+  Income: 'Income',
+  Expense: 'Expense',
+  Categories: 'Categories',
+  Investments: 'Investments',
+  Traveling: 'Traveling',
+  Subscriptions: 'Subscriptions',
+  FourSixZeroZero: '$4,600.00',
+  FourFiveZero: '$450.12',
+  TwoSixOne: '$261.99',
+  OneTwoSeven: '$127.99',
 };

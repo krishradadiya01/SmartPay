@@ -59,7 +59,7 @@ const TabNavigation = () => {
         component={TabRoute.ActivityScreen}
         options={{
           headerShown: false,
-          tabBarLabel: 'My Card',
+          tabBarLabel: 'Activity',
           tabBarActiveTintColor: colors.black,
           tabBarInactiveTintColor: colors.tabColor,
           tabBarIcon: ({focused}) =>
@@ -71,7 +71,7 @@ const TabNavigation = () => {
         component={TabRoute.ProfileScreen}
         options={{
           headerShown: false,
-          tabBarLabel: 'My Card',
+          tabBarLabel: 'Profile',
           tabBarActiveTintColor: colors.black,
           tabBarInactiveTintColor: colors.tabColor,
           tabBarIcon: ({focused}) => (focused ? <BlackUser /> : <SilverUser />),

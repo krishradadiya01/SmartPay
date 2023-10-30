@@ -5,28 +5,83 @@ import {
   SafeAreaView,
   TouchableOpacity,
   FlatList,
+  ScrollView,
 } from 'react-native';
 import React, {useCallback, useState} from 'react';
 import Feather from 'react-native-vector-icons/Feather';
+import Octicons from 'react-native-vector-icons/Octicons';
 
 // Local imports
 import CHeader from '../../Components/Common/CHeader';
 import {moderateScale} from '../../Common/constant';
 import {colors} from '../../Themes/colors';
 import {styles} from '../../Themes';
-import {miniCardDetails} from '../../Api/constants';
+import {TimeData, miniCardDetails} from '../../Api/constants';
 import CText from '../../Components/Common/CText';
 import strings from '../../I18n/mergeString';
+import {VictoryAxis, VictoryChart, VictoryLine} from 'victory-native';
+import images from '../../Assets/Images/index';
+import {StackNav} from '../../Navigation/navigationKeys';
 
-export default function MyCardScreen() {
+export default function MyCardScreen({navigation}) {
   const [OnBoardingDetails, setOnBoardingDetails] = useState(0);
+  const [data, setData] = useState('');
 
   const _viewabilityConfig = {itemVisiblePercentThreshold: 50};
 
-  const _setViewableItemsChanged = useCallback(({viewableItems}) => {
+  const setViewableItemsChanged = useCallback(({viewableItems}) => {
     setOnBoardingDetails(viewableItems[0]?.index);
   }, []);
 
+  const onChangeColor = item => {
+    setData(item);
+  };
+
+  const moveToGraph = () => {
+    navigation.navigate(StackNav.ActivityGraph);
+  };
+
+  const renderTimeData = ({item}) => {
+    return (
+      <TouchableOpacity
+        style={[
+          localStyles.timeSty,
+          {
+            borderRadius: moderateScale(8),
+            backgroundColor: data === item ? colors.GreyScale : null,
+          },
+        ]}
+        onPress={() => onChangeColor(item)}>
+        <CText
+          style={[
+            {
+              color: data === item ? colors.numbersColor : null,
+            },
+          ]}>
+          {item}
+        </CText>
+      </TouchableOpacity>
+    );
+  };
+
+  const TransHis = ({source, name, subName, dollars, onPress}) => {
+    return (
+      <TouchableOpacity onPress={onPress} style={localStyles.outerContainer}>
+        <Image source={source} style={localStyles.iconSty} />
+
+        <View style={localStyles.parentContainer}>
+          <View style={{gap: moderateScale(5)}}>
+            <CText type={'B14'}>{name}</CText>
+            <CText type={'M12'} color={colors.tabColor}>
+              {subName}
+            </CText>
+          </View>
+
+          <CText type={'B14'}>{dollars}</CText>
+        </View>
+      </TouchableOpacity>
+    );
+  };
   const renderCard = ({item}) => {
     return (
       <View backgroundColor={item.backgroundColor} style={localStyles.cardSty}>
@@ -51,30 +106,34 @@ export default function MyCardScreen() {
 
   return (
     <SafeAreaView style={styles.main}>
-      <View style={styles.mh20}>
-        <CHeader title={'Activity'} rightIcon={<RightIcon />} />
-        <FlatList
-          data={miniCardDetails}
-          renderItem={renderCard}
-          viewabilityConfig={_viewabilityConfig}
-          onViewableItemsChanged={_setViewableItemsChanged}
-          pagingEnabled
-          horizontal
-          showsHorizontalScrollIndicator={false}
-        />
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={styles.mh20}>
+          <CHeader title={'Activity'} rightIcon={<RightIcon />} />
+          <FlatList
+            data={miniCardDetails}
+            renderItem={renderCard}
+            viewabilityConfig={_viewabilityConfig}
+            onViewableItemsChanged={setViewableItemsChanged}
+            pagingEnabled
+            horizontal
+            showsHorizontalScrollIndicator={false}
+          />
 
-        <View style={styles.rowCenter}>
-          {miniCardDetails.map((item, index) => (
-            <View
-              style={[
-                localStyles.IndicatorStyle,
-                {
-                  backgroundColor:
-                    index !== OnBoardingDetails ? colors.silver : colors.black,
-                },
-              ]}
-            />
-          ))}
+          <View style={styles.rowCenter}>
+            {miniCardDetails.map((item, index) => (
+              <View
+                style={[
+                  localStyles.IndicatorStyle,
+                  {
+                    backgroundColor:
+                      index !== OnBoardingDetails
+                        ? colors.silver
+                        : colors.black,
+                  },
+                ]}
+              />
+            ))}
+          </View>
         </View>
 
         <View style={localStyles.mainBorder}>
@@ -90,8 +149,70 @@ export default function MyCardScreen() {
               {strings.TotalDollars}
             </CText>
           </View>
+
+          <FlatList data={TimeData} renderItem={renderTimeData} horizontal />
+
+          <VictoryChart minDomain={{y: 1}}>
+            <VictoryAxis />
+            <VictoryLine
+              style={{
+                data: {
+                  stroke: colors.numbersColor,
+                  strokeWidth: moderateScale(3),
+                },
+              }}
+              data={[
+                {x: 'S', y: 70},
+                {x: 'M', y: 60},
+                {x: 'T', y: 45},
+                {x: 'W', y: 65},
+                {x: 'T', y: 45},
+                {x: 'F', y: 70},
+                {x: 'S', y: 60},
+              ]}
+            />
+          </VictoryChart>
         </View>
-      </View>
+
+        <View style={styles.mh20}>
+          <View style={localStyles.parentComponent}>
+            <CText type={'B18'}>{strings.Transaction}</CText>
+
+            <TouchableOpacity style={localStyles.outerComponent}>
+              <CText type={'M14'}>{strings.All}</CText>
+              <Octicons
+                name={'chevron-down'}
+                color={colors.numbersColor}
+                size={14}
+              />
+            </TouchableOpacity>
+          </View>
+
+          <View style={{gap: moderateScale(15)}}>
+            <TransHis
+              onPress={moveToGraph}
+              source={images.UiKit}
+              name={strings.SmartPayUi}
+              subName={strings.UiNet}
+              dollars={strings.NineNine}
+            />
+            <TransHis
+              onPress={moveToGraph}
+              source={images.Gym}
+              name={strings.Gym}
+              subName={strings.Payment}
+              dollars={strings.FourFive}
+            />
+            <TransHis
+              onPress={moveToGraph}
+              source={images.BitCoin}
+              name={strings.Bitcoin}
+              subName={strings.Deposit}
+              dollars={strings.TwoFiveFIveZero}
+            />
+          </View>
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
@@ -141,6 +262,38 @@ const localStyles = StyleSheet.create({
     ...styles.mt40,
     borderWidth: moderateScale(1),
     borderRadius: moderateScale(16),
-    borderColor: colors.bottomBorder,
+    borderColor: colors.GreyScale,
+  },
+  parentComponent: {
+    ...styles.mv10,
+    ...styles.flexRow,
+    ...styles.justifyBetween,
+  },
+  outerComponent: {
+    ...styles.flexRow,
+    ...styles.alignCenter,
+    gap: moderateScale(5),
+  },
+  iconSty: {
+    width: moderateScale(48),
+    height: moderateScale(48),
+  },
+  outerContainer: {
+    gap: moderateScale(15),
+    ...styles.flexRow,
+    ...styles.alignCenter,
+  },
+  parentContainer: {
+    ...styles.flexRow,
+    ...styles.flex,
+    ...styles.justifyBetween,
+    ...styles.alignCenter,
+  },
+  timeSty: {
+    backgroundColor: colors.red,
+    ...styles.flexRow,
+    ...styles.mh23,
+    ...styles.mt25,
+    ...styles.p10,
   },
 });

@@ -442,3 +442,10 @@ export const NotificationData2 = [
     Time: strings.Dec19,
   },
 ];
+
+export const TimeData = [
+  strings.Day,
+  strings.Week,
+  strings.Month,
+  strings.Year,
+];

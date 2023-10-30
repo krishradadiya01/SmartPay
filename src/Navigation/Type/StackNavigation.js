@@ -9,7 +9,7 @@ const Stack = createNativeStackNavigator();
 
 const StackNavigation = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator initialRouteName={StackNav.ActivityGraph}>
       <Stack.Screen
         name={StackNav.splash}
         component={StackRoute.splash}
@@ -118,6 +118,11 @@ const StackNavigation = () => {
       <Stack.Screen
         name={StackNav.FQA}
         component={StackRoute.FQA}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name={StackNav.ActivityGraph}
+        component={StackRoute.ActivityGraph}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

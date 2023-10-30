@@ -9,13 +9,13 @@ import {moderateScale} from '../../Common/constant';
 import CBackButton from './CBackButton';
 
 export default function CHeader(props) {
-  const {title, onPressBack, isHideBack, rightIcon, customStyle} = props;
+  const {title, onPressBack, isHideBack, rightIcon, customStyle, containerSty} = props;
   const navigation = useNavigation();
 
   const goBack = () => navigation.goBack();
 
   return (
-    <View style={[localStyles.container, !!isHideBack && styles.ph10]}>
+    <View style={[localStyles.container, !!isHideBack && styles.ph10, containerSty]}>
       {!isHideBack && (
         <TouchableOpacity
           onPress={onPressBack || goBack}
