@@ -96,7 +96,7 @@ export default function SelectLanguage() {
 const localStyles = StyleSheet.create({
   main: {
     backgroundColor: colors.white,
-    ...styles.flex
+    ...styles.flex,
   },
   CTxtInp: {
     ...styles.pl10,

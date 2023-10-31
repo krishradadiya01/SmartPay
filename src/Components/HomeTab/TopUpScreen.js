@@ -126,7 +126,11 @@ export default function TopUpScreen({navigation}) {
         </View>
       </KeyBoardAvoidWrapper>
 
-      <CButton containerStyle={localStyles.CButton} onPress={moveToConfirm} />
+      <CButton
+        disabled={!!!amount}
+        containerStyle={localStyles.CButton}
+        onPress={moveToConfirm}
+      />
     </SafeAreaView>
   );
 }

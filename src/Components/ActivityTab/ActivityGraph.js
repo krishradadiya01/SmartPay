@@ -68,7 +68,7 @@ export default function ActivityGraph() {
 
   return (
     <SafeAreaView style={localStyles.main}>
-      <View style={styles.mh20}>
+      <ScrollView style={styles.mh20} showsVerticalScrollIndicator={false}>
         <CHeader title={'Activity'} rightIcon={<RightIcon />} />
         <View style={localStyles.parentContainer}>
           <View style={{gap: moderateScale(10)}}>
@@ -184,7 +184,7 @@ export default function ActivityGraph() {
             dollars={strings.OneTwoSeven}
           />
         </ScrollView>
-      </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }

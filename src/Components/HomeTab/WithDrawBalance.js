@@ -88,7 +88,11 @@ export default function WithDrawBalance() {
 
         <FlatList data={percentageData} renderItem={renderPercent} horizontal />
       </KeyBoardAvoidWrapper>
-      <CButton containerStyle={localStyles.parentCButton} onPress={openSheet} />
+      <CButton
+        disabled={!!!val}
+        containerStyle={localStyles.parentCButton}
+        onPress={openSheet}
+      />
 
       <SelectBank sheetRef={BankRef} />
     </SafeAreaView>

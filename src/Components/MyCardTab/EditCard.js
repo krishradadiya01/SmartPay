@@ -18,6 +18,7 @@ import {ManageData, switchData} from '../../Api/constants';
 import CText from '../Common/CText';
 import {colors} from '../../Themes/colors';
 import CButton from '../Common/CButton';
+import {useNavigation} from '@react-navigation/native';
 
 const ListHeader = () => {
   const [data, setData] = useState(1);
@@ -44,7 +45,7 @@ const ListHeader = () => {
 
   return (
     <View>
-      <CHeader title={'New Card'} />
+      <CHeader title={'Edit Card'} />
 
       <View style={localStyles.parent}>
         <Image source={images.card3} style={localStyles.imgSty} />
@@ -103,7 +104,15 @@ export default function EditCard() {
   };
 
   const ListFooter = () => {
-    return <CButton text={'Save'} containerStyle={localStyles.CButtonTxt} />;
+    const navigation = useNavigation();
+    const goBack = () => navigation.goBack();
+    return (
+      <CButton
+        text={'Save'}
+        onPress={goBack}
+        containerStyle={localStyles.CButtonTxt}
+      />
+    );
   };
 
   return (

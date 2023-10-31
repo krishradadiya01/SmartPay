@@ -5,7 +5,7 @@ import {
   View,
   TouchableOpacity,
 } from 'react-native';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Fonisto from 'react-native-vector-icons/Fontisto';
 
 // Local imports

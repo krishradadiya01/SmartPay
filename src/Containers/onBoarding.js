@@ -110,6 +110,7 @@ export default function OnBoarding({navigation}) {
 const localStyles = StyleSheet.create({
   MainParent: {
     backgroundColor: colors.white,
+    ...styles.flex,
   },
   Parent: {
     ...styles.center,
@@ -134,11 +135,11 @@ const localStyles = StyleSheet.create({
     height: moderateScale(8),
     borderRadius: moderateScale(10),
     ...styles.mh5,
-    ...styles.mb55,
+    ...styles.mb20
   },
   CommonLgnBtn: {
-    ...styles.center,
-    borderRadius: moderateScale(20),
+    width: moderateScale(327),
+    ...styles.mb40
   },
   ParentSkipButton: {
     ...styles.selfEnd,
