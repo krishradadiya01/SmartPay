@@ -140,7 +140,7 @@ const localStyles = StyleSheet.create({
     ...styles.mb20,
   },
   ParentLgnBtn: {
-    ...styles.mt0,
+    bottom: moderateScale(40),
   },
   parentFromBOA: {
     ...styles.mv10,

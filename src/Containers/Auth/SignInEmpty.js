@@ -124,7 +124,7 @@ const localStyles = StyleSheet.create({
     ...styles.mt25,
   },
   welcomeText: {
-    ...styles.mt10,
+    ...styles.mv15,
   },
   PassTxt: {
     ...styles.mt20,

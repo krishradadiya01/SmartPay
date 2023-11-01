@@ -83,7 +83,7 @@ const localStyles = StyleSheet.create({
     ...typography.fontWeights.Bold,
     ...typography.fontSizes.f24,
     color: colors.black,
-    borderColor: colors.SignUpTxt
+    borderColor: colors.SignUpTxt,
   },
   ParenOtp: {
     ...styles.mt35,

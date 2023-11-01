@@ -23,7 +23,7 @@ export default function CTextInput({
   onPress,
   placeColor,
   keyboardType,
-  align
+  align,
 }) {
   const [isSecurePass, setIsSecurePass] = useState(isSecure);
 
@@ -72,6 +72,7 @@ const localStyles = StyleSheet.create({
     ...styles.pl15,
     ...styles.flex,
     width: '100%',
+    height: moderateScale(80),
   },
   EyePng: {
     ...styles.mr10,

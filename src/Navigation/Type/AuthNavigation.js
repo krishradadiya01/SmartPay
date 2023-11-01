@@ -85,14 +85,7 @@ const AuthNavigation = ({navigation}) => {
       <Stack.Screen
         name={AuthNav.NewCard}
         component={AuthRoute.NewCard}
-        options={{
-          headerLeft: () => (
-            <CBackButton
-              containerStyle={localStyle.CBackButton}
-              onPress={moveToStyle}
-            />
-          ),
-        }}
+        options={{headerShown: false}}
       />
     </Stack.Navigator>
   );

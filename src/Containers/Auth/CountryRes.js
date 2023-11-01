@@ -48,10 +48,11 @@ export default function CountryRes({navigation}) {
         <TouchableOpacity onPress={moveToModel} style={localStyles.mainBox}>
           <View style={localStyles.UsStyle}>
             {!!country ? (
-              <CText type={'B18'} style={localStyles.USTxt}>
+              <View style={localStyles.USTxt}>
                 {country?.svgIcon}
-                {country?.FullName}
-              </CText>
+
+                <CText type={'B18'}>{country?.FullName}</CText>
+              </View>
             ) : (
               <View style={localStyles.ViewOfInitial}>
                 <US />
@@ -107,10 +108,12 @@ const localStyles = StyleSheet.create({
     borderRadius: moderateScale(16),
   },
   USTxt: {
-    ...styles.pl15,
+    ...styles.rowCenter,
+    gap: moderateScale(10),
   },
   UsStyle: {
     ...styles.flexRow,
+    ...styles.center,
   },
   angleButton: {
     ...styles.pr10,

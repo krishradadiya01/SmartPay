@@ -44,7 +44,7 @@ export default function PassRecovery({navigation}) {
 
 const localStyles = StyleSheet.create({
   main: {
-    ...styles.ml20,
+    ...styles.pl20,
     ...styles.justifyBetween,
     ...styles.mainContainerSurface,
   },
@@ -59,6 +59,7 @@ const localStyles = StyleSheet.create({
     ...styles.mt20,
   },
   ParentTxtInp: {
+    ...styles.mt20,
     width: moderateScale(333),
     borderWidth: moderateScale(1),
     borderColor: colors.skyBlue,

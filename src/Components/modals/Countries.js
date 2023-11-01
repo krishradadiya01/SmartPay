@@ -153,13 +153,13 @@ const localStyles = StyleSheet.create({
     backgroundColor: colors.GreyScale,
     width: moderateScale(258),
     ...styles.ml20,
+    ...styles.mv20,
   },
   parentCTxtInp: {
     ...styles.flexRow,
     ...styles.alignCenter,
   },
   parentCancel: {
-    ...styles.pt15,
     ...styles.pl15,
   },
   title: {

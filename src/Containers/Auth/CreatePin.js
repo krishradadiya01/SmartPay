@@ -44,7 +44,11 @@ export default function CreatePin({navigation}) {
           codeInputFieldStyle={localStyles.underlineStyleBase}
         />
       </View>
-      <CButton text={'Create PIN'} ParentLoginBtn={localStyles.mainCButton} onPress={moveToFace} />
+      <CButton
+        text={'Create PIN'}
+        ParentLoginBtn={localStyles.mainCButton}
+        onPress={moveToFace}
+      />
     </SafeAreaView>
   );
 }
@@ -63,10 +67,11 @@ const localStyles = StyleSheet.create({
     ...styles.mt40,
   },
   underlineStyleBase: {
+    // ...styles.pt20,
     width: moderateScale(56),
     height: moderateScale(56),
     borderWidth: moderateScale(2),
-    borderBottomColor: colors.SignUpTxt,
+    borderBottomColor: colors.numbersColor,
     borderColor: colors.GreyScale,
     ...typography.fontWeights.Bold,
     ...typography.fontSizes.f40,

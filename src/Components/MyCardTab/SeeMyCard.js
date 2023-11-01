@@ -65,7 +65,7 @@ const localStyles = StyleSheet.create({
     width: moderateScale(327),
     height: moderateScale(190),
     ...styles.selfCenter,
-    ...styles.mt20,
+    ...styles.mt5,
   },
   mainContainer: {
     ...styles.mv30,

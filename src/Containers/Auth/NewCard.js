@@ -21,6 +21,7 @@ import Feathers from 'react-native-vector-icons/FontAwesome';
 import CButton from '../../Components/Common/CButton';
 import KeyBoardAvoidWrapper from '../../Components/Common/KeyBoardAvoidWrapper';
 import ReadyCard from '../../Components/modals/ReadyCard';
+import CHeader from '../../Components/Common/CHeader';
 
 export default function NewCard() {
   const [country, setCountry] = useState('');
@@ -43,6 +44,7 @@ export default function NewCard() {
   return (
     <SafeAreaView style={localStyles.main}>
       <KeyBoardAvoidWrapper>
+        <CHeader title={'New Card'} />
         <View style={localStyles.parentImg}>
           <Image style={localStyles.imgStyle} source={images.MainCard} />
         </View>
@@ -122,7 +124,7 @@ const localStyles = StyleSheet.create({
   },
   parentColor: {
     position: 'absolute',
-    top: 50,
+    top: 110,
     right: 0,
   },
   numberTxt: {
@@ -132,6 +134,7 @@ const localStyles = StyleSheet.create({
     width: '48%',
   },
   mainCTxtInp: {
+    ...styles.mv20,
     ...styles.rowCenter,
     ...styles.justifyBetween,
   },

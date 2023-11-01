@@ -97,7 +97,7 @@ export default function ActivityGraph() {
             <VictoryAxis
               dependentAxis
               tickValues={[1, 2, 3, 4]}
-              tickFormat={t => `$${Math.round(t)}k`}
+              tickFormat={t => `$${Math.round(t)}`}
               orientation="right"
             />
 
@@ -265,5 +265,8 @@ const localStyles = StyleSheet.create({
     gap: moderateScale(5),
     ...styles.pv15,
     ...styles.pl20,
+  },
+  graphSty: {
+    ...styles.mr20,
   },
 });

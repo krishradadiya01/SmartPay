@@ -26,6 +26,10 @@ export default function CreatePass({navigation}) {
     setConfirmValue(txt);
   };
 
+  const moveToSign = () => {
+    navigation.navigate(AuthNav.SignInEmpty);
+  };
+
   return (
     <SafeAreaView style={localStyles.main}>
       <View>
@@ -57,6 +61,7 @@ export default function CreatePass({navigation}) {
       <CButton
         text={'Create new password'}
         ParentLoginBtn={localStyles.CButton}
+        onPress={moveToSign}
       />
     </SafeAreaView>
   );

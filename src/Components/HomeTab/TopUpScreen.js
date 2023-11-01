@@ -204,7 +204,6 @@ const localStyles = StyleSheet.create({
     ...typography.fontWeights.SemiBold,
   },
   Dollars1txt: {
-    backgroundColor: colors.red,
     ...styles.ph16,
     ...styles.p8,
   },

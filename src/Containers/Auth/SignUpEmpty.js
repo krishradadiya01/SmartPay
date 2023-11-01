@@ -43,14 +43,18 @@ export default function SignUpEmpty({navigation}) {
           <CText style={localStyles.smartPay}>{strings.SmartPay}</CText>
         </CText>
         <CText type={'B24'}>{strings.acc}</CText>
-        <CTextInput text={'Full name'} />
-        <CTextInput text={'email'} />
-        <CTextInput
-          text={'password'}
-          value={change}
-          onChangeText={onChangeTxt}
-          isSecure={true}
-        />
+
+        <View style={localStyles.threeEle}>
+          <CTextInput text={'Full name'} />
+          <CTextInput text={'email'} />
+          <CTextInput
+            text={'password'}
+            value={change}
+            onChangeText={onChangeTxt}
+            isSecure={true}
+          />
+        </View>
+
         <CButton text={'Sign Up'} onPress={moveToCountry} />
 
         <View style={localStyles.parentOr}>
@@ -70,7 +74,7 @@ export default function SignUpEmpty({navigation}) {
         </View>
       </View>
 
-      <CText align={'center'} style={localStyles.AlreadyTxt}>
+      <CText type={'B14'} align={'center'} style={localStyles.AlreadyTxt}>
         {strings.AlreadyAcc}
         <CText
           type={'B16'}
@@ -130,9 +134,13 @@ const localStyles = StyleSheet.create({
     height: moderateScale(24),
   },
   AlreadyTxt: {
-    ...styles.mb10,
+    ...styles.mb40,
   },
   SignInTxt: {
     color: colors.SignUpTxt,
   },
+  threeEle: {
+    ...styles.mv10,
+    gap: moderateScale(15)
+  }
 });

@@ -50,10 +50,10 @@ export default function ProofRes({navigation}) {
 
           <View style={localStyles.mainBox}>
             {!!country ? (
-              <CText type={'B18'} style={localStyles.USTxtStyle}>
+              <View type={'B18'} style={localStyles.USTxtStyle}>
                 {country?.svgIcon}
-                {country?.FullName}
-              </CText>
+                <CText type={'B16'}>{country?.FullName}</CText>
+              </View>
             ) : (
               <View style={localStyles.ViewOfFlag}>
                 <US />
@@ -142,7 +142,9 @@ const localStyles = StyleSheet.create({
     borderRadius: moderateScale(16),
   },
   USTxtStyle: {
-    ...styles.pl15,
+    // ...styles.pl15,
+    ...styles.rowCenter,
+    gap: moderateScale(10),
   },
   mainChange: {
     ...styles.pr15,

@@ -95,6 +95,7 @@ export default function SendMoney() {
 const localStyles = StyleSheet.create({
   main: {
     ...styles.flex,
+    backgroundColor: colors.white,
     ...styles.justifyBetween,
   },
   mainImg: {
