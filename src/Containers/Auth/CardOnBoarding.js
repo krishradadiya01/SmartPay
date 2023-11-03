@@ -9,6 +9,7 @@ import {styles} from '../../Themes';
 import CText from '../../Components/Common/CText';
 import CButton from '../../Components/Common/CButton';
 import {AuthNav} from '../../Navigation/navigationKeys';
+import {colors} from '../../Themes/colors';
 
 export default function CardOnBoarding({navigation}) {
   const moveToStyle = () => {
@@ -18,10 +19,12 @@ export default function CardOnBoarding({navigation}) {
     <SafeAreaView style={localStyles.main}>
       <View>
         <Image style={localStyles.imgStyle} source={images.Cards} />
-        <CText type={'B32'} style={localStyles.cardTxt}>
+        <CText color={colors.black} type={'B32'} style={localStyles.cardTxt}>
           {strings.CreateCard}
         </CText>
-        <CText style={localStyles.detailsTxt}>{strings.CardDetail}</CText>
+        <CText color={colors.black} style={localStyles.detailsTxt}>
+          {strings.CardDetail}
+        </CText>
       </View>
       <CButton
         text={'Get Free Card'}

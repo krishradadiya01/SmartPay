@@ -28,7 +28,7 @@ const ListHeaderComponent = () => {
       </CText>
 
       <View style={styles.mt15}>
-        <FlatList data={contactList.slice(0,3)} renderItem={renderData} />
+        <FlatList data={contactList.slice(0, 3)} renderItem={renderData} />
       </View>
       <View style={localStyles.line} />
 
@@ -46,12 +46,13 @@ const renderData = ({item}) => {
         <Image source={item.image} style={localStyles.imgSty} />
 
         <View>
-          <CText type={'S16'}>{item.name}</CText>
+          <CText color={colors.black} type={'S16'}>
+            {item.name}
+          </CText>
           <CText type={'R14'} color={colors.tabColor}>
             {item.number}
           </CText>
         </View>
-        
       </TouchableOpacity>
     </View>
   );
@@ -95,7 +96,9 @@ export default function ContactsList() {
           onChangeText={onchangeTxt}
           textInputStyle={localStyles.CTxtInp}
           text={'Search'}
-          LeftIcon={() => <EvilIcons name={'search'} size={35} />}
+          LeftIcon={() => (
+            <EvilIcons color={colors.black} name={'search'} size={35} />
+          )}
         />
         {!showSearchResult ? (
           <FlatList

@@ -53,10 +53,12 @@ export default function NewCard() {
           <Image source={images.CardColor} />
         </View>
 
-        <CText type={'B24'}>{strings.CardDetailTxt}</CText>
+        <CText color={colors.black} type={'B24'}>
+          {strings.CardDetailTxt}
+        </CText>
         <CTextInput
           text={'Card number'}
-          style={localStyles.numberTxt}
+          mainTxtInp={localStyles.numberTxt}
           RightIcon={() => (
             <Image style={localStyles.imageStyle} source={images.MasterIcon} />
           )}
@@ -79,20 +81,27 @@ export default function NewCard() {
             {!!country ? (
               <View style={[styles.itemsCenter, styles.flexRow]}>
                 {country?.svgIcon}
-                <CText type={'B18'} style={localStyles.USTxtStyle}>
+                <CText
+                  color={colors.black}
+                  type={'B18'}
+                  style={localStyles.USTxtStyle}>
                   {country?.FullName}
                 </CText>
               </View>
             ) : (
               <View style={[styles.itemsCenter, styles.flexRow]}>
                 <US />
-                <CText type={'B18'} style={localStyles.USTxtStyle}>
+                <CText
+                  color={colors.black}
+                  type={'B18'}
+                  style={localStyles.USTxtStyle}>
                   {strings.America}
                 </CText>
               </View>
             )}
 
             <Feathers
+              color={colors.black}
               name={'angle-down'}
               style={localStyles.angleButton}
               size={24}
@@ -128,7 +137,7 @@ const localStyles = StyleSheet.create({
     right: 0,
   },
   numberTxt: {
-    ...styles.ml10,
+    ...styles.mv10,
   },
   parentCTxtInp: {
     width: '48%',

@@ -5,6 +5,7 @@ import {
   Image,
   TouchableOpacity,
   FlatList,
+  ScrollView,
 } from 'react-native';
 import React from 'react';
 
@@ -89,7 +90,9 @@ export default function HomeScreen({navigation}) {
           </CText>
 
           <TouchableOpacity onPress={moveToAll}>
-            <CText type={'M14'}>{strings.AllTrans}</CText>
+            <CText color={colors.black} type={'M14'}>
+              {strings.AllTrans}
+            </CText>
           </TouchableOpacity>
         </View>
       </View>
@@ -100,7 +103,9 @@ export default function HomeScreen({navigation}) {
     return (
       <TouchableOpacity style={localStyles.parentDep} onPress={onPress}>
         <Image source={image} style={localStyles.childImg} />
-        <CText style={localStyles.Txt}>{text}</CText>
+        <CText color={colors.black} style={localStyles.Txt}>
+          {text}
+        </CText>
       </TouchableOpacity>
     );
   };
@@ -114,7 +119,7 @@ export default function HomeScreen({navigation}) {
             style={localStyles.GymImg}
           />
           <View style={localStyles.mainCText}>
-            <CText type={'B16'} style={localStyles.name}>
+            <CText color={colors.black} type={'B16'} style={localStyles.name}>
               {item.name}
             </CText>
             <CText color={colors.tabColor}>{item.subName}</CText>
@@ -132,13 +137,15 @@ export default function HomeScreen({navigation}) {
 
   return (
     <SafeAreaView style={[styles.mainContainerSurface]}>
-      <FlatList
-        data={HomeData}
-        ListHeaderComponent={ListHeaderComponent}
-        renderItem={renderHomeData}
-        scrollEnabled={false}
-        showsVerticalScrollIndicator={false}
-      />
+      <ScrollView>
+        <FlatList
+          data={HomeData}
+          ListHeaderComponent={ListHeaderComponent}
+          renderItem={renderHomeData}
+          scrollEnabled={false}
+          showsVerticalScrollIndicator={false}
+        />
+      </ScrollView>
     </SafeAreaView>
   );
 }

@@ -80,7 +80,11 @@ export default function TransferMoney({navigation}) {
             />
           ) : null}
           <Image source={item.image} style={localStyles.imgSty} />
-          <CText align={'center'} type={'B12'} style={localStyles.GirlNameTxt}>
+          <CText
+            color={colors.black}
+            align={'center'}
+            type={'B12'}
+            style={localStyles.GirlNameTxt}>
             {item.name}
           </CText>
         </TouchableOpacity>
@@ -92,7 +96,7 @@ export default function TransferMoney({navigation}) {
     <SafeAreaView style={localStyles.main}>
       <View>
         <CHeader title={strings.AllTrans} />
-        <CText type={'B18'} style={localStyles.CardTxt}>
+        <CText color={colors.black} type={'B18'} style={localStyles.CardTxt}>
           {strings.ChooseCards}
         </CText>
         <View style={localStyles.ImgParent}>
@@ -103,7 +107,9 @@ export default function TransferMoney({navigation}) {
           </ScrollView>
         </View>
 
-        <CText type={'B18'}>{strings.ChooseCards}</CText>
+        <CText color={colors.black} type={'B18'}>
+          {strings.ChooseCards}
+        </CText>
 
         <CTextInput
           mainTxtInp={localStyles.CTxtInp}

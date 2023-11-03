@@ -26,14 +26,18 @@ export default function Confirmation({route}) {
           <CText color={colors.tabColor} type={'M16'}>
             {name}
           </CText>
-          <CText type={'B16'}>{dollars}</CText>
+          <CText color={colors.black} type={'B16'}>
+            {dollars}
+          </CText>
         </View>
 
         <View style={localStyles.parentBalance}>
           <CText color={colors.tabColor} type={'M16'}>
             {Total}
           </CText>
-          <CText type={'B16'}>{TotalDollars}</CText>
+          <CText color={colors.black} type={'B16'}>
+            {TotalDollars}
+          </CText>
         </View>
       </View>
     );
@@ -66,7 +70,11 @@ export default function Confirmation({route}) {
         </View>
       </View>
 
-      <CButton text={'Confirm Top Up'} containerStyle={localStyles.parentButton} onPress={onPress} />
+      <CButton
+        text={'Confirm Top Up'}
+        containerStyle={localStyles.parentButton}
+        onPress={onPress}
+      />
       <TopUpSuccess sheetRef={successRef} />
     </SafeAreaView>
   );

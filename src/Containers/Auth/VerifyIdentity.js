@@ -22,15 +22,15 @@ export default function VerifyIdentity({navigation}) {
     <SafeAreaView style={localStyles.main}>
       <View>
         <Identity style={localStyles.imgStyle} />
-        <CText type={'B24'} style={localStyles.verIdeTxt}>
+        <CText color={colors.black} type={'B24'} style={localStyles.verIdeTxt}>
           {strings.VerifyIdentity}
         </CText>
-        <CText type={'R16'} style={localStyles.whereCode}>
+        <CText color={colors.black} type={'R16'} style={localStyles.whereCode}>
           {strings.WhereCode}
           <CText type={'B16'} color={colors.SignUpTxt}>
             {strings.WhereCode2}
           </CText>
-          <CText>{strings.WhereCode3}</CText>
+          <CText color={colors.black}>{strings.WhereCode3}</CText>
         </CText>
         <View style={localStyles.Email}>
           <View style={localStyles.mainView}>
@@ -40,8 +40,13 @@ export default function VerifyIdentity({navigation}) {
               color={colors.SignUpTxt}
             />
             <View style={localStyles.EmailTxt}>
-              <CText type={'B18'}>{strings.Email}</CText>
-              <CText type={'R16'} style={localStyles.RealEmail}>
+              <CText color={colors.black} type={'B18'}>
+                {strings.Email}
+              </CText>
+              <CText
+                color={colors.black}
+                type={'R16'}
+                style={localStyles.RealEmail}>
                 {strings.RealEmail}
               </CText>
             </View>

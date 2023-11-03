@@ -42,6 +42,7 @@ export default function OnBoarding({navigation}) {
         <View style={localStyles.Parent}>
           <Image source={item.image} style={localStyles.OnBoarding1} />
           <CText
+            color={colors.black}
             align={'center'}
             type={'B24'}
             style={localStyles.Title1}
@@ -49,6 +50,7 @@ export default function OnBoarding({navigation}) {
             {item.Title}
           </CText>
           <CText
+            color={colors.black}
             align={'center'}
             type={'R14'}
             style={localStyles.DescStyle}
@@ -135,11 +137,11 @@ const localStyles = StyleSheet.create({
     height: moderateScale(8),
     borderRadius: moderateScale(10),
     ...styles.mh5,
-    ...styles.mb20
+    ...styles.mb20,
   },
   CommonLgnBtn: {
     width: moderateScale(327),
-    ...styles.mb40
+    ...styles.mb40,
   },
   ParentSkipButton: {
     ...styles.selfEnd,

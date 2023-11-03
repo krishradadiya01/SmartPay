@@ -1,8 +1,6 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import MaterialCommunity from 'react-native-vector-icons/MaterialCommunityIcons';
-import Material from 'react-native-vector-icons/MaterialIcons';
 import {useNavigation} from '@react-navigation/native';
 
 // Local imports
@@ -13,7 +11,6 @@ import {styles} from '../../Themes';
 import {CommonBOA} from '../Common/CommonBOA';
 import {colors} from '../../Themes/colors';
 import {moderateScale} from '../../Common/constant';
-import {TouchableOpacity} from 'react-native-gesture-handler';
 import CButton from '../Common/CButton';
 import {StackNav} from '../../Navigation/navigationKeys';
 import images from '../../Assets/Images/index';
@@ -34,7 +31,7 @@ export default function SelectBank(props) {
       ref={sheetRef}
       style={localStyles.main}>
       <View>
-        <CText type={'S18'} style={localStyles.selectSty}>
+        <CText color={colors.black} type={'S18'} style={localStyles.selectSty}>
           {strings.SelectBank}
         </CText>
       </View>

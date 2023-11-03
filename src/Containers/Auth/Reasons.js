@@ -25,51 +25,71 @@ export default function Reasons({navigation}) {
   };
 
   const backToCountry = () => {
-    navigation.navigate(AuthNav.CountryRes)
-  }
+    navigation.navigate(AuthNav.CountryRes);
+  };
 
   return (
     <SafeAreaView style={localStyles.main}>
       <View>
-        <CBackButton onPress={backToCountry}/>
-        <CText type={'B24'} style={localStyles.reasonsTxt}>
+        <CBackButton onPress={backToCountry} />
+        <CText color={colors.black} type={'B24'} style={localStyles.reasonsTxt}>
           {strings.MainReason}
         </CText>
-        <CText style={localStyles.knowReasonTxt}>{strings.KnowReasons}</CText>
+        <CText color={colors.black} style={localStyles.knowReasonTxt}>
+          {strings.KnowReasons}
+        </CText>
         <View style={localStyles.mainBoxes}>
           <View style={localStyles.PieChartMain}>
             <PieChart style={localStyles.PieChartStyle} />
-            <CText type={'B14'} style={localStyles.spendDailyTxt}>
+            <CText
+              color={colors.black}
+              type={'B14'}
+              style={localStyles.spendDailyTxt}>
               {strings.SpendDaily}
             </CText>
           </View>
           <View style={localStyles.BoltMain}>
             <Bolt style={localStyles.PieChartStyle} />
-            <CText type={'B14'} style={localStyles.fastTransTxt}>
+            <CText
+              color={colors.black}
+              type={'B14'}
+              style={localStyles.fastTransTxt}>
               {strings.FastTrans}
             </CText>
           </View>
           <View style={localStyles.BoltMain}>
             <Users style={localStyles.PieChartStyle} />
-            <CText type={'B14'} style={localStyles.fastTransTxt}>
+            <CText
+              color={colors.black}
+              type={'B14'}
+              style={localStyles.fastTransTxt}>
               {strings.PaymentFriends}
             </CText>
           </View>
           <View style={localStyles.PieChartMain}>
             <Creditcard style={localStyles.PieChartStyle} />
-            <CText type={'B14'} style={localStyles.spendDailyTxt}>
+            <CText
+              color={colors.black}
+              type={'B14'}
+              style={localStyles.spendDailyTxt}>
               {strings.OnlinePayment}
             </CText>
           </View>
           <View style={localStyles.BoltMain}>
             <Beach style={localStyles.PieChartStyle} />
-            <CText type={'B14'} style={localStyles.fastTransTxt}>
+            <CText
+              color={colors.black}
+              type={'B14'}
+              style={localStyles.fastTransTxt}>
               {strings.PaymentFriends}
             </CText>
           </View>
           <View style={localStyles.BoltMain}>
             <Business style={localStyles.PieChartStyle} />
-            <CText type={'B14'} style={localStyles.fastTransTxt}>
+            <CText
+              color={colors.black}
+              type={'B14'}
+              style={localStyles.fastTransTxt}>
               {strings.PaymentFriends}
             </CText>
           </View>
@@ -116,11 +136,11 @@ const localStyles = StyleSheet.create({
     ...styles.flexRow,
     flexWrap: 'wrap',
     ...styles.justifyBetween,
-    ...styles.mt25,
+    ...styles.mt10,
   },
   PieChartStyle: {
     ...styles.mh20,
-    ...styles.mv20,
+    ...styles.mv15,
   },
   spendDailyTxt: {
     color: colors.white,
@@ -134,6 +154,6 @@ const localStyles = StyleSheet.create({
     ...styles.mb15,
   },
   CButtonMain: {
-    ...styles.mb20,
+    ...styles.mb30,
   },
 });

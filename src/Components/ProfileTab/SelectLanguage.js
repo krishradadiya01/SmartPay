@@ -54,10 +54,12 @@ export default function SelectLanguage() {
         onPress={() => valueChange(item)}>
         {item?.svgIcon}
         <View style={localStyles.radioSty}>
-          <CText type={'S16'}>{item.name}</CText>
+          <CText color={colors.black} type={'S16'}>
+            {item.name}
+          </CText>
 
           {data === item.id ? (
-            <AntDesign name={'checkcircle'} size={20} />
+            <AntDesign color={colors.black} name={'checkcircle'} size={20} />
           ) : (
             <Ionicons
               name={'radio-button-off'}
@@ -81,7 +83,9 @@ export default function SelectLanguage() {
             value={search}
             onChangeText={onChangeSearch}
             text={'Search'}
-            LeftIcon={() => <EvilIcons name={'search'} size={35} />}
+            LeftIcon={() => (
+              <EvilIcons color={colors.black} name={'search'} size={35} />
+            )}
           />
 
           <View style={localStyles.parentComponent}>

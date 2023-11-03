@@ -6,7 +6,7 @@ import CBackButton from '../../Components/Common/CBackButton';
 import {styles} from '../../Themes';
 import CText from '../../Components/Common/CText';
 import strings from '../../I18n/mergeString';
-import {Card, DigDoc, Identity, Passport} from '../../Assets/Svgs';
+import {Card, DigDoc, Passport} from '../../Assets/Svgs';
 import {colors} from '../../Themes/colors';
 import {moderateScale} from '../../Common/constant';
 import Countries from '../../Components/modals/Countries';
@@ -17,6 +17,22 @@ import {US} from '../../Assets/Svgs';
 export default function ProofRes({navigation}) {
   const Change = useRef(null);
   const [country, SetCountry] = useState('');
+
+  const MethodData = ({name, icon}) => {
+    return (
+      <TouchableOpacity style={localStyles.parentPass} onPress={moveToCard}>
+        <View style={localStyles.parentPassAndTxt}>
+          {icon}
+          <CText color={colors.black} type={'B16'} style={localStyles.PassTxt}>
+            {name}
+          </CText>
+        </View>
+        <View>
+          <Material color={colors.black} name={'navigate-next'} size={25} />
+        </View>
+      </TouchableOpacity>
+    );
+  };
 
   const selectedCountry = itm => {
     SetCountry(itm);
@@ -38,10 +54,13 @@ export default function ProofRes({navigation}) {
     <SafeAreaView style={localStyles.main}>
       <View>
         <CBackButton onPress={backToFace} />
-        <CText type={'B24'} style={localStyles.ProofResTxt}>
+        <CText
+          color={colors.black}
+          type={'B24'}
+          style={localStyles.ProofResTxt}>
           {strings.ProofOfRes}
         </CText>
-        <CText>{strings.ProveLive}</CText>
+        <CText color={colors.black}>{strings.ProveLive}</CText>
 
         <View style={localStyles.mainNation}>
           <CText type={'B18'} color={colors.silver}>
@@ -52,12 +71,17 @@ export default function ProofRes({navigation}) {
             {!!country ? (
               <View type={'B18'} style={localStyles.USTxtStyle}>
                 {country?.svgIcon}
-                <CText type={'B16'}>{country?.FullName}</CText>
+                <CText color={colors.black} type={'B16'}>
+                  {country?.FullName}
+                </CText>
               </View>
             ) : (
               <View style={localStyles.ViewOfFlag}>
                 <US />
-                <CText type={'B18'} style={localStyles.USTxtStyle}>
+                <CText
+                  color={colors.black}
+                  type={'B18'}
+                  style={localStyles.USTxtStyle}>
                   {strings.America}
                 </CText>
               </View>
@@ -79,41 +103,9 @@ export default function ProofRes({navigation}) {
           {strings.MethodVer}
         </CText>
         <View style={localStyles.mainBoxes}>
-          <TouchableOpacity style={localStyles.parentPass} onPress={moveToCard}>
-            <View style={localStyles.parentPassAndTxt}>
-              <Passport />
-              <CText type={'B16'} style={localStyles.PassTxt}>
-                {strings.PassPort}
-              </CText>
-            </View>
-            <View>
-              <Material name={'navigate-next'} size={25} />
-            </View>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={localStyles.parentPass} onPress={moveToCard}>
-            <View style={localStyles.parentPassAndTxt}>
-              <Card />
-              <CText type={'B16'} style={localStyles.PassTxt}>
-                {strings.IdeCard}
-              </CText>
-            </View>
-            <View>
-              <Material name={'navigate-next'} size={25} />
-            </View>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={localStyles.parentPass} onPress={moveToCard}>
-            <View style={localStyles.parentPassAndTxt}>
-              <DigDoc />
-              <CText type={'B16'} style={localStyles.PassTxt}>
-                {strings.DigDoc}
-              </CText>
-            </View>
-            <View>
-              <Material name={'navigate-next'} size={25} />
-            </View>
-          </TouchableOpacity>
+          <MethodData name={strings.PassPort} icon={<Passport />} />
+          <MethodData name={strings.IdeCard} icon={<Card />} />
+          <MethodData name={strings.DigDoc} icon={<DigDoc />} />
         </View>
       </View>
 
@@ -142,7 +134,6 @@ const localStyles = StyleSheet.create({
     borderRadius: moderateScale(16),
   },
   USTxtStyle: {
-    // ...styles.pl15,
     ...styles.rowCenter,
     gap: moderateScale(10),
   },
@@ -151,6 +142,7 @@ const localStyles = StyleSheet.create({
   },
   ViewOfFlag: {
     ...styles.flexRow,
+    gap: moderateScale(10),
   },
   mainNation: {
     ...styles.mv50,

@@ -21,10 +21,13 @@ export default function PassRecovery({navigation}) {
     <SafeAreaView style={localStyles.main}>
       <KeyBoardAvoidWrapper contentContainerStyle={styles.flexGrow1}>
         <Lock style={localStyles.lock} />
-        <CText type={'B24'} style={localStyles.PassRecTxt}>
+        <CText color={colors.black} type={'B24'} style={localStyles.PassRecTxt}>
           {strings.PassRecovery}
         </CText>
-        <CText type={'R16'} style={localStyles.enterRegEmail}>
+        <CText
+          color={colors.black}
+          type={'R16'}
+          style={localStyles.enterRegEmail}>
           {strings.enterRegEmail}
         </CText>
         <CTextInput
@@ -69,7 +72,7 @@ const localStyles = StyleSheet.create({
   },
   ParentEmail: {
     width: moderateScale(333),
-    borderRadius: moderateScale(16),
     ...styles.mb30,
+    ...styles.mr20,
   },
 });

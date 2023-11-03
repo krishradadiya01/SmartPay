@@ -21,7 +21,6 @@ export default function CTextInput({
   onChangeText,
   value,
   onPress,
-  placeColor,
   keyboardType,
   align,
 }) {
@@ -37,7 +36,7 @@ export default function CTextInput({
       <TextInput
         style={[localStyles.local, textInputStyle]}
         placeholder={text}
-        placeholderTextColor={placeColor}
+        placeholderTextColor={colors.silver}
         secureTextEntry={isSecurePass}
         value={value}
         textAlign={align}
@@ -69,6 +68,7 @@ const localStyles = StyleSheet.create({
     ...styles.justifyBetween,
   },
   local: {
+    color: colors.black,
     ...styles.pl15,
     ...styles.flex,
     width: '100%',

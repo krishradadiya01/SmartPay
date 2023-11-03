@@ -79,7 +79,6 @@ export default function EditCard() {
           return value;
         }
       });
-
       setSelected(newItem);
     };
 
@@ -88,11 +87,13 @@ export default function EditCard() {
         <View style={localStyles.parentThreeData}>
           <View style={localStyles.mainContainer}>
             <Image source={item.image} style={localStyles.threeData} />
-            <CText type={'S14'}>{item.name}</CText>
+            <CText color={colors.black} type={'S14'}>
+              {item.name}
+            </CText>
           </View>
 
           <Switch
-            trackColor={{true: colors.Toggle}}
+            trackColor={{false: colors.bottomBorder, true: colors.Toggle}}
             value={item.selected}
             onValueChange={ontoggle}
           />

@@ -39,8 +39,10 @@ export default function GeneralSetting({navigation}) {
         <Image source={source} style={localStyles.imgSty} />
 
         <View style={localStyles.outerComponent}>
-          <CText type={'M14'}>{strings}</CText>
-          <Material name={'navigate-next'} size={16} />
+          <CText color={colors.black} type={'M14'}>
+            {strings}
+          </CText>
+          <Material color={colors.black} name={'navigate-next'} size={16} />
         </View>
       </View>
     );
@@ -51,7 +53,9 @@ export default function GeneralSetting({navigation}) {
       <View style={localStyles.mainContainer}>
         <View style={localStyles.outerContainer}>
           <View style={{gap: moderateScale(8)}}>
-            <CText type={'M14'}>{name}</CText>
+            <CText color={colors.black} type={'M14'}>
+              {name}
+            </CText>
             <CText
               type={'R12'}
               color={colors.tabColor}
@@ -61,7 +65,7 @@ export default function GeneralSetting({navigation}) {
           </View>
 
           <Switch
-            trackColor={{true: colors.Toggle}}
+            trackColor={{false: colors.bottomBorder, true: colors.Toggle}}
             value={value}
             onChange={onchange}
           />

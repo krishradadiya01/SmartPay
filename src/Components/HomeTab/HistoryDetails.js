@@ -30,7 +30,7 @@ const HeaderComponent = () => {
   const RightIcon = () => {
     return (
       <TouchableOpacity style={localStyles.parentMore}>
-        <Feather name={'more-horizontal'} size={20} />
+        <Feather color={colors.black} name={'more-horizontal'} size={20} />
       </TouchableOpacity>
     );
   };
@@ -39,7 +39,9 @@ const HeaderComponent = () => {
       <CHeader title={'Spotify'} rightIcon={<RightIcon />} />
       <View style={localStyles.mainView}>
         <View style={localStyles.mainPayment}>
-          <CText type={'B24'}>{strings.Amount}</CText>
+          <CText color={colors.black} type={'B24'}>
+            {strings.Amount}
+          </CText>
           <CText>
             <CText color={colors.red}> {strings.ThreeFive}</CText>
             {strings.ago}
@@ -87,7 +89,9 @@ const HeaderComponent = () => {
       </View>
 
       <View style={localStyles.outerContainer}>
-        <CText type={'B18'}>{strings.AllTrans}</CText>
+        <CText color={colors.black} type={'B18'}>
+          {strings.AllTrans}
+        </CText>
         <Octicons name={'search'} color={colors.numbersColor} size={24} />
       </View>
     </View>
@@ -102,7 +106,9 @@ export default function HistoryDetails() {
           <Image source={item.image} style={localStyles.UiKitSty} />
           <View style={localStyles.outerCOntainer}>
             <View style={localStyles.parentUi}>
-              <CText type={'B14'}>{item.mainName}</CText>
+              <CText color={colors.black} type={'B14'}>
+                {item.mainName}
+              </CText>
               <CText type={'M12'} color={colors.tabColor}>
                 {item.subName}
               </CText>

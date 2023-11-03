@@ -38,11 +38,15 @@ export default function SignUpEmpty({navigation}) {
     <SafeAreaView style={localStyles.main}>
       <View>
         <CBackButton onPress={backToSignIn} />
-        <CText type={'B24'} style={localStyles.mainTxt}>
+        <CText color={colors.black} type={'B24'} style={localStyles.mainTxt}>
           {strings.CreateAcc}
-          <CText style={localStyles.smartPay}>{strings.SmartPay}</CText>
+          <CText color={colors.black} style={localStyles.smartPay}>
+            {strings.SmartPay}
+          </CText>
         </CText>
-        <CText type={'B24'}>{strings.acc}</CText>
+        <CText color={colors.black} type={'B24'}>
+          {strings.acc}
+        </CText>
 
         <View style={localStyles.threeEle}>
           <CTextInput text={'Full name'} />
@@ -59,7 +63,9 @@ export default function SignUpEmpty({navigation}) {
 
         <View style={localStyles.parentOr}>
           <View style={localStyles.firstLine} />
-          <CText style={localStyles.OrTxt}>{strings.or}</CText>
+          <CText color={colors.black} style={localStyles.OrTxt}>
+            {strings.or}
+          </CText>
           <View style={localStyles.firstLine} />
         </View>
 
@@ -74,10 +80,15 @@ export default function SignUpEmpty({navigation}) {
         </View>
       </View>
 
-      <CText type={'B14'} align={'center'} style={localStyles.AlreadyTxt}>
+      <CText
+        color={colors.black}
+        type={'B14'}
+        align={'center'}
+        style={localStyles.AlreadyTxt}>
         {strings.AlreadyAcc}
         <CText
           type={'B16'}
+          color={colors.black}
           style={localStyles.SignInTxt}
           onPress={backToSignIn}>
           {strings.SignIn}
@@ -141,6 +152,6 @@ const localStyles = StyleSheet.create({
   },
   threeEle: {
     ...styles.mv10,
-    gap: moderateScale(15)
-  }
+    gap: moderateScale(15),
+  },
 });

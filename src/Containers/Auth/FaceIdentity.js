@@ -11,6 +11,7 @@ import CButton from '../../Components/Common/CButton';
 import {AuthNav} from '../../Navigation/navigationKeys';
 import {launchImageLibrary} from 'react-native-image-picker';
 import images from '../../Assets/Images/index';
+import {colors} from '../../Themes/colors';
 
 export default function FaceIdentity({navigation}) {
   const [selectImage, setSelectImage] = useState('');
@@ -39,10 +40,13 @@ export default function FaceIdentity({navigation}) {
     <SafeAreaView style={localStyles.main}>
       <View>
         <CBackButton onPress={backToPin} />
-        <CText type={'B24'} style={localStyles.letsVerifyTxt}>
+        <CText
+          color={colors.black}
+          type={'B24'}
+          style={localStyles.letsVerifyTxt}>
           {strings.LetsVerify}
         </CText>
-        <CText>{strings.IdentityWarning}</CText>
+        <CText color={colors.black}>{strings.IdentityWarning}</CText>
 
         {!!selectImage ? (
           <View style={localStyles.parentGal}>

@@ -36,7 +36,11 @@ export default function SendMoney() {
           <View style={localStyles.mainImg}>
             <Image source={images.Girl} style={localStyles.girlImg} />
           </View>
-          <CText align={'center'} type={'M14'} style={localStyles.mariaTxt}>
+          <CText
+            color={colors.black}
+            align={'center'}
+            type={'M14'}
+            style={localStyles.mariaTxt}>
             {strings.ToMaria}
           </CText>
 
@@ -160,6 +164,6 @@ const localStyles = StyleSheet.create({
   keyBoardSty: {
     ...styles.ph20,
     ...styles.flexGrow1,
-    ...styles.mainContainerSurface
+    ...styles.mainContainerSurface,
   },
 });

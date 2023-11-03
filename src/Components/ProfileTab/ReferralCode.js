@@ -5,7 +5,7 @@ import {
   View,
   TouchableOpacity,
 } from 'react-native';
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import Fonisto from 'react-native-vector-icons/Fontisto';
 
 // Local imports
@@ -29,10 +29,10 @@ export default function ReferralCode() {
           <Image source={images.DollarsBank} style={localStyles.imgSty} />
 
           <View style={localStyles.parentComponent}>
-            <CText type={'B24'} align={'center'}>
+            <CText color={colors.black} type={'B24'} align={'center'}>
               {strings.BonusTxt}
               <CText color={colors.numbersColor}>{strings.Free}</CText>
-              <CText>{strings.Onus}</CText>
+              <CText color={colors.black}>{strings.Onus}</CText>
             </CText>
             <CText type={'R16'} color={colors.tabColor} align={'center'}>
               {strings.ShareLink}
@@ -70,7 +70,7 @@ export default function ReferralCode() {
 
           <View style={{gap: moderateScale(40)}}>
             <View style={{gap: moderateScale(10)}}>
-              <CText type={'B24'} align={'center'}>
+              <CText color={colors.black} type={'B24'} align={'center'}>
                 {strings.GetFree}
                 <CText color={colors.numbersColor}>{strings.Free}</CText>
               </CText>

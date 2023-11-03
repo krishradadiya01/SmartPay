@@ -66,6 +66,9 @@ export default StyleSheet.create({
   mh15: {
     marginHorizontal: moderateScale(15),
   },
+  mh19: {
+    marginHorizontal: moderateScale(19),
+  },
   mh20: {
     marginHorizontal: moderateScale(20),
   },

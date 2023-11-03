@@ -38,10 +38,13 @@ export default function CountryRes({navigation}) {
     <SafeAreaView style={localStyles.main}>
       <View>
         <CBackButton onPress={backToSignUp} />
-        <CText style={localStyles.CountryResTxt} type={'B24'}>
+        <CText
+          color={colors.black}
+          style={localStyles.CountryResTxt}
+          type={'B24'}>
           {strings.CountryOfRes}
         </CText>
-        <CText style={localStyles.selectCountryTxt}>
+        <CText color={colors.black} style={localStyles.selectCountryTxt}>
           {strings.SelectCountry}
         </CText>
 
@@ -51,18 +54,24 @@ export default function CountryRes({navigation}) {
               <View style={localStyles.USTxt}>
                 {country?.svgIcon}
 
-                <CText type={'B18'}>{country?.FullName}</CText>
+                <CText color={colors.black} type={'B18'}>
+                  {country?.FullName}
+                </CText>
               </View>
             ) : (
               <View style={localStyles.ViewOfInitial}>
                 <US />
-                <CText type={'B18'} style={localStyles.USTxtStyle}>
+                <CText
+                  color={colors.black}
+                  type={'B18'}
+                  style={localStyles.USTxtStyle}>
                   {strings.America}
                 </CText>
               </View>
             )}
           </View>
           <Feathers
+            color={colors.black}
             name={'angle-down'}
             style={localStyles.angleButton}
             size={24}

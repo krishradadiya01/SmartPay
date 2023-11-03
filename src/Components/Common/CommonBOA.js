@@ -17,7 +17,9 @@ export const CommonBOA = props => {
       <Image source={source} style={localStyles.AmericaPng} />
       <View style={localStyles.forIcon}>
         <View style={localStyles.BOATxt}>
-          <CText type={'S16'}>{strings.BOA}</CText>
+          <CText color={colors.black} type={'S16'}>
+            {strings.BOA}
+          </CText>
           <CText color={colors.tabColor} type={'M12'}>
             {strings.AnnaNumber}
           </CText>

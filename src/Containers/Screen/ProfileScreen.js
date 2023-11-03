@@ -49,9 +49,11 @@ export default function ProfileScreen({navigation}) {
       <TouchableOpacity style={localStyles.outerContainer} onPress={onPress}>
         <View style={localStyles.parentCompo}>
           <Image source={image} style={localStyles.iconSty} />
-          <CText type={'M14'}>{name}</CText>
+          <CText color={colors.black} type={'M14'}>
+            {name}
+          </CText>
         </View>
-        <Material name={'navigate-next'} size={16} />
+        <Material color={colors.black} name={'navigate-next'} size={16} />
       </TouchableOpacity>
     );
   };
@@ -62,7 +64,9 @@ export default function ProfileScreen({navigation}) {
         <Image source={images.ProfileImg} style={localStyles.imgSty} />
 
         <View style={localStyles.outerComponent}>
-          <CText type={'B20'}>{strings.Anna}</CText>
+          <CText color={colors.black} type={'B20'}>
+            {strings.Anna}
+          </CText>
           <CText type={'R12'} color={colors.tabColor}>
             {strings.AnnaEmail}
           </CText>

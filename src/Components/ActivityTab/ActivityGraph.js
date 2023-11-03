@@ -37,7 +37,9 @@ export default function ActivityGraph() {
           <CText type={'R12'} color={colors.tabColor}>
             {name}
           </CText>
-          <CText type={'B16'}>{dollars}</CText>
+          <CText color={colors.black} type={'B16'}>
+            {dollars}
+          </CText>
         </View>
       </View>
     );
@@ -53,7 +55,9 @@ export default function ActivityGraph() {
           <CText type={'R12'} color={colors.tabColor}>
             {name}
           </CText>
-          <CText type={'S14'}>{dollars}</CText>
+          <CText color={colors.black} type={'S14'}>
+            {dollars}
+          </CText>
         </View>
       </TouchableOpacity>
     );
@@ -61,7 +65,7 @@ export default function ActivityGraph() {
   const RightIcon = () => {
     return (
       <TouchableOpacity style={localStyles.parentMore}>
-        <Feather name={'more-horizontal'} size={20} />
+        <Feather color={colors.black} name={'more-horizontal'} size={20} />
       </TouchableOpacity>
     );
   };
@@ -75,7 +79,9 @@ export default function ActivityGraph() {
             <CText type={'M14'} color={colors.tabColor}>
               {strings.TotalSpending}
             </CText>
-            <CText type={'B24'}>{strings.OneFourNineEight}</CText>
+            <CText color={colors.black} type={'B24'}>
+              {strings.OneFourNineEight}
+            </CText>
           </View>
 
           <View style={localStyles.iconSty}>
@@ -160,8 +166,12 @@ export default function ActivityGraph() {
         </View>
 
         <View style={localStyles.outerContainer}>
-          <CText type={'B18'}>{strings.Categories}</CText>
-          <CText type={'M14'}>{strings.Expense}</CText>
+          <CText color={colors.black} type={'B18'}>
+            {strings.Categories}
+          </CText>
+          <CText color={colors.black} type={'M14'}>
+            {strings.Expense}
+          </CText>
         </View>
 
         <ScrollView
@@ -268,5 +278,8 @@ const localStyles = StyleSheet.create({
   },
   graphSty: {
     ...styles.mr20,
+  },
+  scrollView: {
+    ...styles.mb20,
   },
 });

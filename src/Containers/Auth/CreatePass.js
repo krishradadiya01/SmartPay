@@ -9,6 +9,7 @@ import CText from '../../Components/Common/CText';
 import strings from '../../I18n/mergeString';
 import CTextInput from '../../Components/Common/CTextInput';
 import CButton from '../../Components/Common/CButton';
+import {colors} from '../../Themes/colors';
 
 export default function CreatePass({navigation}) {
   const [changeValue, setChangeValue] = useState(changeValue);
@@ -34,10 +35,10 @@ export default function CreatePass({navigation}) {
     <SafeAreaView style={localStyles.main}>
       <View>
         <CBackButton onPress={moveToVerify} />
-        <CText type={'B24'} style={localStyles.NewPassTxt}>
+        <CText color={colors.black} type={'B24'} style={localStyles.NewPassTxt}>
           {strings.CreateNewPass}
         </CText>
-        <CText style={localStyles.passWarningTxt}>
+        <CText color={colors.black} style={localStyles.passWarningTxt}>
           {strings.PasswordWarning}
         </CText>
 

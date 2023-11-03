@@ -77,9 +77,12 @@ export default function TopUpScreen({navigation}) {
                 style={localStyles.debitTxt}>
                 {strings.Debit}
               </CText>
-              <CText type={'B18'}>{strings.RealDollars}</CText>
+              <CText color={colors.black} type={'B18'}>
+                {strings.RealDollars}
+              </CText>
             </View>
             <Feathers
+              color={colors.black}
               name={'angle-down'}
               style={localStyles.angleButton}
               size={24}

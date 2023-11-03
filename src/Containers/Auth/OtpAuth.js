@@ -26,10 +26,12 @@ export default function ItsYou({navigation}) {
     <SafeAreaView style={localStyles.main}>
       <View>
         <CBackButton onPress={moveToBack} />
-        <CText style={localStyles.VerifyTxt} type={'B24'}>
+        <CText color={colors.black} style={localStyles.VerifyTxt} type={'B24'}>
           {strings.VerifyItsYou}
         </CText>
-        <CText style={localStyles.EnterEmailTxt}>{strings.EnterEmail}</CText>
+        <CText color={colors.black} style={localStyles.EnterEmailTxt}>
+          {strings.EnterEmail}
+        </CText>
         <View style={localStyles.ParenOtp}>
           <OTPInputView
             style={localStyles.otpInputStyle}

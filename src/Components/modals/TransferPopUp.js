@@ -50,8 +50,12 @@ export default function TransferPopUp(props) {
               </CText>
             </View>
             <View style={localStyles.detailStyle}>
-              <CText type={'B16'}>{name}</CText>
-              <CText type={'B16'}>{cardNumber}</CText>
+              <CText color={colors.black} type={'B16'}>
+                {name}
+              </CText>
+              <CText color={colors.black} type={'B16'}>
+                {cardNumber}
+              </CText>
             </View>
           </View>
         ) : (
@@ -59,7 +63,9 @@ export default function TransferPopUp(props) {
             <CText color={colors.tabColor} type={'M16'}>
               {total}
             </CText>
-            <CText type={'B16'}>{prize}</CText>
+            <CText color={colors.black} type={'B16'}>
+              {prize}
+            </CText>
           </View>
         )}
       </View>
@@ -78,10 +84,7 @@ export default function TransferPopUp(props) {
               style={localStyles.imgStyle}>
               <View style={localStyles.innerContainer}>
                 <View>
-                  <CText
-                    type={'S18'}
-                    align="center"
-                    style={localStyles.TransTxt}>
+                  <CText type={'S18'} align="center">
                     {strings.TransConf}
                   </CText>
 
@@ -136,14 +139,11 @@ const localStyles = StyleSheet.create({
     ...styles.flex,
     ...styles.mv15,
   },
-  TransTxt: {
-    ...styles.mb20,
-  },
   ParentLgnBtn: {
     bottom: moderateScale(40),
   },
   parentFromBOA: {
-    ...styles.mv10,
+    ...styles.mt15,
     ...styles.pb15,
     borderBottomColor: colors.bottomBorder,
     borderBottomWidth: moderateScale(1),

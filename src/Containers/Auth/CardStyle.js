@@ -15,6 +15,7 @@ import {moderateScale} from '../../Common/constant';
 import {AuthNav} from '../../Navigation/navigationKeys';
 import CText from '../../Components/Common/CText';
 import strings from '../../I18n/mergeString';
+import {colors} from '../../Themes/colors';
 
 export default function CardStyle({navigation}) {
   const moveToNew = () => {
@@ -29,7 +30,10 @@ export default function CardStyle({navigation}) {
     <SafeAreaView style={localStyles.main}>
       <View style={localStyles.mainView}>
         <CBackButton onPress={backToOnBoarding} />
-        <CText type={'B18'} style={localStyles.ChooseStyleTxt}>
+        <CText
+          color={colors.black}
+          type={'B18'}
+          style={localStyles.ChooseStyleTxt}>
           {strings.ChooseStyle}
         </CText>
         <View></View>
@@ -52,7 +56,7 @@ const localStyles = StyleSheet.create({
   main: {
     ...styles.mh20,
     ...styles.justifyBetween,
-    ...styles.flex
+    ...styles.flex,
   },
   card1: {
     width: moderateScale(333),

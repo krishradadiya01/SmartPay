@@ -35,8 +35,8 @@ export default function SeeMyCard({navigation, route}) {
   const ListFooterComponent = () => {
     return (
       <TouchableOpacity style={localStyles.mainContainer}>
-        <Octicons name={'plus'} size={20} />
-        <CText align={'center'} type={'B16'}>
+        <Octicons color={colors.black} name={'plus'} size={20} />
+        <CText color={colors.black} align={'center'} type={'B16'}>
           {strings.AddNewCard}
         </CText>
       </TouchableOpacity>

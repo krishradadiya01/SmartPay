@@ -11,6 +11,7 @@ import strings from '../../I18n/mergeString';
 import CText from '../Common/CText';
 import CButton from '../../Components/Common/CButton';
 import {StackNav} from '../../Navigation/navigationKeys';
+import {colors} from '../../Themes/colors';
 
 export default function TopUpSuccess(props) {
   const navigation = useNavigation();
@@ -27,11 +28,19 @@ export default function TopUpSuccess(props) {
         <Image source={images.TopUpComplete} style={localStyles.imgSty} />
       </View>
 
-      <CText align={'center'} type={'B24'} style={localStyles.TUSTxt}>
+      <CText
+        color={colors.black}
+        align={'center'}
+        type={'B24'}
+        style={localStyles.TUSTxt}>
         {strings.TUS}
       </CText>
       <View style={localStyles.mainTop}>
-        <CText type={'R14'} align={'center'} style={localStyles.noticeTxt}>
+        <CText
+          color={colors.black}
+          type={'R14'}
+          align={'center'}
+          style={localStyles.noticeTxt}>
           {strings.TopUpNotice}
         </CText>
 

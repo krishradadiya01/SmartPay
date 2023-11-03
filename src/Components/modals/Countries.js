@@ -76,10 +76,15 @@ export default function Countries(props) {
           ]}
           onPress={() => onPressCountry(item)}>
           {item.svgIcon ? item.svgIcon : <Image source={{uri: item}} />}
-          <CText style={localStyles.title}>{item.title}</CText>
+          <CText color={colors.black} style={localStyles.title}>
+            {item.title}
+          </CText>
 
           <View style={localStyles.mainImg}>
-            <CText type={'B16'} style={localStyles.FullName}>
+            <CText
+              color={colors.black}
+              type={'B16'}
+              style={localStyles.FullName}>
               {item.FullName}
             </CText>
           </View>
@@ -107,7 +112,7 @@ export default function Countries(props) {
             <Ionicons
               name={'search-outline'}
               size={moderateScale(22)}
-              color={colors.grayText}
+              color={colors.black}
               style={styles.ml15}
             />
           )}
@@ -116,7 +121,9 @@ export default function Countries(props) {
         <TouchableOpacity
           style={localStyles.parentCancel}
           onPress={CancelButton}>
-          <CText type={'B18'}>{strings.Cancel}</CText>
+          <CText color={colors.black} type={'B18'}>
+            {strings.Cancel}
+          </CText>
         </TouchableOpacity>
       </View>
 

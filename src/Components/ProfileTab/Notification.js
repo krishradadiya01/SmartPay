@@ -28,7 +28,9 @@ export default function Notification() {
 
           <View style={localStyles.outerContainer}>
             <View style={{gap: moderateScale(3)}}>
-              <CText type={'B16'}>{item.name}</CText>
+              <CText color={colors.black} type={'B16'}>
+                {item.name}
+              </CText>
               <CText color={colors.tabColor} type={'R12'} numberOfLines={1}>
                 {item.subName}
               </CText>

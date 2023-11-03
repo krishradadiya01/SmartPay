@@ -38,7 +38,9 @@ export default function HistoryTrans({navigation}) {
           <Image source={item.image} style={localStyles.UiKitSty} />
           <View style={localStyles.outerCOntainer}>
             <View style={localStyles.parentUi}>
-              <CText type={'B14'}>{item.mainName}</CText>
+              <CText color={colors.black} type={'B14'}>
+                {item.mainName}
+              </CText>
               <CText type={'M12'} color={colors.tabColor}>
                 {item.subName}
               </CText>
@@ -64,7 +66,7 @@ export default function HistoryTrans({navigation}) {
               <Material
                 name={'arrow-back-ios'}
                 size={24}
-                color={colors.white}
+                color={colors.black}
                 style={localStyles.vectorSty}
               />
             </TouchableOpacity>
@@ -105,7 +107,10 @@ export default function HistoryTrans({navigation}) {
       <View style={localStyles.upperMain}>
         <View style={styles.mh20}>
           <View style={localStyles.parentTransHis}>
-            <CText type={'B18'} style={localStyles.TransHistoryTxt}>
+            <CText
+              color={colors.black}
+              type={'B18'}
+              style={localStyles.TransHistoryTxt}>
               {strings.TransHistory}
             </CText>
 

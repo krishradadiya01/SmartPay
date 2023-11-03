@@ -30,14 +30,26 @@ export default function TransferProof({route, navigation}) {
             style={localStyles.congratsImg}
           />
         </View>
-        <CText style={localStyles.successTxt} type={'B24'} align={'center'}>
+        <CText
+          color={colors.black}
+          style={localStyles.successTxt}
+          type={'B24'}
+          align={'center'}>
           {strings.TransSuccess}
         </CText>
-        <CText style={localStyles.NoticeTxt} type={'R14'} align={'center'}>
+        <CText
+          color={colors.black}
+          style={localStyles.NoticeTxt}
+          type={'R14'}
+          align={'center'}>
           {strings.SuccessNotice}
         </CText>
         <View style={localStyles.parentAmount}>
-          <CText align={'center'} type={'B32'} style={localStyles.amountTxt}>
+          <CText
+            color={colors.black}
+            align={'center'}
+            type={'B32'}
+            style={localStyles.amountTxt}>
             {'$' + parseFloat(amount).toFixed(2)}
           </CText>
         </View>

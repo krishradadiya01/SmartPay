@@ -55,7 +55,7 @@ export default function MyCardScreen({navigation}) {
         <CText
           style={[
             {
-              color: data === item ? colors.numbersColor : null,
+              color: data === item ? colors.numbersColor : colors.black,
             },
           ]}>
           {item}
@@ -71,13 +71,17 @@ export default function MyCardScreen({navigation}) {
 
         <View style={localStyles.parentContainer}>
           <View style={{gap: moderateScale(5)}}>
-            <CText type={'B14'}>{name}</CText>
+            <CText color={colors.black} type={'B14'}>
+              {name}
+            </CText>
             <CText type={'M12'} color={colors.tabColor}>
               {subName}
             </CText>
           </View>
 
-          <CText type={'B14'}>{dollars}</CText>
+          <CText color={colors.black} type={'B14'}>
+            {dollars}
+          </CText>
         </View>
       </TouchableOpacity>
     );
@@ -99,7 +103,7 @@ export default function MyCardScreen({navigation}) {
   const RightIcon = () => {
     return (
       <TouchableOpacity style={localStyles.parentMore}>
-        <Feather name={'more-horizontal'} size={20} />
+        <Feather color={colors.black} name={'more-horizontal'} size={20} />
       </TouchableOpacity>
     );
   };
@@ -145,7 +149,7 @@ export default function MyCardScreen({navigation}) {
               type={'M14'}>
               {strings.TotalSpend}
             </CText>
-            <CText type={'B24'} align={'center'}>
+            <CText color={colors.black} type={'B24'} align={'center'}>
               {strings.TotalDollars}
             </CText>
           </View>
@@ -176,10 +180,14 @@ export default function MyCardScreen({navigation}) {
 
         <View style={styles.mh20}>
           <View style={localStyles.parentComponent}>
-            <CText type={'B18'}>{strings.Transaction}</CText>
+            <CText color={colors.black} type={'B18'}>
+              {strings.Transaction}
+            </CText>
 
             <TouchableOpacity style={localStyles.outerComponent}>
-              <CText type={'M14'}>{strings.All}</CText>
+              <CText color={colors.black} type={'M14'}>
+                {strings.All}
+              </CText>
               <Octicons
                 name={'chevron-down'}
                 color={colors.numbersColor}
@@ -292,7 +300,7 @@ const localStyles = StyleSheet.create({
   timeSty: {
     backgroundColor: colors.red,
     ...styles.flexRow,
-    ...styles.mh23,
+    ...styles.mh19,
     ...styles.mt25,
     ...styles.p10,
   },

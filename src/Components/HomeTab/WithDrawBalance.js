@@ -1,10 +1,4 @@
-import {
-  StyleSheet,
-  Image,
-  View,
-  FlatList,
-  TouchableOpacity,
-} from 'react-native';
+import {StyleSheet, View, FlatList, TouchableOpacity} from 'react-native';
 import React, {useRef, useState} from 'react';
 import Feather from 'react-native-vector-icons/Feather';
 
@@ -69,7 +63,9 @@ export default function WithDrawBalance() {
           <CHeader title={'WithDraw'} />
           <CommonBOA
             source={images.BankAmerica}
-            Icon={<Feather name={'chevron-down'} size={20} />}
+            Icon={
+              <Feather color={colors.black} name={'chevron-down'} size={20} />
+            }
           />
         </View>
 
@@ -82,7 +78,11 @@ export default function WithDrawBalance() {
           textInputStyle={localStyles.childTxtInp}
         />
 
-        <CText align={'center'} type={'R14'} style={localStyles.maxTxt}>
+        <CText
+          color={colors.black}
+          align={'center'}
+          type={'R14'}
+          style={localStyles.maxTxt}>
           {strings.MaxAmt}
         </CText>
 

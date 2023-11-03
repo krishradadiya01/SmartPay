@@ -49,11 +49,14 @@ export default function SignInEmpty({navigation}) {
       <View>
         <SafeAreaView>
           <CBackButton onPress={backTo} />
-          <CText style={localStyles.hiText} type={'B24'}>
+          <CText color={colors.black} style={localStyles.hiText} type={'B24'}>
             {strings.Hi}
           </CText>
 
-          <CText style={localStyles.welcomeText} type={'R16'}>
+          <CText
+            color={colors.black}
+            style={localStyles.welcomeText}
+            type={'R16'}>
             {strings.WelcomeBack}
           </CText>
 
@@ -84,7 +87,7 @@ export default function SignInEmpty({navigation}) {
 
         <View style={localStyles.mainOr}>
           <View style={localStyles.firstLine} />
-          <CText type={'M14'} style={localStyles.orTxt}>
+          <CText color={colors.black} type={'M14'} style={localStyles.orTxt}>
             {strings.or}
           </CText>
           <View style={localStyles.firstLine} />
@@ -102,10 +105,15 @@ export default function SignInEmpty({navigation}) {
       </View>
 
       <View style={localStyles.NoHaveAcc}>
-        <CText type={'B16'}>{strings.NoHaveAcc}</CText>
+        <CText color={colors.black} type={'B16'}>
+          {strings.NoHaveAcc}
+        </CText>
 
         <TouchableOpacity onPress={moveToSignUp}>
-          <CText type={'B16'} style={localStyles.SignUpTxt}>
+          <CText
+            color={colors.black}
+            type={'B16'}
+            style={localStyles.SignUpTxt}>
             {strings.SignUp}
           </CText>
         </TouchableOpacity>

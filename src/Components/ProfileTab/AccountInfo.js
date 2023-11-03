@@ -25,7 +25,9 @@ export default function AccountInfo({navigation}) {
         <CText type={'M14'} color={colors.tabColor}>
           {question}
         </CText>
-        <CText type={'M14'}>{answer}</CText>
+        <CText color={colors.black} type={'M14'}>
+          {answer}
+        </CText>
       </View>
     );
   };
@@ -33,6 +35,7 @@ export default function AccountInfo({navigation}) {
   const onValueChangeToggle = () => {
     open(!close);
   };
+
   return (
     <SafeAreaView style={localStyles.main}>
       <View style={styles.mh20}>
@@ -66,7 +69,7 @@ export default function AccountInfo({navigation}) {
               {strings.USCitizen}
             </CText>
             <Switch
-              trackColor={{true: colors.Toggle}}
+              trackColor={{false: colors.bottomBorder, true: colors.Toggle}}
               value={close}
               onValueChange={onValueChangeToggle}
             />
@@ -105,7 +108,7 @@ export default function AccountInfo({navigation}) {
 const localStyles = StyleSheet.create({
   main: {
     backgroundColor: colors.white,
-    ...styles.flex
+    ...styles.flex,
   },
   imgSty: {
     width: moderateScale(200),
@@ -125,6 +128,7 @@ const localStyles = StyleSheet.create({
     borderColor: colors.bottomBorder,
   },
   CButton: {
+    ...styles.mt0,
     backgroundColor: colors.bottomBorder,
   },
   childCompo: {

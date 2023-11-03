@@ -13,11 +13,17 @@ export default function CAddNewBank({newBankSty}) {
   return (
     <View>
       <TouchableOpacity style={[localStyles.parentNewBank, newBankSty]}>
-        <MaterialCommunity name={'bank-outline'} size={20} />
+        <MaterialCommunity
+          color={colors.black}
+          name={'bank-outline'}
+          size={20}
+        />
 
         <View style={localStyles.outerAddBank}>
-          <CText type={'B16'}>{strings.AddNewBank}</CText>
-          <Material name={'navigate-next'} size={20} />
+          <CText color={colors.black} type={'B16'}>
+            {strings.AddNewBank}
+          </CText>
+          <Material color={colors.black} name={'navigate-next'} size={20} />
         </View>
       </TouchableOpacity>
     </View>

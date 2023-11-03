@@ -57,7 +57,10 @@ export default function MyCardScreen({navigation}) {
 
   const ListHeaderComponent = () => {
     return (
-      <CText style={localStyles.YourBankAccTxt} type={'B24'}>
+      <CText
+        color={colors.black}
+        style={localStyles.YourBankAccTxt}
+        type={'B24'}>
         {strings.YourBankAcc}
       </CText>
     );

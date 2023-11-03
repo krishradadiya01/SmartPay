@@ -48,8 +48,10 @@ export default function EditAccount({navigation}) {
               {strings.Occupation}
             </CText>
             <TouchableOpacity style={localStyles.outerComponent}>
-              <CText type={'S16'}>{strings.Students}</CText>
-              <Feather name={'chevron-down'} size={16} />
+              <CText color={colors.black} type={'S16'}>
+                {strings.Students}
+              </CText>
+              <Feather color={colors.black} name={'chevron-down'} size={16} />
             </TouchableOpacity>
 
             <TxtInputData
@@ -73,7 +75,7 @@ export default function EditAccount({navigation}) {
 const localStyles = StyleSheet.create({
   main: {
     backgroundColor: colors.white,
-    ...styles.flex
+    ...styles.flex,
   },
   parentComponent: {
     backgroundColor: colors.GreyScale,

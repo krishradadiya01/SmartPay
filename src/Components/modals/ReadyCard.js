@@ -31,8 +31,12 @@ export default function ReadyCard(props) {
           <TouchableOpacity activeOpacity={1} onPress={onPressClose}>
             <Image source={images.PopUp} style={localStyles.imgStyle} />
             <View style={localStyles.getTxtParent}>
-              <CText type={'B18'}>{strings.GetReady}</CText>
-              <CText align={'center'} style={localStyles.TransTxt}>{strings.ShopTransfer}</CText>
+              <CText color={colors.black} type={'B18'}>
+                {strings.GetReady}
+              </CText>
+              <CText color={colors.black} align={'center'}>
+                {strings.ShopTransfer}
+              </CText>
             </View>
 
             <CButton
@@ -58,13 +62,12 @@ const localStyles = StyleSheet.create({
     height: moderateScale(337),
   },
   getTxtParent: {
+    gap: moderateScale(13),
     position: 'absolute',
     top: moderateScale(150),
     ...styles.center,
-  },
-  TransTxt: {
-    ...styles.mt25,
-    width: moderateScale(300),
+    ...styles.selfCenter,
+    width: '70%',
   },
   ParentLgnBtn: {
     position: 'absolute',

@@ -30,10 +30,12 @@ export default function CreatePin({navigation}) {
     <SafeAreaView style={localStyles.main}>
       <View>
         <CBackButton onPress={backToReason} />
-        <CText type={'B24'} style={localStyles.yourPinTxt}>
+        <CText color={colors.black} type={'B24'} style={localStyles.yourPinTxt}>
           {strings.SetYourPin}
         </CText>
-        <CText style={localStyles.warningTxt}>{strings.PinWarning}</CText>
+        <CText color={colors.black} style={localStyles.warningTxt}>
+          {strings.PinWarning}
+        </CText>
         <OTPInputView
           style={localStyles.otpInputStyle}
           pinCount={5}
@@ -67,14 +69,13 @@ const localStyles = StyleSheet.create({
     ...styles.mt40,
   },
   underlineStyleBase: {
-    // ...styles.pt20,
     width: moderateScale(56),
     height: moderateScale(56),
     borderWidth: moderateScale(2),
     borderBottomColor: colors.numbersColor,
     borderColor: colors.GreyScale,
     ...typography.fontWeights.Bold,
-    ...typography.fontSizes.f40,
+    ...typography.fontSizes.f24,
     color: colors.black,
   },
   mainCButton: {
