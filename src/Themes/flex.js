@@ -10,7 +10,7 @@ export default StyleSheet.create({
     justifyContent: 'center',
   },
   alignCenter: {
-    alignItems: 'center'
+    alignItems: 'center',
   },
   columnCenter: {
     alignItems: 'center',
@@ -68,8 +68,11 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  flexStart: {
+    justifyContent: 'flex-Start',
+  },
   flexEnd: {
-    justifyContent: 'flex-end'
+    justifyContent: 'flex-end',
   },
   rowCenter: {
     alignItems: 'center',

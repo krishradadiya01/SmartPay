@@ -16,21 +16,23 @@ export default function CardOnBoarding({navigation}) {
     navigation.navigate(AuthNav.CardStyle);
   };
   return (
-    <SafeAreaView style={localStyles.main}>
-      <View>
-        <Image style={localStyles.imgStyle} source={images.Cards} />
-        <CText color={colors.black} type={'B32'} style={localStyles.cardTxt}>
-          {strings.CreateCard}
-        </CText>
-        <CText color={colors.black} style={localStyles.detailsTxt}>
-          {strings.CardDetail}
-        </CText>
+    <SafeAreaView style={{backgroundColor: colors.white}}>
+      <View style={localStyles.main}>
+        <View>
+          <Image style={localStyles.imgStyle} source={images.Cards} />
+          <CText color={colors.black} type={'B32'} style={localStyles.cardTxt}>
+            {strings.CreateCard}
+          </CText>
+          <CText color={colors.black} style={localStyles.detailsTxt}>
+            {strings.CardDetail}
+          </CText>
+        </View>
+        <CButton
+          text={'Get Free Card'}
+          ParentLoginBtn={localStyles.CButtonTxt}
+          onPress={moveToStyle}
+        />
       </View>
-      <CButton
-        text={'Get Free Card'}
-        ParentLoginBtn={localStyles.CButtonTxt}
-        onPress={moveToStyle}
-      />
     </SafeAreaView>
   );
 }
@@ -38,14 +40,14 @@ export default function CardOnBoarding({navigation}) {
 const localStyles = StyleSheet.create({
   main: {
     ...styles.mh20,
-    ...styles.flex,
     ...styles.justifyBetween,
+    height: '100%',
   },
   imgStyle: {
     width: moderateScale(288),
     height: moderateScale(351),
     ...styles.mt50,
-    ...styles.center,
+    ...styles.mh20,
   },
   cardTxt: {
     ...styles.mt40,

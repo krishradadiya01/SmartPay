@@ -9,7 +9,7 @@ const Stack = createNativeStackNavigator();
 
 const StackNavigation = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator initialRouteName={StackNav.MoreOptions}>
       <Stack.Screen
         name={StackNav.splash}
         component={StackRoute.splash}
@@ -123,6 +123,21 @@ const StackNavigation = () => {
       <Stack.Screen
         name={StackNav.ActivityGraph}
         component={StackRoute.ActivityGraph}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name={StackNav.MoreOptions}
+        component={StackRoute.MoreOptions}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name={StackNav.ChatScreen}
+        component={StackRoute.ChatScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name={StackNav.ATMDetails}
+        component={StackRoute.ATMDetails}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

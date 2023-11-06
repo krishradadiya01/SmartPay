@@ -449,3 +449,44 @@ export const TimeData = [
   strings.Month,
   strings.Year,
 ];
+
+export const ChatData = [
+  {
+    id: 1,
+    message: strings.Chat1,
+    type: 'receiver',
+  },
+  {
+    id: 2,
+    message: strings.Chat2,
+    type: 'sender',
+  },
+  {
+    id: 3,
+    message: strings.Chat3,
+    type: 'receiver',
+  },
+  {
+    id: 4,
+    message: strings.Chat4,
+    type: 'sender',
+  },
+];
+
+export const LocationData = [
+  {
+    id: 1,
+    image: Images.Star,
+    reviews: strings.Reviews,
+  },
+  {
+    id: 2,
+    image: Images.MiniCar,
+    reviews: strings.Mils,
+  },
+  {
+    id: 3,
+    image: Images.Time,
+    reviews: strings.Time,
+  },
+];

@@ -7,11 +7,17 @@ import {styles} from '../../Themes';
 import CText from './CText';
 import {moderateScale} from '../../Common/constant';
 import CBackButton from './CBackButton';
-import {colors} from '../../Themes/colors';
 
 export default function CHeader(props) {
-  const {title, onPressBack, isHideBack, rightIcon, customStyle, containerSty} =
-    props;
+  const {
+    title,
+    onPressBack,
+    isHideBack,
+    rightIcon,
+    customStyle,
+    containerSty,
+    color
+  } = props;
   const navigation = useNavigation();
 
   const goBack = () => navigation.goBack();
@@ -32,7 +38,7 @@ export default function CHeader(props) {
       )}
       <View style={[styles.flex, styles.mh40, customStyle]}>
         <CText
-          color={colors.black}
+          color={color}
           align={'center'}
           type={'B18'}
           numberOfLines={1}>
@@ -54,5 +60,12 @@ const localStyles = StyleSheet.create({
     borderRadius: moderateScale(20),
     position: 'absolute',
     zIndex: 1,
+  },
+  senderContainer: {
+    ...styles.p15,
+    ...styles.flexRow,
+    maxWidth: '80%',
+    ...styles.itemsEnd,
+    ...styles.mt10,
   },
 });

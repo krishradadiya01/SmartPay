@@ -66,8 +66,7 @@ export default function HistoryTrans({navigation}) {
               <Material
                 name={'arrow-back-ios'}
                 size={24}
-                color={colors.black}
-                style={localStyles.vectorSty}
+                color={colors.white}
               />
             </TouchableOpacity>
             <CText type={'M14'} color={colors.white}>

@@ -40,6 +40,10 @@ export default function HomeScreen({navigation}) {
   const moveToNot = () => {
     navigation.navigate(StackNav.Notification);
   };
+
+  const moveToOpt = () => {
+    navigation.navigate(StackNav.MoreOptions);
+  };
   const ListHeaderComponent = () => {
     return (
       <View>
@@ -81,7 +85,11 @@ export default function HomeScreen({navigation}) {
             text={strings.Withdraw}
             onPress={moveToWith}
           />
-          <FirstImage image={images.More} text={strings.More} />
+          <FirstImage
+            image={images.More}
+            text={strings.More}
+            onPress={moveToOpt}
+          />
         </View>
 
         <View style={localStyles.parentTodayTxt}>

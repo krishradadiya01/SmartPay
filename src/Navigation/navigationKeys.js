@@ -21,7 +21,10 @@ export const StackNav = {
   ContactsList: 'ContactsList',
   Notification: 'Notification',
   FQA: 'FQA',
-  ActivityGraph: 'ActivityGraph'
+  ActivityGraph: 'ActivityGraph',
+  MoreOptions: 'MoreOptions',
+  ChatScreen: 'CHatScreen',
+  ATMDetails: 'ATMDetails',
 };
 
 export const AuthNav = {

@@ -40,6 +40,9 @@ import ContactsList from '../Components/ProfileTab/ContactsList';
 import Notification from '../Components/ProfileTab/Notification';
 import FQA from '../Components/ProfileTab/FQA';
 import ActivityGraph from '../Components/ActivityTab/ActivityGraph';
+import MoreOptions from '../Components/HomeTab/MoreOptions';
+import ChatScreen from '../Containers/MoreOpctions/ChatAssistant/ChatScreen';
+import ATMDetails from '../Containers/MoreOpctions/ATMFinder/ATMDetails';
 
 export const StackRoute = {
   splash,
@@ -64,7 +67,10 @@ export const StackRoute = {
   ContactsList,
   Notification,
   FQA,
-  ActivityGraph
+  ActivityGraph,
+  MoreOptions,
+  ChatScreen,
+  ATMDetails,
 };
 
 export const AuthRoute = {

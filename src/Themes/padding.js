@@ -48,7 +48,7 @@ export default StyleSheet.create({
     paddingHorizontal: 0,
   },
   ph10: {
-    paddingHorizontal: moderateScale(10),
+    paddingHorizontal: moderateScale(7),
   },
   ph15: {
     paddingHorizontal: moderateScale(15),

@@ -254,4 +254,20 @@ export default {
   FourFiveZero: '$450.12',
   TwoSixOne: '$261.99',
   OneTwoSeven: '$127.99',
+  ATM: 'ATM',
+  MobileTopUp: 'Mobile Top Up',
+  Help: 'Help',
+  Chat1: 'Hello! my name is Smarty before we start, what is your name?',
+  Chat2: 'Anabella Angela',
+  Chat3:
+    'Hello! Angela 👋. I can converse in your preferred language. How may I help you today? ',
+  Chat4: 'How to create a Smartpay account?',
+  SmartyHelp: 'Smarty Help',
+  FindLocation: 'Find Location',
+  LocationLine:
+    'To do this process please click now to find the location your nearest ATM',
+  BOALine: '318 Grand St,  New York 10002, US',
+  Reviews: '400 reviews',
+  Mils: '5,6 mils',
+  Time: '08:00- 12:00',
 };

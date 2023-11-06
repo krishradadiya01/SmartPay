@@ -66,4 +66,12 @@ export default {
   Car: require('../Images/Car.png'),
   Crown: require('../Images/Crown.png'),
   Bank: require('../Images/Bank.png'),
+  Robot: require('../Images/Robot.png'),
+  Location: require('../Images/Location.png'),
+  Map: require('../Images/Map.png'),
+  SquareFlag: require('../Images/SquareFlag.png'),
+  ATMPhoto: require('../Images/ATMPhoto.png'),
+  Star: require('../Images/Star.png'),
+  MiniCar: require('../Images/MiniCar.png'),
+  Time: require('../Images/Time.png')
 };

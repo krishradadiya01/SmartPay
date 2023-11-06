@@ -9,11 +9,19 @@ import typography from '../../Themes/typography';
 import CText from './CText';
 
 const CButton = props => {
-  let {ParentLoginBtn, ChildLoginBtn, text, onPress, containerStyle, disabled} =
-    props;
+  let {
+    ParentLoginBtn,
+    ChildLoginBtn,
+    text,
+    onPress,
+    containerStyle,
+    disabled,
+    RightIcon,
+  } = props;
 
   return (
-    <View style={styles.center}>
+    <View
+      style={[styles.rowStart, styles.center]}>
       <TouchableOpacity
         disabled={disabled}
         style={[localStyles.ParentButton, ParentLoginBtn, containerStyle]}
@@ -21,6 +29,7 @@ const CButton = props => {
         <CText style={[localStyles.ChildButton, ChildLoginBtn]}>
           {text || 'Continue'}
         </CText>
+        {!!RightIcon && <RightIcon />}
       </TouchableOpacity>
     </View>
   );
