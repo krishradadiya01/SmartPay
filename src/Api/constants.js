@@ -490,3 +490,48 @@ export const LocationData = [
     reviews: strings.Time,
   },
 ];
+
+export const TransferData = [
+  {
+    id: 1,
+    image: Images.BankAmerica,
+    name: strings.BOA,
+    num: strings.BankNum,
+  },
+  {
+    id: 2,
+    image: Images.USBank,
+    name: strings.USBank,
+    num: strings.USBankNum,
+  },
+];
+
+export const TransferData2 = [
+  {
+    id: 4,
+    image: Images.PayPal,
+    name: strings.Paypal,
+    num: strings.EasyPayment,
+  },
+  {
+    id: 5,
+    image: Images.AppleRound,
+    name: strings.ApplePay,
+    num: strings.EasyPayment,
+  },
+  {
+    id: 6,
+    image: Images.GoogleRound,
+    name: strings.GooglePay,
+    num: strings.EasyPayment,
+  },
+];
+
+export const moneyData = [strings.$5, strings.$10, strings.$15, strings.$20];
+
+export const moneyData2 = [
+  strings.$50,
+  strings.$100,
+  strings.$200,
+  strings.$500,
+];

@@ -25,6 +25,9 @@ export const StackNav = {
   MoreOptions: 'MoreOptions',
   ChatScreen: 'CHatScreen',
   ATMDetails: 'ATMDetails',
+  SelectProvider: 'SelectProvider',
+  TopUpModal: 'TopUpModal',
+  PhoneBook: 'PhoneBook',
 };
 
 export const AuthNav = {

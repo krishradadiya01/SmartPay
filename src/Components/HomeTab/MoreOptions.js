@@ -39,7 +39,9 @@ export default function MoreOptions({navigation}) {
     navigation.navigate(StackNav.ATMDetails);
   };
 
-  const moveToMobile = () => {};
+  const moveToMobile = () => {
+    navigation.navigate(StackNav.SelectProvider);
+  };
 
   const renderItems = ({item}) => {
     return (

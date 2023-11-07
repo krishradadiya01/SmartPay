@@ -73,5 +73,10 @@ export default {
   ATMPhoto: require('../Images/ATMPhoto.png'),
   Star: require('../Images/Star.png'),
   MiniCar: require('../Images/MiniCar.png'),
-  Time: require('../Images/Time.png')
+  Time: require('../Images/Time.png'),
+  USBank: require('../Images/USBank.png'),
+  PayPal: require('../Images/PayPal.png'),
+  AppleRound: require('../Images/AppleRound.png'),
+  GoogleRound: require('../Images/GoogleRound.png'),
+  Slider: require('../Images/Slider.png'),
 };

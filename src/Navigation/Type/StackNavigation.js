@@ -140,6 +140,21 @@ const StackNavigation = () => {
         component={StackRoute.ATMDetails}
         options={{headerShown: false}}
       />
+      <Stack.Screen
+        name={StackNav.SelectProvider}
+        component={StackRoute.SelectProvider}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name={StackNav.TopUpModal}
+        component={StackRoute.TopUpModal}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name={StackNav.PhoneBook}
+        component={StackRoute.PhoneBook}
+        options={{headerShown: false}}
+      />
     </Stack.Navigator>
   );
 };

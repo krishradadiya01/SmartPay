@@ -43,6 +43,9 @@ import ActivityGraph from '../Components/ActivityTab/ActivityGraph';
 import MoreOptions from '../Components/HomeTab/MoreOptions';
 import ChatScreen from '../Containers/MoreOpctions/ChatAssistant/ChatScreen';
 import ATMDetails from '../Containers/MoreOpctions/ATMFinder/ATMDetails';
+import SelectProvider from '../Containers/MoreOpctions/MobileTopUp/SelectProvider';
+import TopUpModal from '../Components/modals/TopUpModal';
+import PhoneBook from '../Containers/MoreOpctions/MobileTopUp/PhoneBook';
 
 export const StackRoute = {
   splash,
@@ -71,6 +74,9 @@ export const StackRoute = {
   MoreOptions,
   ChatScreen,
   ATMDetails,
+  SelectProvider,
+  TopUpModal,
+  PhoneBook,
 };
 
 export const AuthRoute = {
