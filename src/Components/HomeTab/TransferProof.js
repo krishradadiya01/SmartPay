@@ -23,7 +23,7 @@ export default function TransferProof({route, navigation}) {
   return (
     <SafeAreaView style={localStyles.main}>
       <View>
-        <CHeader />
+        <CHeader color={colors.black} />
         <View style={localStyles.parentImg}>
           <Image
             source={images.Congratulation}

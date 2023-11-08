@@ -36,7 +36,7 @@ const HeaderComponent = () => {
   };
   return (
     <View>
-      <CHeader title={'Spotify'} rightIcon={<RightIcon />} />
+      <CHeader color={colors.black} title={'Spotify'} rightIcon={<RightIcon />} />
       <View style={localStyles.mainView}>
         <View style={localStyles.mainPayment}>
           <CText color={colors.black} type={'B24'}>

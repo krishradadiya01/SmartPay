@@ -32,7 +32,7 @@ export default function SendMoney() {
     <SafeAreaView style={localStyles.main}>
       <KeyBoardAvoidWrapper containerStyle={localStyles.keyBoardSty}>
         <View>
-          <CHeader title={'Send Money'} />
+          <CHeader color={colors.black} title={'Send Money'} />
           <View style={localStyles.mainImg}>
             <Image source={images.Girl} style={localStyles.girlImg} />
           </View>

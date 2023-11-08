@@ -39,7 +39,7 @@ export default function AccountInfo({navigation}) {
   return (
     <SafeAreaView style={localStyles.main}>
       <View style={styles.mh20}>
-        <CHeader title={'Account Info'} />
+        <CHeader color={colors.black} title={'Account Info'} />
         <Image source={images.EditPhoto} style={localStyles.imgSty} />
         <CText type={'B16'} color={colors.tabColor}>
           {strings.PersonalInfo}

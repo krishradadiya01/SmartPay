@@ -95,7 +95,7 @@ export default function TransferMoney({navigation}) {
   return (
     <SafeAreaView style={localStyles.main}>
       <View>
-        <CHeader title={strings.AllTrans} />
+        <CHeader color={colors.black} title={strings.Transaction} />
         <CText color={colors.black} type={'B18'} style={localStyles.CardTxt}>
           {strings.ChooseCards}
         </CText>

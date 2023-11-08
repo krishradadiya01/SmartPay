@@ -90,7 +90,7 @@ export default function ContactsList() {
     <SafeAreaView style={localStyles.main}>
       <KeyBoardAvoidWrapper>
         <View style={localStyles.innerContainer}>
-          <CHeader title={'Contacts'} />
+          <CHeader color={colors.black} title={'Contacts'} />
 
           <CTextInput
             mainTxtInp={localStyles.outerComponent}

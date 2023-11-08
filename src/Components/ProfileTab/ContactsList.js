@@ -88,7 +88,7 @@ export default function ContactsList() {
   return (
     <SafeAreaView style={localStyles.main}>
       <View style={localStyles.innerContainer}>
-        <CHeader title={'Contacts'} />
+        <CHeader color={colors.black} title={'Contacts'} />
 
         <CTextInput
           mainTxtInp={localStyles.outerComponent}

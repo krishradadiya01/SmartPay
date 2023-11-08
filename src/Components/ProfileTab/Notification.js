@@ -55,6 +55,7 @@ export default function Notification() {
     <SafeAreaView style={localStyles.main}>
       <View style={styles.mh20}>
         <CHeader
+          color={colors.black}
           customStyle={localStyles.notTxt}
           title={'Notification'}
           rightIcon={<RightIcon />}

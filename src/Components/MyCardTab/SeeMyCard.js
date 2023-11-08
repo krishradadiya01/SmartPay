@@ -45,7 +45,7 @@ export default function SeeMyCard({navigation, route}) {
 
   return (
     <SafeAreaView style={localStyles.main}>
-      <CHeader title={'My Card'} />
+      <CHeader color={colors.black} title={'My Card'} />
       <FlatList
         data={cardList}
         renderItem={renderCard}

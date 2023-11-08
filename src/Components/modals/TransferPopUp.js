@@ -4,6 +4,7 @@ import {
   View,
   TouchableOpacity,
   ImageBackground,
+  Platform,
 } from 'react-native';
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
@@ -84,7 +85,7 @@ export default function TransferPopUp(props) {
               style={localStyles.imgStyle}>
               <View style={localStyles.innerContainer}>
                 <View>
-                  <CText type={'S18'} align="center">
+                  <CText color={colors.black} type={'S18'} align="center">
                     {strings.TransConf}
                   </CText>
 
@@ -109,7 +110,15 @@ export default function TransferPopUp(props) {
                 </View>
                 <CButton
                   text={'Ok, Send Now!'}
-                  containerStyle={localStyles.ParentLgnBtn}
+                  containerStyle={[
+                    localStyles.ParentLgnBtn,
+                    {
+                      bottom:
+                        Platform.OS === 'ios'
+                          ? moderateScale(0)
+                          : moderateScale(40),
+                    },
+                  ]}
                   onPress={moveToHome}
                 />
               </View>
@@ -140,7 +149,7 @@ const localStyles = StyleSheet.create({
     ...styles.mv15,
   },
   ParentLgnBtn: {
-    bottom: moderateScale(40),
+    // bottom: moderateScale(40),
   },
   parentFromBOA: {
     ...styles.mt15,

@@ -128,12 +128,14 @@ export const TodayData = [
     mainName: strings.SmartPayUi,
     subName: strings.UiNet,
     payments: strings.NineNine,
+    color: colors.black,
   },
   {
     image: Images.Gym,
     mainName: strings.Gym,
     subName: strings.Payment,
     payments: strings.FourFive,
+    color: colors.black,
   },
   {
     image: Images.Deposit2,
@@ -150,6 +152,7 @@ export const YesterdayData = [
     mainName: strings.Bitcoin,
     subName: strings.Deposit,
     payments: strings.TwoFiveFIveZero,
+    color: colors.black,
   },
   {
     image: Images.Deposit2,
@@ -163,6 +166,7 @@ export const YesterdayData = [
     mainName: strings.Gym,
     subName: strings.Payment,
     payments: strings.FourFive,
+    color: colors.black,
   },
 ];
 

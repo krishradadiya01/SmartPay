@@ -67,7 +67,7 @@ export default function MyCardScreen({navigation}) {
   };
   return (
     <SafeAreaView style={localStyles.main}>
-      <CHeader title={'My Bank'} />
+      <CHeader color={colors.black} title={'My Bank'} />
       <FlatList
         data={BankList}
         renderItem={RenderBankCard}

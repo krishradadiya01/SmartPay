@@ -1,4 +1,4 @@
-import {StyleSheet, SafeAreaView} from 'react-native';
+import {StyleSheet, SafeAreaView, View} from 'react-native';
 import React from 'react';
 
 // Local imports
@@ -11,30 +11,35 @@ import CTextInput from '../../Components/Common/CTextInput';
 import {colors} from '../../Themes/colors';
 import typography from '../../Themes/typography';
 import CButton from '../../Components/Common/CButton';
-import KeyBoardAvoidWrapper from '../../Components/Common/KeyBoardAvoidWrapper';
 import {AuthNav} from '../../Navigation/navigationKeys';
+import KeyBoardAvoidWrapper from '../../Components/Common/KeyBoardAvoidWrapper';
 
 export default function PassRecovery({navigation}) {
   const moveToVerify = () => navigation.navigate(AuthNav.VerifyIdentity);
 
   return (
     <SafeAreaView style={localStyles.main}>
-      <KeyBoardAvoidWrapper contentContainerStyle={styles.flexGrow1}>
-        <Lock style={localStyles.lock} />
-        <CText color={colors.black} type={'B24'} style={localStyles.PassRecTxt}>
-          {strings.PassRecovery}
-        </CText>
-        <CText
-          color={colors.black}
-          type={'R16'}
-          style={localStyles.enterRegEmail}>
-          {strings.enterRegEmail}
-        </CText>
-        <CTextInput
-          textInputStyle={localStyles.TxtInp}
-          mainTxtInp={localStyles.ParentTxtInp}
-          text={'Enter your email address'}
-        />
+      <KeyBoardAvoidWrapper containerStyle={localStyles.keyBoardSty}>
+        <View style={[styles.flex, styles.justifyBetween]}>
+          <Lock style={localStyles.lock} />
+          <CText
+            color={colors.black}
+            type={'B24'}
+            style={localStyles.PassRecTxt}>
+            {strings.PassRecovery}
+          </CText>
+          <CText
+            color={colors.black}
+            type={'R16'}
+            style={localStyles.enterRegEmail}>
+            {strings.enterRegEmail}
+          </CText>
+          <CTextInput
+            textInputStyle={localStyles.TxtInp}
+            mainTxtInp={localStyles.ParentTxtInp}
+            text={'Enter your email address'}
+          />
+        </View>
       </KeyBoardAvoidWrapper>
       <CButton
         text={'Send me email'}
@@ -47,8 +52,6 @@ export default function PassRecovery({navigation}) {
 
 const localStyles = StyleSheet.create({
   main: {
-    ...styles.pl20,
-    ...styles.justifyBetween,
     ...styles.mainContainerSurface,
   },
   lock: {
@@ -73,6 +76,10 @@ const localStyles = StyleSheet.create({
   ParentEmail: {
     width: moderateScale(333),
     ...styles.mb30,
-    ...styles.mr20,
+  },
+  keyBoardSty: {
+    ...styles.justifyBetween,
+    ...styles.ph20,
+    ...styles.flexGrow1,
   },
 });

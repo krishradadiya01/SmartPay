@@ -34,7 +34,7 @@ export default function FQA() {
   return (
     <SafeAreaView style={localStyles.main}>
       <KeyBoardAvoidWrapper containerStyle={localStyles.keyBoardSty}>
-        <CHeader />
+        <CHeader color={colors.black} />
 
         <CText
           color={colors.black}

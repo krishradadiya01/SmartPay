@@ -17,6 +17,7 @@ import CText from '../Common/CText';
 import {colors} from '../../Themes/colors';
 import {StackNav} from '../../Navigation/navigationKeys';
 import {HomeData} from '../../Api/constants';
+import CHeader from '../Common/CHeader';
 
 export default function MoreOptions({navigation}) {
   const moveToTrans = () => {
@@ -82,6 +83,7 @@ export default function MoreOptions({navigation}) {
   return (
     <SafeAreaView style={localStyles.main}>
       <ScrollView showsVerticalScrollIndicator={false} style={styles.mh20}>
+        <CHeader />
         <View style={localStyles.mainImg}>
           <View style={localStyles.menuRowStyle}>
             <FirstImage
@@ -155,7 +157,7 @@ const localStyles = StyleSheet.create({
     backgroundColor: colors.GreyScale,
     ...styles.mt30,
     ...styles.ph30,
-    ...styles.pv30,
+    // ...styles.pv30,
     gap: moderateScale(20),
     borderRadius: moderateScale(16),
   },

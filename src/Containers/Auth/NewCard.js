@@ -44,7 +44,7 @@ export default function NewCard() {
   return (
     <SafeAreaView style={localStyles.main}>
       <KeyBoardAvoidWrapper>
-        <CHeader title={'New Card'} />
+        <CHeader color={colors.black} title={'New Card'} />
         <View style={localStyles.parentImg}>
           <Image style={localStyles.imgStyle} source={images.MainCard} />
         </View>
@@ -133,7 +133,7 @@ const localStyles = StyleSheet.create({
   },
   parentColor: {
     position: 'absolute',
-    top: 110,
+    top: moderateScale(100),
     right: 0,
   },
   numberTxt: {

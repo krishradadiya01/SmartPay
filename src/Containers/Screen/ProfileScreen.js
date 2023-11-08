@@ -81,7 +81,7 @@ export default function ProfileScreen({navigation}) {
         style={styles.mh20}
         showsVerticalScrollIndicator={false}
         bounces={false}>
-        <CHeader title={'Profile'} />
+        <CHeader color={colors.black} title={'Profile'} />
         <RenderHeaderComponent />
 
         <View style={styles.mv20}>

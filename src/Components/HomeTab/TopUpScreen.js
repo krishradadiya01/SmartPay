@@ -67,7 +67,7 @@ export default function TopUpScreen({navigation}) {
     <SafeAreaView style={localStyles.main}>
       <KeyBoardAvoidWrapper contentContainerStyle={localStyles.keyboardType}>
         <View>
-          <CHeader title={'Top Up'} />
+          <CHeader color={colors.black} title={'Top Up'} />
           <TouchableOpacity style={localStyles.parentDebit}>
             <Image source={images.card3} style={localStyles.ImageSty} />
             <View style={localStyles.innerContainer}>

@@ -77,7 +77,7 @@ export default function GeneralSetting({navigation}) {
   return (
     <SafeAreaView style={localStyles.main}>
       <View style={styles.mh20}>
-        <CHeader title={'General Setting'} />
+        <CHeader color={colors.black} title={'General Setting'} />
 
         <TouchableOpacity>
           <CommonCom source={images.Notification} strings={strings.DNA} />

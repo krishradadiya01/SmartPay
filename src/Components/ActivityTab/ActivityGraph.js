@@ -73,7 +73,7 @@ export default function ActivityGraph() {
   return (
     <SafeAreaView style={localStyles.main}>
       <ScrollView style={styles.mh20} showsVerticalScrollIndicator={false}>
-        <CHeader title={'Activity'} rightIcon={<RightIcon />} />
+        <CHeader color={colors.black} title={'Activity'} rightIcon={<RightIcon />} />
         <View style={localStyles.parentContainer}>
           <View style={{gap: moderateScale(10)}}>
             <CText type={'M14'} color={colors.tabColor}>

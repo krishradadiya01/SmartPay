@@ -53,6 +53,7 @@ export default function Countries(props) {
   const onPressCountry = itm => {
     setData(itm.id);
     selectedCountry(itm);
+    sheetRef.current?.hide();
   };
 
   const onChangeSearch = text => setSearch(text);

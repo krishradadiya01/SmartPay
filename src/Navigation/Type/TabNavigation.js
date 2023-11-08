@@ -83,7 +83,7 @@ const TabNavigation = () => {
 
 const localStyles = StyleSheet.create({
   ScanImg: {
-    top: moderateScale(10),
+    top: moderateScale(7),
   },
 });
 

@@ -60,7 +60,7 @@ export default function WithDrawBalance() {
     <SafeAreaView style={localStyles.main}>
       <KeyBoardAvoidWrapper>
         <View style={localStyles.parent}>
-          <CHeader title={'WithDraw'} />
+          <CHeader color={colors.black} title={'WithDraw'} />
           <CommonBOA
             source={images.BankAmerica}
             Icon={

@@ -27,9 +27,7 @@ export default function ProofRes({navigation}) {
             {name}
           </CText>
         </View>
-        <View>
-          <Material color={colors.black} name={'navigate-next'} size={25} />
-        </View>
+        <Material style={localStyles.iconSty} color={colors.black} name={'navigate-next'} size={25} />
       </TouchableOpacity>
     );
   };
@@ -173,4 +171,7 @@ const localStyles = StyleSheet.create({
   mainMethod: {
     ...styles.mb180,
   },
+  iconSty: {
+    ...styles.pr15
+  }
 });

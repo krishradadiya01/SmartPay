@@ -39,7 +39,7 @@ export default function EditAccount({navigation}) {
     <SafeAreaView style={localStyles.main}>
       <KeyBoardAvoidWrapper>
         <View style={styles.mh20}>
-          <CHeader title={'Edit Account'} />
+          <CHeader color={colors.black} title={'Edit Account'} />
 
           <View style={localStyles.mainParent}>
             <TxtInputData name={strings.YourName} inpTxt={strings.Anna} />

@@ -29,7 +29,7 @@ export default function MyCardScreen({navigation}) {
 
   const _viewabilityConfig = {itemVisiblePercentThreshold: 50};
 
-  const setViewableItemsChanged = useCallback(({viewableItems}) => {
+  const _onViewableItemsChanged = useCallback(({viewableItems}) => {
     setOnBoardingDetails(viewableItems[0]?.index);
   }, []);
 
@@ -112,12 +112,17 @@ export default function MyCardScreen({navigation}) {
     <SafeAreaView style={styles.main}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.mh20}>
-          <CHeader title={'Activity'} rightIcon={<RightIcon />} />
+          <CHeader
+            customStyle={localStyles.headerSty}
+            color={colors.black}
+            title={'Activity'}
+            rightIcon={<RightIcon />}
+          />
           <FlatList
             data={miniCardDetails}
             renderItem={renderCard}
             viewabilityConfig={_viewabilityConfig}
-            onViewableItemsChanged={setViewableItemsChanged}
+            onViewableItemsChanged={_onViewableItemsChanged}
             pagingEnabled
             horizontal
             showsHorizontalScrollIndicator={false}
@@ -231,7 +236,7 @@ const localStyles = StyleSheet.create({
     ...styles.flex,
   },
   parentMore: {
-    width: moderateScale(38),
+    width: moderateScale(40),
     height: moderateScale(38),
     borderWidth: moderateScale(1),
     borderColor: colors.silver,
@@ -303,5 +308,9 @@ const localStyles = StyleSheet.create({
     ...styles.mh19,
     ...styles.mt25,
     ...styles.p10,
+  },
+  headerSty: {
+    ...styles.mh0,
+    ...styles.pl25,
   },
 });

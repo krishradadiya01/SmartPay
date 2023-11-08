@@ -25,7 +25,7 @@ export default function ReferralCode() {
     <SafeAreaView style={localStyles.main}>
       <KeyBoardAvoidWrapper>
         <View style={localStyles.mainView}>
-          <CHeader />
+          <CHeader color={colors.black} />
           <Image source={images.DollarsBank} style={localStyles.imgSty} />
 
           <View style={localStyles.parentComponent}>

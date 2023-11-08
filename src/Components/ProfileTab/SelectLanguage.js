@@ -76,7 +76,7 @@ export default function SelectLanguage() {
     <SafeAreaView style={localStyles.main}>
       <KeyboardAvoidWrapper>
         <View style={styles.mh20}>
-          <CHeader title={'Select Language'} />
+          <CHeader color={colors.black} title={'Select Language'} />
           <CTextInput
             mainTxtInp={localStyles.outerComponent}
             textInputStyle={localStyles.CTxtInp}

@@ -72,7 +72,7 @@ export default function SelectProvider() {
   return (
     <SafeAreaView style={localStyles.main}>
       <View style={styles.ph20}>
-        <CHeader title={'Top Up'} />
+        <CHeader color={colors.black} title={'Top Up'} />
         <CText style={styles.mt30} color={colors.black} type={'B18'}>
           {strings.BankTrans}
         </CText>

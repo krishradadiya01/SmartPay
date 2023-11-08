@@ -47,7 +47,7 @@ export default function Confirmation({route}) {
     <SafeAreaView style={localStyles.main}>
       <View>
         <View style={localStyles.margin}>
-          <CHeader title={'Confirmation'} />
+          <CHeader color={colors.black} title={'Confirmation'} />
           <View style={localStyles.imgParent}>
             <Image source={images.card3} style={localStyles.cardSty} />
           </View>

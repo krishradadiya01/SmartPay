@@ -17,15 +17,10 @@ import CTextInput from '../../Components/Common/CTextInput';
 import CButton from '../../Components/Common/CButton';
 import {moderateScale} from '../../Common/constant';
 import images from '../../Assets/Images/index';
-import CBackButton from '../../Components/Common/CBackButton';
 import {authToken} from '../../Utils/asyncStorage';
 
 export default function SignInEmpty({navigation}) {
   const [changeValue, setChangeValue] = useState(changeValue);
-
-  const backTo = () => {
-    navigation.navigate(StackNav.OnBoarding);
-  };
 
   const changeText = txt => {
     setChangeValue(txt);
@@ -48,7 +43,6 @@ export default function SignInEmpty({navigation}) {
     <View style={localStyles.mainParent}>
       <View>
         <SafeAreaView>
-          <CBackButton onPress={backTo} />
           <CText color={colors.black} style={localStyles.hiText} type={'B24'}>
             {strings.Hi}
           </CText>
@@ -124,6 +118,7 @@ export default function SignInEmpty({navigation}) {
 
 const localStyles = StyleSheet.create({
   mainParent: {
+    ...styles.mt50,
     ...styles.mh20,
     ...styles.flex,
     ...styles.justifyBetween,

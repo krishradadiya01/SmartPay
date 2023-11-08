@@ -45,7 +45,7 @@ const ListHeader = () => {
 
   return (
     <View>
-      <CHeader title={'Edit Card'} />
+      <CHeader color={colors.black} title={'Edit Card'} />
 
       <View style={localStyles.parent}>
         <Image source={images.card3} style={localStyles.imgSty} />
@@ -119,14 +119,12 @@ export default function EditCard() {
   return (
     <SafeAreaView style={{backgroundColor: colors.white}}>
       <View style={localStyles.main}>
-        <View>
           <FlatList
             data={selected}
             renderItem={renderManageData}
             ListHeaderComponent={<ListHeader />}
             ListFooterComponent={<ListFooter />}
           />
-        </View>
       </View>
     </SafeAreaView>
   );
