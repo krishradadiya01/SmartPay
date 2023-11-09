@@ -28,57 +28,66 @@ export default function CreatePin({navigation}) {
 
   return (
     <SafeAreaView style={localStyles.main}>
-      <View>
-        <CBackButton onPress={backToReason} />
-        <CText color={colors.black} type={'B24'} style={localStyles.yourPinTxt}>
-          {strings.SetYourPin}
-        </CText>
-        <CText color={colors.black} style={localStyles.warningTxt}>
-          {strings.PinWarning}
-        </CText>
-        <OTPInputView
-          style={localStyles.otpInputStyle}
-          pinCount={5}
-          code={otp}
-          onCodeChanged={onOtpChange}
-          autoFocusOnLoad={false}
-          secureTextEntry={true}
-          codeInputFieldStyle={localStyles.underlineStyleBase}
+      <View style={localStyles.outerMainContainer}>
+        <View>
+          <CBackButton onPress={backToReason} />
+          <CText
+            color={colors.black}
+            type={'B24'}
+            style={localStyles.yourPinTxt}>
+            {strings.SetYourPin}
+          </CText>
+          <CText color={colors.black} style={localStyles.warningTxt}>
+            {strings.PinWarning}
+          </CText>
+          <OTPInputView
+            style={localStyles.otpInputStyle}
+            pinCount={5}
+            code={otp}
+            onCodeChanged={onOtpChange}
+            autoFocusOnLoad={false}
+            secureTextEntry={true}
+            codeInputFieldStyle={[localStyles.underlineStyleBase]}
+          />
+        </View>
+        <CButton
+          text={'Create PIN'}
+          ParentLoginBtn={localStyles.mainCButton}
+          onPress={moveToFace}
         />
       </View>
-      <CButton
-        text={'Create PIN'}
-        ParentLoginBtn={localStyles.mainCButton}
-        onPress={moveToFace}
-      />
     </SafeAreaView>
   );
 }
 
 const localStyles = StyleSheet.create({
   main: {
-    ...styles.mh20,
     ...styles.flex,
-    ...styles.justifyBetween,
+    backgroundColor: colors.white,
   },
   yourPinTxt: {
     ...styles.mv30,
   },
   otpInputStyle: {
     height: moderateScale(50),
-    ...styles.mt40,
+    ...styles.mt20,
   },
   underlineStyleBase: {
     width: moderateScale(56),
-    height: moderateScale(56),
-    borderWidth: moderateScale(2),
-    borderBottomColor: colors.numbersColor,
-    borderColor: colors.GreyScale,
-    ...typography.fontWeights.Bold,
-    ...typography.fontSizes.f24,
+    height: moderateScale(66),
     color: colors.black,
+    ...typography.fontWeights.Bold,
+    ...typography.fontSizes.f32,
+    borderWidth: moderateScale(0),
+    borderBottomWidth: moderateScale(2),
+    borderColor: colors.Primary,
   },
   mainCButton: {
     ...styles.mb30,
+  },
+  outerMainContainer: {
+    ...styles.flex,
+    ...styles.justifyBetween,
+    ...styles.ph20,
   },
 });

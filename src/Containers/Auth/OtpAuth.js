@@ -24,45 +24,49 @@ export default function ItsYou({navigation}) {
 
   return (
     <SafeAreaView style={localStyles.main}>
-      <View>
-        <CBackButton onPress={moveToBack} />
-        <CText color={colors.black} style={localStyles.VerifyTxt} type={'B24'}>
-          {strings.VerifyItsYou}
-        </CText>
-        <CText color={colors.black} style={localStyles.EnterEmailTxt}>
-          {strings.EnterEmail}
-        </CText>
-        <View style={localStyles.ParenOtp}>
-          <OTPInputView
-            style={localStyles.otpInputStyle}
-            pinCount={5}
-            code={otp}
-            onCodeChanged={onOtpChange}
-            autoFocusOnLoad={false}
-            codeInputFieldStyle={localStyles.underlineStyleBase}
-          />
+      <View style={localStyles.outerComponent}>
+        <View>
+          <CBackButton onPress={moveToBack} />
+          <CText
+            color={colors.black}
+            style={localStyles.VerifyTxt}
+            type={'B24'}>
+            {strings.VerifyItsYou}
+          </CText>
+          <CText color={colors.black} style={localStyles.EnterEmailTxt}>
+            {strings.EnterEmail}
+          </CText>
+          <View style={localStyles.ParenOtp}>
+            <OTPInputView
+              style={localStyles.otpInputStyle}
+              pinCount={5}
+              code={otp}
+              onCodeChanged={onOtpChange}
+              autoFocusOnLoad={false}
+              codeInputFieldStyle={localStyles.underlineStyleBase}
+            />
+          </View>
+
+          <TouchableOpacity style={localStyles.mainReset}>
+            <CText type={'B16'} color={colors.SignUpTxt}>
+              {strings.ResetCode}
+            </CText>
+          </TouchableOpacity>
         </View>
 
-        <TouchableOpacity style={localStyles.mainReset}>
-          <CText type={'B16'} color={colors.SignUpTxt}>
-            {strings.ResetCode}
-          </CText>
-        </TouchableOpacity>
+        <CButton
+          ParentLoginBtn={localStyles.continue}
+          onPress={moveToCreatePass}
+        />
       </View>
-
-      <CButton
-        ParentLoginBtn={localStyles.continue}
-        onPress={moveToCreatePass}
-      />
     </SafeAreaView>
   );
 }
 
 const localStyles = StyleSheet.create({
   main: {
-    ...styles.mh20,
+    backgroundColor: colors.white,
     ...styles.flex,
-    ...styles.justifyBetween,
   },
   VerifyTxt: {
     ...styles.mt30,
@@ -96,5 +100,10 @@ const localStyles = StyleSheet.create({
   },
   continue: {
     ...styles.mb30,
+  },
+  outerComponent: {
+    ...styles.ph20,
+    ...styles.flex,
+    ...styles.justifyBetween,
   },
 });

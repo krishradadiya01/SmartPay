@@ -1,5 +1,5 @@
 import {StyleSheet, SafeAreaView, View} from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 
 // Local imports
 import {styles} from '../../Themes';
@@ -13,14 +13,42 @@ import typography from '../../Themes/typography';
 import CButton from '../../Components/Common/CButton';
 import {AuthNav} from '../../Navigation/navigationKeys';
 import KeyBoardAvoidWrapper from '../../Components/Common/KeyBoardAvoidWrapper';
+import CHeader from '../../Components/Common/CHeader';
+
+const BlurStyle = {
+  borderColor: colors.white,
+};
+
+const FocusStyle = {
+  borderColor: colors.numbersColor,
+};
 
 export default function PassRecovery({navigation}) {
+  const [focus, setFocus] = useState(BlurStyle);
+
+  const onFocus = () => {
+    onFocusInput(setFocus);
+  };
+
+  const onBlur = () => {
+    onBlurInput(setFocus);
+  };
+
+  const onFocusInput = onHighlight => {
+    onHighlight(FocusStyle);
+  };
+
+  const onBlurInput = onHighlight => {
+    onHighlight(BlurStyle);
+  };
+
   const moveToVerify = () => navigation.navigate(AuthNav.VerifyIdentity);
 
   return (
     <SafeAreaView style={localStyles.main}>
       <KeyBoardAvoidWrapper containerStyle={localStyles.keyBoardSty}>
         <View style={[styles.flex, styles.justifyBetween]}>
+          <CHeader />
           <Lock style={localStyles.lock} />
           <CText
             color={colors.black}
@@ -35,8 +63,10 @@ export default function PassRecovery({navigation}) {
             {strings.enterRegEmail}
           </CText>
           <CTextInput
+            onFocus={onFocus}
+            onBlur={onBlur}
             textInputStyle={localStyles.TxtInp}
-            mainTxtInp={localStyles.ParentTxtInp}
+            mainTxtInp={[localStyles.ParentTxtInp, focus]}
             text={'Enter your email address'}
           />
         </View>
@@ -68,7 +98,6 @@ const localStyles = StyleSheet.create({
     ...styles.mt20,
     width: moderateScale(333),
     borderWidth: moderateScale(1),
-    borderColor: colors.skyBlue,
   },
   TxtInp: {
     ...typography.fontWeights.SemiBold,

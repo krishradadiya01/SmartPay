@@ -36,14 +36,18 @@ const HeaderComponent = () => {
   };
   return (
     <View>
-      <CHeader color={colors.black} title={'Spotify'} rightIcon={<RightIcon />} />
+      <CHeader
+        color={colors.black}
+        title={'Spotify'}
+        rightIcon={<RightIcon />}
+      />
       <View style={localStyles.mainView}>
         <View style={localStyles.mainPayment}>
           <CText color={colors.black} type={'B24'}>
             {strings.Amount}
           </CText>
           <CText>
-            <CText color={colors.red}> {strings.ThreeFive}</CText>
+            <CText color={colors.red}>{strings.ThreeFive}</CText>
             {strings.ago}
           </CText>
         </View>

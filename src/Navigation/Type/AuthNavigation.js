@@ -12,9 +12,6 @@ import {moderateScale} from '../../Common/constant';
 const Stack = createNativeStackNavigator();
 
 const AuthNavigation = ({navigation}) => {
-  const moveToStyle = () => {
-    navigation.navigate(AuthNav.CardStyle);
-  };
   return (
     <Stack.Navigator>
       <Stack.Screen

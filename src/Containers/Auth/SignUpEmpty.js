@@ -18,9 +18,52 @@ import CButton from '../../Components/Common/CButton';
 import {moderateScale} from '../../Common/constant';
 import images from '../../Assets/Images/index';
 import {AuthNav} from '../../Navigation/navigationKeys';
+import KeyBoardAvoidWrapper from '../../Components/Common/KeyBoardAvoidWrapper';
+
+const BlurStyle = {
+  borderColor: colors.white,
+};
+
+const FocusStyle = {
+  borderColor: colors.numbersColor,
+};
 
 export default function SignUpEmpty({navigation}) {
   const [change, setChange] = useState(change);
+  const [focus, setFocus] = useState(BlurStyle);
+  const [focus2, setFocus2] = useState(BlurStyle);
+  const [focus3, setFocus3] = useState(BlurStyle);
+
+  const onFocus = () => {
+    onFocusInput(setFocus);
+  };
+
+  const onBlur = () => {
+    onBlurInput(setFocus);
+  };
+
+  const onFocus2 = () => {
+    onFocusInput(setFocus2);
+  };
+
+  const onBlur2 = () => {
+    onBlurInput(setFocus2);
+  };
+
+  const onFocus3 = () => {
+    onFocusInput(setFocus3);
+  };
+
+  const onBlur3 = () => {
+    onBlurInput(setFocus3);
+  };
+
+  const onFocusInput = onHighlight => {
+    onHighlight(FocusStyle);
+  };
+  const onBlurInput = onHighlight => {
+    onHighlight(BlurStyle);
+  };
 
   const onChangeTxt = txt => {
     setChange(txt);
@@ -36,73 +79,91 @@ export default function SignUpEmpty({navigation}) {
 
   return (
     <SafeAreaView style={localStyles.main}>
-      <View>
-        <CBackButton onPress={backToSignIn} />
-        <CText color={colors.black} type={'B24'} style={localStyles.mainTxt}>
-          {strings.CreateAcc}
-          <CText color={colors.black} style={localStyles.smartPay}>
-            {strings.SmartPay}
-          </CText>
-        </CText>
-        <CText color={colors.black} type={'B24'}>
-          {strings.acc}
-        </CText>
+      <View style={localStyles.outerMainContainer}>
+        <KeyBoardAvoidWrapper>
+          <View>
+            <CBackButton onPress={backToSignIn} />
+            <CText
+              color={colors.black}
+              type={'B24'}
+              style={localStyles.mainTxt}>
+              {strings.CreateAcc}
+              <CText color={colors.black} style={localStyles.smartPay}>
+                {strings.SmartPay}
+              </CText>
+            </CText>
+            <CText color={colors.black} type={'B24'}>
+              {strings.acc}
+            </CText>
 
-        <View style={localStyles.threeEle}>
-          <CTextInput text={'Full name'} />
-          <CTextInput text={'email'} />
-          <CTextInput
-            text={'password'}
-            value={change}
-            onChangeText={onChangeTxt}
-            isSecure={true}
-          />
-        </View>
+            <View style={localStyles.threeEle}>
+              <CTextInput
+                mainTxtInp={[localStyles.border, focus]}
+                onFocus={onFocus}
+                onBlur={onBlur}
+                text={'Full name'}
+              />
+              <CTextInput
+                mainTxtInp={[localStyles.border, focus2]}
+                onFocus={onFocus2}
+                onBlur={onBlur2}
+                text={'email'}
+              />
+              <CTextInput
+                mainTxtInp={[localStyles.border, focus3]}
+                onFocus={onFocus3}
+                onBlur={onBlur3}
+                text={'password'}
+                value={change}
+                onChangeText={onChangeTxt}
+                isSecure={true}
+              />
+            </View>
 
-        <CButton text={'Sign Up'} onPress={moveToCountry} />
+            <CButton text={'Sign Up'} onPress={moveToCountry} />
 
-        <View style={localStyles.parentOr}>
-          <View style={localStyles.firstLine} />
-          <CText color={colors.black} style={localStyles.OrTxt}>
-            {strings.or}
-          </CText>
-          <View style={localStyles.firstLine} />
-        </View>
+            <View style={localStyles.parentOr}>
+              <View style={localStyles.firstLine} />
+              <CText color={colors.black} style={localStyles.OrTxt}>
+                {strings.or}
+              </CText>
+              <View style={localStyles.firstLine} />
+            </View>
 
-        <View style={localStyles.mainSocial}>
-          <TouchableOpacity style={localStyles.parentGoogle}>
-            <Image source={images.Google} style={localStyles.google} />
-          </TouchableOpacity>
+            <View style={localStyles.mainSocial}>
+              <TouchableOpacity style={localStyles.parentGoogle}>
+                <Image source={images.Google} style={localStyles.google} />
+              </TouchableOpacity>
 
-          <TouchableOpacity style={localStyles.parentGoogle}>
-            <Image source={images.Apple} style={localStyles.Apple} />
-          </TouchableOpacity>
-        </View>
-      </View>
-
-      <CText
-        color={colors.black}
-        type={'B14'}
-        align={'center'}
-        style={localStyles.AlreadyTxt}>
-        {strings.AlreadyAcc}
+              <TouchableOpacity style={localStyles.parentGoogle}>
+                <Image source={images.Apple} style={localStyles.Apple} />
+              </TouchableOpacity>
+            </View>
+          </View>
+        </KeyBoardAvoidWrapper>
         <CText
-          type={'B16'}
           color={colors.black}
-          style={localStyles.SignInTxt}
-          onPress={backToSignIn}>
-          {strings.SignIn}
+          type={'B14'}
+          align={'center'}
+          style={localStyles.AlreadyTxt}>
+          {strings.AlreadyAcc}
+          <CText
+            type={'B16'}
+            color={colors.black}
+            style={localStyles.SignInTxt}
+            onPress={backToSignIn}>
+            {strings.SignIn}
+          </CText>
         </CText>
-      </CText>
+      </View>
     </SafeAreaView>
   );
 }
 
 const localStyles = StyleSheet.create({
   main: {
-    ...styles.mh20,
+    backgroundColor: colors.white,
     ...styles.flex,
-    ...styles.justifyBetween,
   },
   smartPay: {
     color: colors.SignUpTxt,
@@ -117,7 +178,7 @@ const localStyles = StyleSheet.create({
   firstLine: {
     width: moderateScale(133),
     height: moderateScale(1),
-    backgroundColor: colors.silver,
+    backgroundColor: colors.google,
   },
   OrTxt: {
     ...styles.ph20,
@@ -131,7 +192,6 @@ const localStyles = StyleSheet.create({
     width: moderateScale(155),
     height: moderateScale(56),
     borderRadius: moderateScale(16),
-    backgroundColor: colors.google,
     borderWidth: moderateScale(1),
     borderColor: colors.google,
     ...styles.center,
@@ -153,5 +213,14 @@ const localStyles = StyleSheet.create({
   threeEle: {
     ...styles.mv10,
     gap: moderateScale(15),
+  },
+  border: {
+    backgroundColor: colors.GreyScale,
+    borderWidth: moderateScale(1),
+  },
+  outerMainContainer: {
+    ...styles.ph20,
+    ...styles.flex,
+    ...styles.justifyBetween,
   },
 });

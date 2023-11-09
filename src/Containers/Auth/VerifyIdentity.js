@@ -12,6 +12,7 @@ import {colors} from '../../Themes/colors';
 import {moderateScale} from '../../Common/constant';
 import CButton from '../../Components/Common/CButton';
 import {AuthNav} from '../../Navigation/navigationKeys';
+import CHeader from '../../Components/Common/CHeader';
 
 export default function VerifyIdentity({navigation}) {
   const moveToItsYou = () => {
@@ -21,6 +22,7 @@ export default function VerifyIdentity({navigation}) {
   return (
     <SafeAreaView style={localStyles.main}>
       <View>
+        <CHeader />
         <Identity style={localStyles.imgStyle} />
         <CText color={colors.black} type={'B24'} style={localStyles.verIdeTxt}>
           {strings.VerifyIdentity}

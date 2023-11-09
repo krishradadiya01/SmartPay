@@ -117,14 +117,14 @@ export default function ATMDetails({navigation}) {
 
         <Location sheetRef={Search} />
       </SafeAreaView>
-    </KeyBoardAvoidWrapper>
+    </KeyBoardAvoidWrapper> 
   );
 }
 
 const localStyles = StyleSheet.create({
   main: {
     backgroundColor: colors.black,
-    height: '100%',
+    ...styles.flex
   },
   parentMaterial: {
     borderWidth: moderateScale(1),

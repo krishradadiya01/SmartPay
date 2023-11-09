@@ -119,12 +119,12 @@ export default function EditCard() {
   return (
     <SafeAreaView style={{backgroundColor: colors.white}}>
       <View style={localStyles.main}>
-          <FlatList
-            data={selected}
-            renderItem={renderManageData}
-            ListHeaderComponent={<ListHeader />}
-            ListFooterComponent={<ListFooter />}
-          />
+        <FlatList
+          data={selected}
+          renderItem={renderManageData}
+          ListHeaderComponent={<ListHeader />}
+          ListFooterComponent={<ListFooter />}
+        />
       </View>
     </SafeAreaView>
   );

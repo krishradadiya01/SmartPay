@@ -23,9 +23,60 @@ import KeyBoardAvoidWrapper from '../../Components/Common/KeyBoardAvoidWrapper';
 import ReadyCard from '../../Components/modals/ReadyCard';
 import CHeader from '../../Components/Common/CHeader';
 
+const BlurStyle = {
+  borderColor: colors.white,
+};
+
+const FocusStyle = {
+  borderColor: colors.numbersColor,
+};
+
 export default function NewCard() {
   const [country, setCountry] = useState('');
   const [visible, setVisible] = useState(false);
+  const [focus, setFocus] = useState(BlurStyle);
+  const [focus2, setFocus2] = useState(BlurStyle);
+  const [focus3, setFocus3] = useState(BlurStyle);
+  const [focus4, setFocus4] = useState(BlurStyle);
+
+  const onFocus = () => {
+    onFocusInput(setFocus);
+  };
+
+  const onBlur = () => {
+    onBlurInput(setFocus);
+  };
+
+  const onFocus2 = () => {
+    onFocusInput(setFocus2);
+  };
+
+  const onBlur2 = () => {
+    onBlurInput(setFocus2);
+  };
+
+  const onFocus3 = () => {
+    onFocusInput(setFocus3);
+  };
+
+  const onBlur3 = () => {
+    onBlurInput(setFocus3);
+  };
+
+  const onFocus4 = () => {
+    onFocusInput(setFocus4);
+  };
+
+  const onBlur4 = () => {
+    onBlurInput(setFocus4);
+  };
+
+  const onFocusInput = onHighlight => {
+    onHighlight(FocusStyle);
+  };
+  const onBlurInput = onHighlight => {
+    onHighlight(BlurStyle);
+  };
 
   const init = useRef(null);
 
@@ -43,76 +94,98 @@ export default function NewCard() {
 
   return (
     <SafeAreaView style={localStyles.main}>
-      <KeyBoardAvoidWrapper>
-        <CHeader color={colors.black} title={'New Card'} />
-        <View style={localStyles.parentImg}>
-          <Image style={localStyles.imgStyle} source={images.MainCard} />
-        </View>
+      <KeyBoardAvoidWrapper contentContainerStyle={styles.flexGrow1}>
+        <View style={styles.mh20}>
+          <CHeader color={colors.black} title={'New Card'} />
+          <View style={localStyles.parentImg}>
+            <Image style={localStyles.imgStyle} source={images.MainCard} />
+          </View>
 
-        <View style={localStyles.parentColor}>
-          <Image source={images.CardColor} />
-        </View>
+          <View style={localStyles.parentColor}>
+            <Image source={images.CardColor} />
+          </View>
 
-        <CText color={colors.black} type={'B24'}>
-          {strings.CardDetailTxt}
-        </CText>
-        <CTextInput
-          text={'Card number'}
-          mainTxtInp={localStyles.numberTxt}
-          RightIcon={() => (
-            <Image style={localStyles.imageStyle} source={images.MasterIcon} />
-          )}
-        />
-
-        <View style={localStyles.mainCTxtInp}>
+          <CText color={colors.black} type={'B24'}>
+            {strings.CardDetailTxt}
+          </CText>
           <CTextInput
-            text={'Expiry date'}
-            mainTxtInp={localStyles.parentCTxtInp}
-          />
-          <CTextInput text={'VCC'} mainTxtInp={localStyles.parentCTxtInp} />
-        </View>
-
-        <CTextInput text={'Card holder'} />
-
-        <TouchableOpacity
-          onPress={showCountry}
-          style={localStyles.mainSelector}>
-          <View style={localStyles.mainBox}>
-            {!!country ? (
-              <View style={[styles.itemsCenter, styles.flexRow]}>
-                {country?.svgIcon}
-                <CText
-                  color={colors.black}
-                  type={'B18'}
-                  style={localStyles.USTxtStyle}>
-                  {country?.FullName}
-                </CText>
-              </View>
-            ) : (
-              <View style={[styles.itemsCenter, styles.flexRow]}>
-                <US />
-                <CText
-                  color={colors.black}
-                  type={'B18'}
-                  style={localStyles.USTxtStyle}>
-                  {strings.America}
-                </CText>
-              </View>
+            onFocus={onFocus}
+            onBlur={onBlur}
+            keyboardType={'numeric'}
+            text={'Card number'}
+            mainTxtInp={[localStyles.numberTxt, focus]}
+            RightIcon={() => (
+              <Image
+                style={localStyles.imageStyle}
+                source={images.MasterIcon}
+              />
             )}
+          />
 
-            <Feathers
-              color={colors.black}
-              name={'angle-down'}
-              style={localStyles.angleButton}
-              size={24}
+          <View style={localStyles.mainCTxtInp}>
+            <CTextInput
+              onFocus={onFocus2}
+              onBlur={onBlur2}
+              text={'Expiry date'}
+              mainTxtInp={[localStyles.parentCTxtInp, focus2]}
+            />
+            <CTextInput
+              onFocus={onFocus3}
+              onBlur={onBlur3}
+              keyboardType={'numeric'}
+              text={'VCC'}
+              mainTxtInp={[localStyles.parentCTxtInp, focus3]}
             />
           </View>
-        </TouchableOpacity>
 
-        <Countries sheetRef={init} selectedCountry={selectedCountry} />
-        <CButton text={'Save'} onPress={onPressCancel} />
+          <CTextInput
+            onFocus={onFocus4}
+            onBlur={onBlur4}
+            keyboardType={'numeric'}
+            text={'Card holder'}
+            mainTxtInp={[localStyles.numberTxt, focus4]}
+          />
 
-        <ReadyCard visible={visible} onPressClose={onPressCancel} />
+          <TouchableOpacity
+            onPress={showCountry}
+            style={localStyles.mainSelector}>
+            <View style={localStyles.mainBox}>
+              {!!country ? (
+                <View style={[styles.itemsCenter, styles.flexRow]}>
+                  {country?.svgIcon}
+                  <CText
+                    color={colors.black}
+                    type={'B18'}
+                    style={localStyles.USTxtStyle}>
+                    {country?.FullName}
+                  </CText>
+                </View>
+              ) : (
+                <View style={[styles.itemsCenter, styles.flexRow]}>
+                  <US />
+                  <CText
+                    color={colors.black}
+                    type={'B18'}
+                    style={localStyles.USTxtStyle}>
+                    {strings.America}
+                  </CText>
+                </View>
+              )}
+
+              <Feathers
+                color={colors.black}
+                name={'angle-down'}
+                style={localStyles.angleButton}
+                size={24}
+              />
+            </View>
+          </TouchableOpacity>
+
+          <Countries sheetRef={init} selectedCountry={selectedCountry} />
+          <CButton text={'Save'} onPress={onPressCancel} />
+
+          <ReadyCard visible={visible} onPressClose={onPressCancel} />
+        </View>
       </KeyBoardAvoidWrapper>
     </SafeAreaView>
   );
@@ -120,7 +193,7 @@ export default function NewCard() {
 
 const localStyles = StyleSheet.create({
   main: {
-    ...styles.mh20,
+    backgroundColor: colors.white,
     ...styles.flex,
   },
   imgStyle: {
@@ -137,9 +210,13 @@ const localStyles = StyleSheet.create({
     right: 0,
   },
   numberTxt: {
-    ...styles.mv10,
+    backgroundColor: colors.GreyScale,
+    ...styles.mv5,
+    borderWidth: moderateScale(1),
   },
   parentCTxtInp: {
+    backgroundColor: colors.GreyScale,
+    borderWidth: moderateScale(1),
     width: '48%',
   },
   mainCTxtInp: {

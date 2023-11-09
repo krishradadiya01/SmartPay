@@ -67,7 +67,7 @@ export default function TransferMoney({navigation}) {
           style={[
             localStyles.parentGirl,
             {
-              borderColor: data === item.id ? colors.SignUpTxt : colors.silver,
+              borderColor: data === item.id ? colors.SignUpTxt : colors.google,
             },
           ]}
           onPress={() => setData(item.id)}>
@@ -94,7 +94,7 @@ export default function TransferMoney({navigation}) {
 
   return (
     <SafeAreaView style={localStyles.main}>
-      <View>
+      <View style={styles.ph20}>
         <CHeader color={colors.black} title={strings.Transaction} />
         <CText color={colors.black} type={'B18'} style={localStyles.CardTxt}>
           {strings.ChooseCards}
@@ -140,7 +140,7 @@ export default function TransferMoney({navigation}) {
 
 const localStyles = StyleSheet.create({
   main: {
-    ...styles.mh20,
+    backgroundColor: colors.white,
     ...styles.flex,
     ...styles.justifyBetween,
   },
@@ -166,7 +166,6 @@ const localStyles = StyleSheet.create({
     ...styles.center,
     ...styles.mh5,
     borderWidth: moderateScale(1),
-    borderColor: colors.silver,
     borderRadius: moderateScale(16),
   },
   mainBoyGirl: {

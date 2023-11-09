@@ -4,6 +4,7 @@ import {
   Image,
   TouchableOpacity,
   FlatList,
+  View,
 } from 'react-native';
 import React from 'react';
 import Octicons from 'react-native-vector-icons/Octicons';
@@ -45,20 +46,22 @@ export default function SeeMyCard({navigation, route}) {
 
   return (
     <SafeAreaView style={localStyles.main}>
-      <CHeader color={colors.black} title={'My Card'} />
-      <FlatList
-        data={cardList}
-        renderItem={renderCard}
-        showsVerticalScrollIndicator={false}
-        ListFooterComponent={<ListFooterComponent />}
-      />
+      <View style={styles.ph20}>
+        <CHeader color={colors.black} title={'My Card'} />
+        <FlatList
+          data={cardList}
+          renderItem={renderCard}
+          showsVerticalScrollIndicator={false}
+          ListFooterComponent={<ListFooterComponent />}
+        />
+      </View>
     </SafeAreaView>
   );
 }
 
 const localStyles = StyleSheet.create({
   main: {
-    ...styles.mh20,
+    backgroundColor: colors.white,
     ...styles.flex,
   },
   imgSty: {

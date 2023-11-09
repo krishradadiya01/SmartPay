@@ -10,10 +10,19 @@ import {
   France,
   Germany,
   Russia,
+  Bolt,
+  Users,
+  Creditcard,
+  Beach,
+  Business,
 } from '../Assets/Svgs';
 import {moderateScale} from '../Common/constant';
 import {colors} from '../Themes/colors';
 import strings from '../I18n/mergeString';
+import FontAwesome from 'react-native-vector-icons/FontAwesome5';
+import Feather from 'react-native-vector-icons/Feather';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 export const OnBoardingData = [
   {
@@ -538,4 +547,43 @@ export const moneyData2 = [
   strings.$100,
   strings.$200,
   strings.$500,
+];
+
+export const ReasonsData = [
+  {
+    id: 1,
+    svgIcon: <FontAwesome name={'chart-pie'} size={28} />,
+    name: strings.SpendDaily,
+    selected: false,
+  },
+  {
+    id: 2,
+    svgIcon: <FontAwesome name={'bolt'} size={28} />,
+    name: strings.FastTrans,
+    selected: false,
+  },
+  {
+    id: 3,
+    svgIcon: <Feather name={'users'} size={28} />,
+    name: strings.PaymentFriends,
+    selected: false,
+  },
+  {
+    id: 4,
+    svgIcon: <AntDesign name={'creditcard'} size={28} />,
+    name: strings.OnlinePayment,
+    selected: false,
+  },
+  {
+    id: 5,
+    svgIcon: <FontAwesome name={'umbrella-beach'} size={28} />,
+    name: strings.SpendTravel,
+    selected: false,
+  },
+  {
+    id: 6,
+    svgIcon: <Ionicons name={'business-outline'} size={28} />,
+    name: strings.FinancialAsset,
+    selected: false,
+  },
 ];

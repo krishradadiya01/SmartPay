@@ -20,11 +20,11 @@ const Splash = ({navigation}) => {
       if (Data) {
         let {OnBoardingDataValue, authDataValue} = Data;
         if (!!authDataValue) {
-          navigation.navigate(StackNav.OnBoarding);
+          navigation.replace(StackNav.AuthNavigation);
         } else if (!!OnBoardingDataValue) {
-          navigation.navigate(StackNav.AuthNavigation);
+          navigation.replace(StackNav.AuthNavigation);
         } else {
-          navigation.navigate(StackNav.OnBoarding);
+          navigation.replace(StackNav.OnBoarding);
         }
       }
     } catch (e) {

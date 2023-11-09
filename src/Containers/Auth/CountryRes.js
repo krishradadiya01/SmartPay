@@ -36,63 +36,65 @@ export default function CountryRes({navigation}) {
 
   return (
     <SafeAreaView style={localStyles.main}>
-      <View>
-        <CBackButton onPress={backToSignUp} />
-        <CText
-          color={colors.black}
-          style={localStyles.CountryResTxt}
-          type={'B24'}>
-          {strings.CountryOfRes}
-        </CText>
-        <CText color={colors.black} style={localStyles.selectCountryTxt}>
-          {strings.SelectCountry}
-        </CText>
-
-        <TouchableOpacity onPress={moveToModel} style={localStyles.mainBox}>
-          <View style={localStyles.UsStyle}>
-            {!!country ? (
-              <View style={localStyles.USTxt}>
-                {country?.svgIcon}
-
-                <CText color={colors.black} type={'B18'}>
-                  {country?.FullName}
-                </CText>
-              </View>
-            ) : (
-              <View style={localStyles.ViewOfInitial}>
-                <US />
-                <CText
-                  color={colors.black}
-                  type={'B18'}
-                  style={localStyles.USTxtStyle}>
-                  {strings.America}
-                </CText>
-              </View>
-            )}
-          </View>
-          <Feathers
+      <View style={localStyles.outerMainContainer}>
+        <View>
+          <CBackButton onPress={backToSignUp} />
+          <CText
             color={colors.black}
-            name={'angle-down'}
-            style={localStyles.angleButton}
-            size={24}
-          />
-        </TouchableOpacity>
+            style={localStyles.CountryResTxt}
+            type={'B24'}>
+            {strings.CountryOfRes}
+          </CText>
+          <CText color={colors.black} style={localStyles.selectCountryTxt}>
+            {strings.SelectCountry}
+          </CText>
 
-        <Countries sheetRef={Choose} selectedCountry={selectedCountry} />
+          <TouchableOpacity onPress={moveToModel} style={localStyles.mainBox}>
+            <View style={localStyles.UsStyle}>
+              {!!country ? (
+                <View style={localStyles.USTxt}>
+                  {country?.svgIcon}
+
+                  <CText color={colors.black} type={'B18'}>
+                    {country?.FullName}
+                  </CText>
+                </View>
+              ) : (
+                <View style={localStyles.ViewOfInitial}>
+                  <US />
+                  <CText
+                    color={colors.black}
+                    type={'B18'}
+                    style={localStyles.USTxtStyle}>
+                    {strings.America}
+                  </CText>
+                </View>
+              )}
+            </View>
+            <Feathers
+              color={colors.black}
+              name={'angle-down'}
+              style={localStyles.angleButton}
+              size={24}
+            />
+          </TouchableOpacity>
+
+          <Countries sheetRef={Choose} selectedCountry={selectedCountry} />
+        </View>
+
+        <CButton
+          ParentLoginBtn={localStyles.ParentCButton}
+          onPress={moveToReasons}
+        />
       </View>
-      <CButton
-        ParentLoginBtn={localStyles.ParentCButton}
-        onPress={moveToReasons}
-      />
     </SafeAreaView>
   );
 }
 
 const localStyles = StyleSheet.create({
   main: {
-    ...styles.mh20,
+    backgroundColor: colors.white,
     ...styles.flex,
-    ...styles.justifyBetween,
   },
   CountryResTxt: {
     ...styles.mt30,
@@ -139,5 +141,10 @@ const localStyles = StyleSheet.create({
   },
   ParentCButton: {
     ...styles.mb30,
+  },
+  outerMainContainer: {
+    ...styles.ph20,
+    ...styles.flex,
+    ...styles.justifyBetween,
   },
 });

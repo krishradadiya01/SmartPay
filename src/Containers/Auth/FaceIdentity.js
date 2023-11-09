@@ -38,44 +38,51 @@ export default function FaceIdentity({navigation}) {
 
   return (
     <SafeAreaView style={localStyles.main}>
-      <View>
-        <CBackButton onPress={backToPin} />
-        <CText
-          color={colors.black}
-          type={'B24'}
-          style={localStyles.letsVerifyTxt}>
-          {strings.LetsVerify}
-        </CText>
-        <CText color={colors.black}>{strings.IdentityWarning}</CText>
+      <View style={localStyles.outerMainContainer}>
+        <View>
+          <CBackButton onPress={backToPin} />
+          <CText
+            color={colors.black}
+            type={'B24'}
+            style={localStyles.letsVerifyTxt}>
+            {strings.LetsVerify}
+          </CText>
+          <CText color={colors.black}>{strings.IdentityWarning}</CText>
 
-        {!!selectImage ? (
-          <View style={localStyles.parentGal}>
-            <Image source={{uri: selectImage}} style={localStyles.gallImage} />
-          </View>
-        ) : (
-          <View style={localStyles.parentImage}>
-            <Image style={localStyles.scanImage} source={images.FaceScan} />
-          </View>
-        )}
+          {!!selectImage ? (
+            <View style={localStyles.parentGal}>
+              <Image
+                source={{uri: selectImage}}
+                style={localStyles.gallImage}
+              />
+            </View>
+          ) : (
+            <View style={localStyles.parentImage}>
+              <Image style={localStyles.scanImage} source={images.FaceScan} />
+            </View>
+          )}
+        </View>
+
+        <CButton
+          text={'Choose Image'}
+          ParentLoginBtn={localStyles.ParentCButton}
+          onPress={() => {
+            ImagePicker();
+          }}
+        />
+        <CButton
+          ParentLoginBtn={localStyles.CButtonTxt}
+          onPress={moveToProof}
+        />
       </View>
-
-      <CButton
-        text={'Choose Image'}
-        ParentLoginBtn={localStyles.ParentCButton}
-        onPress={() => {
-          ImagePicker();
-        }}
-      />
-      <CButton ParentLoginBtn={localStyles.CButtonTxt} onPress={moveToProof} />
     </SafeAreaView>
   );
 }
 
 const localStyles = StyleSheet.create({
   main: {
-    ...styles.mh20,
+    backgroundColor: colors.white,
     ...styles.flex,
-    ...styles.justifyBetween,
   },
   letsVerifyTxt: {
     ...styles.mv25,
@@ -101,5 +108,10 @@ const localStyles = StyleSheet.create({
   },
   CButtonTxt: {
     ...styles.mb30,
+  },
+  outerMainContainer: {
+    ...styles.ph20,
+    ...styles.flex,
+    ...styles.justifyBetween,
   },
 });

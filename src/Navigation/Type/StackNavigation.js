@@ -2,7 +2,7 @@ import React from 'react';
 
 // Local imports
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {StackNav} from '../navigationKeys';
+import {AuthNav, StackNav} from '../navigationKeys';
 import {StackRoute} from '../navigationRoute';
 
 const Stack = createNativeStackNavigator();

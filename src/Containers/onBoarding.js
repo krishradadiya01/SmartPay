@@ -25,10 +25,13 @@ export default function OnBoarding({navigation}) {
     navigation.navigate(StackNav.AuthNavigation);
   };
 
-  const onPressRightArrow = () => {
+  const onPressRightArrow = async () => {
     if (OnBoardingDetails === 1) {
-      navigation.navigate(StackNav.AuthNavigation);
-      OnBoardingToken(true);
+      await OnBoardingToken(true);
+      navigation.reset({
+        index: 0,
+        routes: [{name: StackNav.AuthNavigation}],
+      });
     } else {
       BoardingRef.current._listRef._scrollRef.scrollTo({
         x: deviceWidth * (OnBoardingDetails + 1),

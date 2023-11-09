@@ -23,6 +23,8 @@ export default function CTextInput({
   onPress,
   keyboardType,
   align,
+  onFocus,
+  onBlur,
 }) {
   const [isSecurePass, setIsSecurePass] = useState(isSecure);
 
@@ -34,6 +36,8 @@ export default function CTextInput({
     <View style={[localStyles.main, mainTxtInp]}>
       {!!LeftIcon && <LeftIcon />}
       <TextInput
+        onFocus={onFocus}
+        onBlur={onBlur}
         style={[localStyles.local, textInputStyle]}
         placeholder={text}
         placeholderTextColor={colors.silver}

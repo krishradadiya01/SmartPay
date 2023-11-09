@@ -67,21 +67,23 @@ export default function MyCardScreen({navigation}) {
   };
   return (
     <SafeAreaView style={localStyles.main}>
-      <CHeader color={colors.black} title={'My Bank'} />
-      <FlatList
-        data={BankList}
-        renderItem={RenderBankCard}
-        showsHorizontalScrollIndicator={false}
-        ListHeaderComponent={<ListHeaderComponent />}
-        ListFooterComponent={<ListFooterComponent />}
-      />
+      <View style={styles.ph20}>
+        <CHeader color={colors.black} title={'My Bank'} />
+        <FlatList
+          data={BankList}
+          renderItem={RenderBankCard}
+          showsHorizontalScrollIndicator={false}
+          ListHeaderComponent={<ListHeaderComponent />}
+          ListFooterComponent={<ListFooterComponent />}
+        />
+      </View>
     </SafeAreaView>
   );
 }
 
 const localStyles = StyleSheet.create({
   main: {
-    ...styles.mh20,
+    backgroundColor: colors.white,
     ...styles.flex,
   },
   YourBankAccTxt: {
@@ -102,7 +104,10 @@ const localStyles = StyleSheet.create({
     width: deviceWidth - moderateScale(305),
   },
   mainContainer: {
+    borderWidth: moderateScale(1),
+    borderColor: colors.bottomBorder,
     width: deviceWidth - moderateScale(40),
+    backgroundColor: colors.white,
   },
   newBank: {
     ...styles.mh0,

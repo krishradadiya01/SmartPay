@@ -1,25 +1,37 @@
-import {StyleSheet, SafeAreaView, View} from 'react-native';
-import React from 'react';
+import {
+  StyleSheet,
+  SafeAreaView,
+  View,
+  TouchableOpacity,
+  FlatList,
+} from 'react-native';
+import React, {useState} from 'react';
 
 // Local imports
 import CBackButton from '../../Components/Common/CBackButton';
 import {styles} from '../../Themes';
 import CText from '../../Components/Common/CText';
 import strings from '../../I18n/mergeString';
-import {
-  Beach,
-  Bolt,
-  Business,
-  Creditcard,
-  PieChart,
-  Users,
-} from '../../Assets/Svgs';
 import {moderateScale} from '../../Common/constant';
 import {colors} from '../../Themes/colors';
 import CButton from '../../Components/Common/CButton';
 import {AuthNav} from '../../Navigation/navigationKeys';
+import {ReasonsData} from '../../Api/constants';
 
 export default function Reasons({navigation}) {
+  const [selectedData, setSelectedData] = useState(ReasonsData);
+
+  const ontoggle = item => {
+    const newItem = selectedData.map(value => {
+      if (value.id === item.id) {
+        return {...value, selected: !value.selected};
+      } else {
+        return value;
+      }
+    });
+    setSelectedData(newItem);
+  };
+
   const moveToCreatePin = () => {
     navigation.navigate(AuthNav.CreatePin);
   };
@@ -28,87 +40,77 @@ export default function Reasons({navigation}) {
     navigation.navigate(AuthNav.CountryRes);
   };
 
+  const CommonComponent = ({item}) => {
+    return (
+      <TouchableOpacity
+        style={[
+          localStyles.BoltMain,
+          {
+            backgroundColor: item.selected ? colors.black : colors.white,
+          },
+        ]}
+        onPress={() => ontoggle(item)}>
+        <CText
+          style={[
+            localStyles.iconStyle,
+            {
+              color: item.selected ? colors.white : colors.numbersColor,
+            },
+          ]}>
+          {item.svgIcon}
+        </CText>
+        <CText
+          color={colors.black}
+          type={'B14'}
+          style={[
+            localStyles.fastTransTxt,
+            {
+              color: item.selected ? colors.white : colors.black,
+            },
+          ]}>
+          {item.name}
+        </CText>
+      </TouchableOpacity>
+    );
+  };
+
   return (
     <SafeAreaView style={localStyles.main}>
-      <View>
-        <CBackButton onPress={backToCountry} />
-        <CText color={colors.black} type={'B24'} style={localStyles.reasonsTxt}>
-          {strings.MainReason}
-        </CText>
-        <CText color={colors.black} style={localStyles.knowReasonTxt}>
-          {strings.KnowReasons}
-        </CText>
-        <View style={localStyles.mainBoxes}>
-          <View style={localStyles.PieChartMain}>
-            <PieChart style={localStyles.PieChartStyle} />
-            <CText
-              color={colors.black}
-              type={'B14'}
-              style={localStyles.spendDailyTxt}>
-              {strings.SpendDaily}
-            </CText>
-          </View>
-          <View style={localStyles.BoltMain}>
-            <Bolt style={localStyles.PieChartStyle} />
-            <CText
-              color={colors.black}
-              type={'B14'}
-              style={localStyles.fastTransTxt}>
-              {strings.FastTrans}
-            </CText>
-          </View>
-          <View style={localStyles.BoltMain}>
-            <Users style={localStyles.PieChartStyle} />
-            <CText
-              color={colors.black}
-              type={'B14'}
-              style={localStyles.fastTransTxt}>
-              {strings.PaymentFriends}
-            </CText>
-          </View>
-          <View style={localStyles.PieChartMain}>
-            <Creditcard style={localStyles.PieChartStyle} />
-            <CText
-              color={colors.black}
-              type={'B14'}
-              style={localStyles.spendDailyTxt}>
-              {strings.OnlinePayment}
-            </CText>
-          </View>
-          <View style={localStyles.BoltMain}>
-            <Beach style={localStyles.PieChartStyle} />
-            <CText
-              color={colors.black}
-              type={'B14'}
-              style={localStyles.fastTransTxt}>
-              {strings.PaymentFriends}
-            </CText>
-          </View>
-          <View style={localStyles.BoltMain}>
-            <Business style={localStyles.PieChartStyle} />
-            <CText
-              color={colors.black}
-              type={'B14'}
-              style={localStyles.fastTransTxt}>
-              {strings.PaymentFriends}
-            </CText>
+      <View style={localStyles.outerContainer}>
+        <View>
+          <CBackButton onPress={backToCountry} />
+          <CText
+            color={colors.black}
+            type={'B24'}
+            style={localStyles.reasonsTxt}>
+            {strings.MainReason}
+          </CText>
+          <CText color={colors.black} style={localStyles.knowReasonTxt}>
+            {strings.KnowReasons}
+          </CText>
+          <View style={localStyles.mainBoxes}>
+            <FlatList
+              numColumns={2}
+              key={2}
+              data={selectedData}
+              renderItem={CommonComponent}
+            />
           </View>
         </View>
-      </View>
 
-      <CButton
-        ParentLoginBtn={localStyles.CButtonMain}
-        onPress={moveToCreatePin}
-      />
+        <CButton
+          ParentLoginBtn={localStyles.CButtonMain}
+          onPress={moveToCreatePin}
+        />
+      </View>
     </SafeAreaView>
   );
 }
 
 const localStyles = StyleSheet.create({
   main: {
-    ...styles.mh20,
+    backgroundColor: colors.white,
     ...styles.flex,
-    ...styles.justifyBetween,
   },
   reasonsTxt: {
     ...styles.mt30,
@@ -119,7 +121,6 @@ const localStyles = StyleSheet.create({
   PieChartMain: {
     width: moderateScale(156),
     height: moderateScale(108),
-    backgroundColor: colors.black,
     borderRadius: moderateScale(16),
     ...styles.mv20,
   },
@@ -128,13 +129,13 @@ const localStyles = StyleSheet.create({
     height: moderateScale(108),
     borderRadius: moderateScale(16),
     ...styles.mv20,
+    ...styles.flex,
+    ...styles.mh10,
+    ...styles.justifyBetween,
     borderWidth: moderateScale(1),
-    borderColor: colors.silver,
+    borderColor: colors.google,
   },
   mainBoxes: {
-    ...styles.flex,
-    ...styles.flexRow,
-    flexWrap: 'wrap',
     ...styles.justifyBetween,
     ...styles.mt10,
   },
@@ -143,17 +144,27 @@ const localStyles = StyleSheet.create({
     ...styles.mv15,
   },
   spendDailyTxt: {
-    color: colors.white,
     width: moderateScale(100),
     ...styles.pl20,
     ...styles.mb15,
   },
   fastTransTxt: {
-    width: moderateScale(100),
-    ...styles.pl20,
+    ...styles.ph20,
     ...styles.mb15,
   },
   CButtonMain: {
     ...styles.mb30,
+  },
+  imgSty: {
+    ...styles.p10,
+  },
+  iconStyle: {
+    ...styles.p15,
+    color: colors.red,
+  },
+  outerContainer: {
+    ...styles.flex,
+    ...styles.justifyBetween,
+    ...styles.ph20,
   },
 });

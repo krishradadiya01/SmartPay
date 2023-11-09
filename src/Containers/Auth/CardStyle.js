@@ -28,41 +28,42 @@ export default function CardStyle({navigation}) {
 
   return (
     <SafeAreaView style={localStyles.main}>
-      <View style={localStyles.mainView}>
-        <CBackButton onPress={backToOnBoarding} />
-        <CText
-          color={colors.black}
-          type={'B18'}
-          style={localStyles.ChooseStyleTxt}>
-          {strings.ChooseStyle}
-        </CText>
-        <View></View>
-        <View></View>
+      <View style={styles.ph20}>
+        <View style={localStyles.mainView}>
+          <CBackButton onPress={backToOnBoarding} />
+          <CText
+            color={colors.black}
+            type={'B18'}
+            style={localStyles.ChooseStyleTxt}>
+            {strings.ChooseStyle}
+          </CText>
+          <View></View>
+          <View></View>
+        </View>
+        <TouchableOpacity onPress={moveToNew}>
+          <Image style={localStyles.card1} source={images.card1} />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={moveToNew}>
+          <Image style={localStyles.card1} source={images.card3} />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={moveToNew}>
+          <Image style={localStyles.card1} source={images.card2} />
+        </TouchableOpacity>
       </View>
-      <TouchableOpacity onPress={moveToNew}>
-        <Image style={localStyles.card1} source={images.card1} />
-      </TouchableOpacity>
-      <TouchableOpacity onPress={moveToNew}>
-        <Image style={localStyles.card1} source={images.card3} />
-      </TouchableOpacity>
-      <TouchableOpacity onPress={moveToNew}>
-        <Image style={localStyles.card1} source={images.card2} />
-      </TouchableOpacity>
     </SafeAreaView>
   );
 }
 
 const localStyles = StyleSheet.create({
   main: {
-    ...styles.mh20,
+    backgroundColor: colors.white,
     ...styles.justifyBetween,
     ...styles.flex,
   },
   card1: {
     width: moderateScale(333),
     height: moderateScale(190),
-
-    ...styles.mb30,
+    ...styles.mv20,
   },
   parentChoose: {
     ...styles.flexRow,

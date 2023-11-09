@@ -27,7 +27,12 @@ export default function ProofRes({navigation}) {
             {name}
           </CText>
         </View>
-        <Material style={localStyles.iconSty} color={colors.black} name={'navigate-next'} size={25} />
+        <Material
+          style={localStyles.iconSty}
+          color={colors.black}
+          name={'navigate-next'}
+          size={25}
+        />
       </TouchableOpacity>
     );
   };
@@ -50,73 +55,77 @@ export default function ProofRes({navigation}) {
 
   return (
     <SafeAreaView style={localStyles.main}>
-      <View>
-        <CBackButton onPress={backToFace} />
-        <CText
-          color={colors.black}
-          type={'B24'}
-          style={localStyles.ProofResTxt}>
-          {strings.ProofOfRes}
-        </CText>
-        <CText color={colors.black}>{strings.ProveLive}</CText>
-
-        <View style={localStyles.mainNation}>
-          <CText type={'B18'} color={colors.silver}>
-            {strings.Nationality}
+      <View style={localStyles.outerMainContainer}>
+        <View>
+          <CBackButton onPress={backToFace} />
+          <CText
+            color={colors.black}
+            type={'B24'}
+            style={localStyles.ProofResTxt}>
+            {strings.ProofOfRes}
           </CText>
+          <CText color={colors.black}>{strings.ProveLive}</CText>
 
-          <View style={localStyles.mainBox}>
-            {!!country ? (
-              <View type={'B18'} style={localStyles.USTxtStyle}>
-                {country?.svgIcon}
-                <CText color={colors.black} type={'B16'}>
-                  {country?.FullName}
-                </CText>
-              </View>
-            ) : (
-              <View style={localStyles.ViewOfFlag}>
-                <US />
-                <CText
-                  color={colors.black}
-                  type={'B18'}
-                  style={localStyles.USTxtStyle}>
-                  {strings.America}
-                </CText>
-              </View>
-            )}
+          <View style={localStyles.mainNation}>
+            <CText type={'B18'} color={colors.tabColor}>
+              {strings.Nationality}
+            </CText>
 
-            <TouchableOpacity
-              style={localStyles.mainChange}
-              onPress={showCountry}>
-              <CText color={colors.SignUpTxt} type={'B16'}>
-                {strings.Change}
-              </CText>
-            </TouchableOpacity>
+            <View style={localStyles.mainBox}>
+              {!!country ? (
+                <View type={'B18'} style={localStyles.USTxtStyle}>
+                  {country?.svgIcon}
+                  <CText color={colors.black} type={'B16'}>
+                    {country?.FullName}
+                  </CText>
+                </View>
+              ) : (
+                <View style={localStyles.ViewOfFlag}>
+                  <US />
+                  <CText
+                    color={colors.black}
+                    type={'B18'}
+                    style={localStyles.USTxtStyle}>
+                    {strings.America}
+                  </CText>
+                </View>
+              )}
+
+              <TouchableOpacity
+                style={localStyles.mainChange}
+                onPress={showCountry}>
+                <CText color={colors.SignUpTxt} type={'B16'}>
+                  {strings.Change}
+                </CText>
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
-      </View>
 
-      <View style={localStyles.mainMethod}>
-        <CText type={'B18'} color={colors.silver} style={localStyles.MethodTxt}>
-          {strings.MethodVer}
-        </CText>
-        <View style={localStyles.mainBoxes}>
-          <MethodData name={strings.PassPort} icon={<Passport />} />
-          <MethodData name={strings.IdeCard} icon={<Card />} />
-          <MethodData name={strings.DigDoc} icon={<DigDoc />} />
+        <View style={localStyles.mainMethod}>
+          <CText
+            type={'B18'}
+            color={colors.tabColor}
+            style={localStyles.MethodTxt}>
+            {strings.MethodVer}
+          </CText>
+          <View style={localStyles.mainBoxes}>
+            <MethodData name={strings.PassPort} icon={<Passport />} />
+            <MethodData name={strings.IdeCard} icon={<Card />} />
+            <MethodData name={strings.DigDoc} icon={<DigDoc />} />
+          </View>
         </View>
-      </View>
 
-      <Countries sheetRef={Change} selectedCountry={selectedCountry} />
+        <Countries sheetRef={Change} selectedCountry={selectedCountry} />
+      </View>
     </SafeAreaView>
   );
 }
 
 const localStyles = StyleSheet.create({
   main: {
-    ...styles.mh20,
+    backgroundColor: colors.white,
     ...styles.flex,
-    ...styles.justifyBetween,
   },
   ProofResTxt: {
     ...styles.mv20,
@@ -150,7 +159,7 @@ const localStyles = StyleSheet.create({
     borderRadius: moderateScale(16),
     borderColor: colors.silver,
     borderWidth: moderateScale(1),
-    backgroundColor: colors.GreyScale,
+    backgroundColor: colors.white,
   },
   parentPass: {
     ...styles.flexRow,
@@ -172,6 +181,11 @@ const localStyles = StyleSheet.create({
     ...styles.mb180,
   },
   iconSty: {
-    ...styles.pr15
-  }
+    ...styles.pr15,
+  },
+  outerMainContainer: {
+    ...styles.ph20,
+    ...styles.flex,
+    ...styles.justifyBetween,
+  },
 });
