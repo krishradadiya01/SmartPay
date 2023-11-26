@@ -94,46 +94,48 @@ export default function TransferMoney({navigation}) {
 
   return (
     <SafeAreaView style={localStyles.main}>
-      <View style={styles.ph20}>
-        <CHeader color={colors.black} title={strings.Transaction} />
-        <CText color={colors.black} type={'B18'} style={localStyles.CardTxt}>
-          {strings.ChooseCards}
-        </CText>
-        <View style={localStyles.ImgParent}>
-          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-            <Cards style={localStyles.cardImg1} source={images.card3} />
-            <Cards style={localStyles.cardImg1} source={images.card2} />
-            <Cards style={localStyles.cardImg1} source={images.card1} />
-          </ScrollView>
+      <View style={localStyles.mainContainer}>
+        <View>
+          <CHeader color={colors.black} title={strings.Transaction} />
+          <CText color={colors.black} type={'B18'} style={localStyles.CardTxt}>
+            {strings.ChooseCards}
+          </CText>
+          <View style={localStyles.ImgParent}>
+            <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+              <Cards style={localStyles.cardImg1} source={images.card3} />
+              <Cards style={localStyles.cardImg1} source={images.card2} />
+              <Cards style={localStyles.cardImg1} source={images.card1} />
+            </ScrollView>
+          </View>
+
+          <CText color={colors.black} type={'B18'}>
+            {strings.ChooseCards}
+          </CText>
+
+          <CTextInput
+            mainTxtInp={localStyles.CTxtInp}
+            value={search}
+            onChangeText={onChangeSearch}
+            text={'Search contacts...'}
+            LeftIcon={() => (
+              <Ionicons
+                name={'search-outline'}
+                size={moderateScale(22)}
+                color={colors.black}
+                style={styles.ml15}
+              />
+            )}
+          />
+          <FlatList
+            data={filterData}
+            renderItem={ContactDetails}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+          />
         </View>
 
-        <CText color={colors.black} type={'B18'}>
-          {strings.ChooseCards}
-        </CText>
-
-        <CTextInput
-          mainTxtInp={localStyles.CTxtInp}
-          value={search}
-          onChangeText={onChangeSearch}
-          text={'Search contacts...'}
-          LeftIcon={() => (
-            <Ionicons
-              name={'search-outline'}
-              size={moderateScale(22)}
-              color={colors.black}
-              style={styles.ml15}
-            />
-          )}
-        />
-        <FlatList
-          data={filterData}
-          renderItem={ContactDetails}
-          horizontal
-          showsHorizontalScrollIndicator={false}
-        />
+        <CButton containerStyle={localStyles.ContBtn} onPress={moveToMoney} />
       </View>
-
-      <CButton containerStyle={localStyles.ContBtn} onPress={moveToMoney} />
     </SafeAreaView>
   );
 }
@@ -143,6 +145,11 @@ const localStyles = StyleSheet.create({
     backgroundColor: colors.white,
     ...styles.flex,
     ...styles.justifyBetween,
+  },
+  mainContainer: {
+    ...styles.ph20,
+    ...styles.justifyBetween,
+    ...styles.flex,
   },
   CardTxt: {
     ...styles.mt15,

@@ -13,12 +13,12 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		625E9B06AF6745B0B2A92C11 /* Recursive-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8341A3E298F49BE9CB7C212 /* Recursive-Bold.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-SmartPayAPP-SmartPayAPPTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-SmartPayAPP-SmartPayAPPTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		625E9B06AF6745B0B2A92C11 /* Recursive-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8341A3E298F49BE9CB7C212 /* Recursive-Bold.ttf */; };
-		D6C35C1E39B7419E9AF387B2 /* Recursive-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 766D2E0E6B1E4AED828777D7 /* Recursive-Medium.ttf */; };
-		CCEF76B71ECD4B379956D911 /* Recursive-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70DE9EB27CD14D6AAAB7ABB3 /* Recursive-Regular.ttf */; };
 		933F6A62AB194048A2CAFE84 /* Recursive-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42BF66D1ECD2425EA7D46252 /* Recursive-SemiBold.ttf */; };
+		CCEF76B71ECD4B379956D911 /* Recursive-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70DE9EB27CD14D6AAAB7ABB3 /* Recursive-Regular.ttf */; };
+		D6C35C1E39B7419E9AF387B2 /* Recursive-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 766D2E0E6B1E4AED828777D7 /* Recursive-Medium.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,16 +45,16 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = SmartPayAPP/main.m; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-SmartPayAPP-SmartPayAPPTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SmartPayAPP-SmartPayAPPTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4392A12AC88292D35C810B /* Pods-SmartPayAPP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartPayAPP.debug.xcconfig"; path = "Target Support Files/Pods-SmartPayAPP/Pods-SmartPayAPP.debug.xcconfig"; sourceTree = "<group>"; };
+		42BF66D1ECD2425EA7D46252 /* Recursive-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Recursive-SemiBold.ttf"; path = "../src/Assets/Fonts/Recursive-SemiBold.ttf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-SmartPayAPP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartPayAPP.release.xcconfig"; path = "Target Support Files/Pods-SmartPayAPP/Pods-SmartPayAPP.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-SmartPayAPP-SmartPayAPPTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartPayAPP-SmartPayAPPTests.debug.xcconfig"; path = "Target Support Files/Pods-SmartPayAPP-SmartPayAPPTests/Pods-SmartPayAPP-SmartPayAPPTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-SmartPayAPP.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SmartPayAPP.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		70DE9EB27CD14D6AAAB7ABB3 /* Recursive-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Recursive-Regular.ttf"; path = "../src/Assets/Fonts/Recursive-Regular.ttf"; sourceTree = "<group>"; };
+		766D2E0E6B1E4AED828777D7 /* Recursive-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Recursive-Medium.ttf"; path = "../src/Assets/Fonts/Recursive-Medium.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = SmartPayAPP/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-SmartPayAPP-SmartPayAPPTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartPayAPP-SmartPayAPPTests.release.xcconfig"; path = "Target Support Files/Pods-SmartPayAPP-SmartPayAPPTests/Pods-SmartPayAPP-SmartPayAPPTests.release.xcconfig"; sourceTree = "<group>"; };
+		A8341A3E298F49BE9CB7C212 /* Recursive-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Recursive-Bold.ttf"; path = "../src/Assets/Fonts/Recursive-Bold.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		A8341A3E298F49BE9CB7C212 /* Recursive-Bold.ttf */ = {isa = PBXFileReference; name = "Recursive-Bold.ttf"; path = "../src/Assets/Fonts/Recursive-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		766D2E0E6B1E4AED828777D7 /* Recursive-Medium.ttf */ = {isa = PBXFileReference; name = "Recursive-Medium.ttf"; path = "../src/Assets/Fonts/Recursive-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		70DE9EB27CD14D6AAAB7ABB3 /* Recursive-Regular.ttf */ = {isa = PBXFileReference; name = "Recursive-Regular.ttf"; path = "../src/Assets/Fonts/Recursive-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		42BF66D1ECD2425EA7D46252 /* Recursive-SemiBold.ttf */ = {isa = PBXFileReference; name = "Recursive-SemiBold.ttf"; path = "../src/Assets/Fonts/Recursive-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

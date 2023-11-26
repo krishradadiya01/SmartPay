@@ -1,4 +1,4 @@
-import {StyleSheet, SafeAreaView, View} from 'react-native';
+import {StyleSheet, SafeAreaView, View, Alert} from 'react-native';
 import React, {useState} from 'react';
 
 // Local imports
@@ -11,9 +11,10 @@ import CTextInput from '../../Components/Common/CTextInput';
 import {colors} from '../../Themes/colors';
 import typography from '../../Themes/typography';
 import CButton from '../../Components/Common/CButton';
-import {AuthNav} from '../../Navigation/navigationKeys';
+import {AuthNav, StackNav} from '../../Navigation/navigationKeys';
 import KeyBoardAvoidWrapper from '../../Components/Common/KeyBoardAvoidWrapper';
 import CHeader from '../../Components/Common/CHeader';
+import {validateEmail} from '../../Utils/validation';
 
 const BlurStyle = {
   borderColor: colors.white,
@@ -24,6 +25,17 @@ const FocusStyle = {
 };
 
 export default function PassRecovery({navigation}) {
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState(false);
+
+  const nextButton = () => {
+    if (email === '' || message) {
+      Alert.alert(strings.PleaseEmail);
+    } else {
+      navigation.navigate(AuthNav.VerifyIdentity);
+    }
+  };
+
   const [focus, setFocus] = useState(BlurStyle);
 
   const onFocus = () => {
@@ -42,7 +54,13 @@ export default function PassRecovery({navigation}) {
     onHighlight(BlurStyle);
   };
 
-  const moveToVerify = () => navigation.navigate(AuthNav.VerifyIdentity);
+  const setData = item => {
+    const {msg} = validateEmail(item);
+    setEmail(item);
+    setMessage(msg);
+  };
+
+  // const moveToVerify = () => navigation.navigate(AuthNav.VerifyIdentity);
 
   return (
     <SafeAreaView style={localStyles.main}>
@@ -63,17 +81,21 @@ export default function PassRecovery({navigation}) {
             {strings.enterRegEmail}
           </CText>
           <CTextInput
+            value={email}
+            onChangeText={setData}
             onFocus={onFocus}
             onBlur={onBlur}
             textInputStyle={localStyles.TxtInp}
             mainTxtInp={[localStyles.ParentTxtInp, focus]}
             text={'Enter your email address'}
           />
+
+          {message ? <CText color={colors.red}>{message}</CText> : null}
         </View>
       </KeyBoardAvoidWrapper>
       <CButton
         text={'Send me email'}
-        onPress={moveToVerify}
+        onPress={nextButton}
         ParentLoginBtn={localStyles.ParentEmail}
       />
     </SafeAreaView>

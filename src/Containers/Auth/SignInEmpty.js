@@ -4,6 +4,7 @@ import {
   SafeAreaView,
   TouchableOpacity,
   Image,
+  Alert,
 } from 'react-native';
 import React, {useState} from 'react';
 
@@ -19,6 +20,7 @@ import {moderateScale} from '../../Common/constant';
 import images from '../../Assets/Images/index';
 import {authToken} from '../../Utils/asyncStorage';
 import KeyBoardAvoidWrapper from '../../Components/Common/KeyBoardAvoidWrapper';
+import {validateEmail, validatePassword} from '../../Utils/validation';
 
 const BlurStyle = {
   borderColor: colors.white,
@@ -29,9 +31,26 @@ const FocusStyle = {
 };
 
 export default function SignInEmpty({navigation}) {
-  const [changeValue, setChangeValue] = useState(changeValue);
   const [focus, setFocus] = useState(BlurStyle);
   const [focus2, setFocus2] = useState(BlurStyle);
+
+  const [email, setEmail] = useState('');
+  const [showMessage, setShowMessage] = useState(false);
+
+  const [changeValue, setChangeValue] = useState('');
+  const [pass, setPass] = useState(false);
+
+  const signIn = async () => {
+    if (email === '' || showMessage || changeValue === '') {
+      Alert.alert(strings.PleaseFill);
+    } else {
+      await authToken(true);
+      navigation.reset({
+        index: 0,
+        routes: [{name: StackNav.TabNavigation}],
+      });
+    }
+  };
 
   const onFocus = () => {
     onFocusInput(setFocus);
@@ -57,7 +76,9 @@ export default function SignInEmpty({navigation}) {
   };
 
   const changeText = txt => {
+    const {msg} = validatePassword(txt);
     setChangeValue(txt);
+    setPass(msg);
   };
 
   const moveToPassRec = () => {
@@ -68,12 +89,10 @@ export default function SignInEmpty({navigation}) {
     navigation.navigate(AuthNav.SignUpEmpty);
   };
 
-  const moveToHome = async () => {
-    await authToken(true);
-    navigation.reset({
-      index: 0,
-      routes: [{name: StackNav.TabNavigation}],
-    });
+  const setEmailFunction = item => {
+    const {msg} = validateEmail(item);
+    setEmail(item);
+    setShowMessage(msg);
   };
 
   return (
@@ -97,11 +116,18 @@ export default function SignInEmpty({navigation}) {
               </CText>
 
               <CTextInput
+                value={email}
+                onChangeText={setEmailFunction}
                 onFocus={onFocus2}
                 onBlur={onBlur2}
                 mainTxtInp={[localStyles.PassTxt, focus2]}
                 text={'Email'}
               />
+
+              {showMessage ? (
+                <CText color={colors.red}>{showMessage}</CText>
+              ) : null}
+
               <CTextInput
                 onFocus={onFocus}
                 onBlur={onBlur}
@@ -111,6 +137,8 @@ export default function SignInEmpty({navigation}) {
                 text={'Password'}
                 isSecure={true}
               />
+
+              {pass ? <CText color={colors.red}>{pass}</CText> : null}
 
               <TouchableOpacity
                 style={localStyles.mainContainer}
@@ -127,7 +155,7 @@ export default function SignInEmpty({navigation}) {
             <CButton
               text={'Sign In'}
               ParentLoginBtn={localStyles.ParentSignIn}
-              onPress={moveToHome}
+              onPress={signIn}
             />
 
             <View style={localStyles.mainOr}>

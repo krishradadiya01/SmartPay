@@ -1,4 +1,4 @@
-import {StyleSheet, SafeAreaView, View} from 'react-native';
+import {StyleSheet, SafeAreaView, View, Alert} from 'react-native';
 import React, {useState} from 'react';
 
 // Local imports
@@ -12,6 +12,7 @@ import CButton from '../../Components/Common/CButton';
 import {colors} from '../../Themes/colors';
 import {moderateScale} from '../../Common/constant';
 import KeyBoardAvoidWrapper from '../../Components/Common/KeyBoardAvoidWrapper';
+import {validatePassword} from '../../Utils/validation';
 
 const BlurStyle = {
   borderColor: colors.white,
@@ -22,10 +23,24 @@ const FocusStyle = {
 };
 
 export default function CreatePass({navigation}) {
-  const [changeValue, setChangeValue] = useState(changeValue);
-  const [confirmValue, setConfirmValue] = useState(confirmValue);
   const [focus, setFocus] = useState(BlurStyle);
   const [focus2, setFocus2] = useState(BlurStyle);
+
+  const [changeValue, setChangeValue] = useState('');
+  const [message, setMessage] = useState('');
+
+  const [password2, setPassword2] = useState('');
+  const [message2, setMessage2] = useState(false);
+
+  const nextButton = () => {
+    if (changeValue !== password2) {
+      setMessage2(strings.PasswordNotMatch);
+    } else if (changeValue === '' && password2 === '') {
+      setMessage2(strings.PleasePass);
+    } else {
+      navigation.navigate(AuthNav.SignInEmpty);
+    }
+  };
 
   const onFocus = () => {
     onFocusInput(setFocus);
@@ -55,15 +70,14 @@ export default function CreatePass({navigation}) {
   };
 
   const changeText = txt => {
+    const {msg} = validatePassword(txt);
     setChangeValue(txt);
+    setMessage(msg);
   };
 
   const changeConfirm = txt => {
-    setConfirmValue(txt);
-  };
-
-  const moveToSign = () => {
-    navigation.navigate(AuthNav.SignInEmpty);
+    setPassword2(txt);
+    setMessage2('');
   };
 
   return (
@@ -92,21 +106,25 @@ export default function CreatePass({navigation}) {
               isSecure={true}
             />
 
+            {message ? <CText color={colors.red}>{message}</CText> : null}
+
             <CTextInput
               onFocus={onFocus2}
               onBlur={onBlur2}
               onChangeText={changeConfirm}
-              value={confirmValue}
+              value={password2}
               mainTxtInp={[localStyles.PassTxt, focus2]}
               text={'Confirm Password'}
               isSecure={true}
             />
+
+            {message2 ? <CText color={colors.red}>{message2}</CText> : null}
           </View>
         </KeyBoardAvoidWrapper>
         <CButton
           text={'Create new password'}
           ParentLoginBtn={localStyles.CButton}
-          onPress={moveToSign}
+          onPress={nextButton}
         />
       </View>
     </SafeAreaView>

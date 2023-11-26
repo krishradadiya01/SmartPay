@@ -4,6 +4,7 @@ import {
   SafeAreaView,
   TouchableOpacity,
   Image,
+  Alert,
 } from 'react-native';
 import React, {useState} from 'react';
 
@@ -19,6 +20,11 @@ import {moderateScale} from '../../Common/constant';
 import images from '../../Assets/Images/index';
 import {AuthNav} from '../../Navigation/navigationKeys';
 import KeyBoardAvoidWrapper from '../../Components/Common/KeyBoardAvoidWrapper';
+import {
+  validateEmail,
+  validateName,
+  validatePassword,
+} from '../../Utils/validation';
 
 const BlurStyle = {
   borderColor: colors.white,
@@ -29,10 +35,44 @@ const FocusStyle = {
 };
 
 export default function SignUpEmpty({navigation}) {
-  const [change, setChange] = useState(change);
   const [focus, setFocus] = useState(BlurStyle);
   const [focus2, setFocus2] = useState(BlurStyle);
   const [focus3, setFocus3] = useState(BlurStyle);
+
+  const [name, setName] = useState('');
+  const [message, setMessage] = useState(false);
+
+  const [email, setEmail] = useState('');
+  const [message2, setMessage2] = useState(false);
+
+  const [pass, setPass] = useState('');
+  const [message3, setMessage3] = useState(false);
+
+  const nextButton = () => {
+    if (name === '' || message2 || message3) {
+      Alert.alert(strings.PleaseFill);
+    } else {
+      navigation.navigate(AuthNav.CountryRes);
+    }
+  };
+
+  const nameValidation = itm => {
+    const {msg} = validateName(itm);
+    setName(itm);
+    setMessage(msg);
+  };
+
+  const emailValidation = itm => {
+    const {msg} = validateEmail(itm);
+    setEmail(itm);
+    setMessage2(msg);
+  };
+
+  const passValidation = itm => {
+    const {msg} = validatePassword(itm);
+    setPass(itm);
+    setMessage3(msg);
+  };
 
   const onFocus = () => {
     onFocusInput(setFocus);
@@ -65,14 +105,6 @@ export default function SignUpEmpty({navigation}) {
     onHighlight(BlurStyle);
   };
 
-  const onChangeTxt = txt => {
-    setChange(txt);
-  };
-
-  const moveToCountry = () => {
-    navigation.navigate(AuthNav.CountryRes);
-  };
-
   const backToSignIn = () => {
     navigation.navigate(AuthNav.SignInEmpty);
   };
@@ -98,29 +130,41 @@ export default function SignUpEmpty({navigation}) {
 
             <View style={localStyles.threeEle}>
               <CTextInput
+                value={name}
+                onChangeText={nameValidation}
                 mainTxtInp={[localStyles.border, focus]}
                 onFocus={onFocus}
                 onBlur={onBlur}
                 text={'Full name'}
               />
+
+              {message ? <CText color={colors.red}>{message}</CText> : null}
+
               <CTextInput
+                value={email}
+                onChangeText={emailValidation}
                 mainTxtInp={[localStyles.border, focus2]}
                 onFocus={onFocus2}
                 onBlur={onBlur2}
                 text={'email'}
               />
+
+              {message2 ? <CText color={colors.red}>{message2}</CText> : null}
+
               <CTextInput
                 mainTxtInp={[localStyles.border, focus3]}
                 onFocus={onFocus3}
                 onBlur={onBlur3}
                 text={'password'}
-                value={change}
-                onChangeText={onChangeTxt}
+                value={pass}
+                onChangeText={passValidation}
                 isSecure={true}
               />
+
+              {message3 ? <CText color={colors.red}>{message3}</CText> : null}
             </View>
 
-            <CButton text={'Sign Up'} onPress={moveToCountry} />
+            <CButton text={'Sign Up'} onPress={nextButton} />
 
             <View style={localStyles.parentOr}>
               <View style={localStyles.firstLine} />

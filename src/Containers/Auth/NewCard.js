@@ -4,6 +4,7 @@ import {
   View,
   Image,
   TouchableOpacity,
+  Alert,
 } from 'react-native';
 import React, {useRef, useState} from 'react';
 
@@ -22,6 +23,13 @@ import CButton from '../../Components/Common/CButton';
 import KeyBoardAvoidWrapper from '../../Components/Common/KeyBoardAvoidWrapper';
 import ReadyCard from '../../Components/modals/ReadyCard';
 import CHeader from '../../Components/Common/CHeader';
+import {
+  atmCardNumberRegex,
+  expiryDateValidation,
+  validateName,
+  vccNumber,
+} from '../../Utils/validation';
+import {AuthNav} from '../../Navigation/navigationKeys';
 
 const BlurStyle = {
   borderColor: colors.white,
@@ -32,12 +40,58 @@ const FocusStyle = {
 };
 
 export default function NewCard() {
+  const init = useRef(null);
+
   const [country, setCountry] = useState('');
   const [visible, setVisible] = useState(false);
   const [focus, setFocus] = useState(BlurStyle);
   const [focus2, setFocus2] = useState(BlurStyle);
   const [focus3, setFocus3] = useState(BlurStyle);
   const [focus4, setFocus4] = useState(BlurStyle);
+
+  const [card, setCard] = useState('');
+  const [message, setMessage] = useState(false);
+
+  const [cardName, setCardName] = useState('');
+  const [message2, setMessage2] = useState(false);
+
+  const [vcc, setVcc] = useState('');
+  const [message3, setMessage3] = useState(false);
+
+  const [expiryDate, setExpiryDate] = useState('');
+  const [message4, setMessage4] = useState(false);
+
+  const nextButton = () => {
+    if (card === '' || message || message2 || message3 || message4) {
+      Alert.alert(strings.PleaseFill);
+    } else {
+      setVisible(!visible);
+    }
+  };
+
+  const cardNumberValidation = itm => {
+    const {msg} = atmCardNumberRegex(itm);
+    setCard(itm);
+    setMessage(msg);
+  };
+
+  const cardHolderName = itm => {
+    const {msg} = validateName(itm);
+    setCardName(itm);
+    setMessage2(msg);
+  };
+
+  const vccValidation = itm => {
+    const {msg} = vccNumber(itm);
+    setVcc(itm);
+    setMessage3(msg);
+  };
+
+  const expiryDateVal = itm => {
+    const {msg} = expiryDateValidation(itm);
+    setExpiryDate(itm);
+    setMessage4(msg);
+  };
 
   const onFocus = () => {
     onFocusInput(setFocus);
@@ -78,11 +132,7 @@ export default function NewCard() {
     onHighlight(BlurStyle);
   };
 
-  const init = useRef(null);
-
-  const showCountry = () => {
-    init.current?.show();
-  };
+  const showCountry = () => {};
 
   const selectedCountry = itm => {
     setCountry(itm);
@@ -109,9 +159,11 @@ export default function NewCard() {
             {strings.CardDetailTxt}
           </CText>
           <CTextInput
+            value={card}
+            onChangeText={cardNumberValidation}
             onFocus={onFocus}
             onBlur={onBlur}
-            keyboardType={'numeric'}
+            keyboardType={'number-pad'}
             text={'Card number'}
             mainTxtInp={[localStyles.numberTxt, focus]}
             RightIcon={() => (
@@ -122,14 +174,20 @@ export default function NewCard() {
             )}
           />
 
+          {message ? <CText color={colors.red}>{message}</CText> : null}
+
           <View style={localStyles.mainCTxtInp}>
             <CTextInput
+              value={expiryDate}
+              onChangeText={expiryDateVal}
               onFocus={onFocus2}
               onBlur={onBlur2}
               text={'Expiry date'}
               mainTxtInp={[localStyles.parentCTxtInp, focus2]}
             />
             <CTextInput
+              value={vcc}
+              onChangeText={vccValidation}
               onFocus={onFocus3}
               onBlur={onBlur3}
               keyboardType={'numeric'}
@@ -138,14 +196,25 @@ export default function NewCard() {
             />
           </View>
 
+          <View style={localStyles.mainValidationContainer}>
+            <View style={localStyles.validationContainer}>
+              {message4 ? <CText color={colors.red}>{message4}</CText> : null}
+            </View>
+            <View style={localStyles.validationContainer}>
+              {message3 ? <CText color={colors.red}>{message3}</CText> : null}
+            </View>
+          </View>
+
           <CTextInput
+            value={cardName}
+            onChangeText={cardHolderName}
             onFocus={onFocus4}
             onBlur={onBlur4}
-            keyboardType={'numeric'}
             text={'Card holder'}
             mainTxtInp={[localStyles.numberTxt, focus4]}
           />
 
+          {message2 ? <CText color={colors.red}>{message2}</CText> : null}
           <TouchableOpacity
             onPress={showCountry}
             style={localStyles.mainSelector}>
@@ -182,7 +251,7 @@ export default function NewCard() {
           </TouchableOpacity>
 
           <Countries sheetRef={init} selectedCountry={selectedCountry} />
-          <CButton text={'Save'} onPress={onPressCancel} />
+          <CButton text={'Save'} onPress={nextButton} />
 
           <ReadyCard visible={visible} onPressClose={onPressCancel} />
         </View>
@@ -211,7 +280,6 @@ const localStyles = StyleSheet.create({
   },
   numberTxt: {
     backgroundColor: colors.GreyScale,
-    ...styles.mv5,
     borderWidth: moderateScale(1),
   },
   parentCTxtInp: {
@@ -223,6 +291,10 @@ const localStyles = StyleSheet.create({
     ...styles.mv20,
     ...styles.rowCenter,
     ...styles.justifyBetween,
+  },
+  validationContainer: {
+    ...styles.flex,
+    ...styles.mb20,
   },
   imageStyle: {
     ...styles.mr15,
@@ -245,5 +317,9 @@ const localStyles = StyleSheet.create({
   },
   mainSelector: {
     ...styles.mt20,
+  },
+  mainValidationContainer: {
+    ...styles.rowSpaceBetween,
+    gap: moderateScale(15),
   },
 });

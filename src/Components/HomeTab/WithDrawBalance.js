@@ -20,7 +20,7 @@ import {CommonBOA} from '../Common/CommonBOA';
 import images from '../../Assets/Images/index';
 
 export default function WithDrawBalance() {
-  const [val, setVal] = useState('$');
+  const [val, setVal] = useState('');
   const [data, setData] = useState('');
   const BankRef = useRef(null);
 

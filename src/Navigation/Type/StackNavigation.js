@@ -9,7 +9,7 @@ const Stack = createNativeStackNavigator();
 
 const StackNavigation = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator initialRouteName={AuthNav.NewCard}>
       <Stack.Screen
         name={StackNav.splash}
         component={StackRoute.splash}
