@@ -126,13 +126,13 @@ const localStyles = StyleSheet.create({
   },
   mainBorder: {
     borderWidth: moderateScale(1),
-    borderColor: colors.silver,
+    borderColor: colors.bottomBorder,
     borderRadius: moderateScale(16),
     ...styles.ph20,
   },
   parentUsd: {
     borderWidth: moderateScale(1),
-    borderColor: colors.silver,
+    borderColor: colors.bottomBorder,
     borderRadius: moderateScale(8),
     width: moderateScale(67),
     backgroundColor: colors.GreyScale,

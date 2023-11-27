@@ -21,57 +21,65 @@ export default function VerifyIdentity({navigation}) {
 
   return (
     <SafeAreaView style={localStyles.main}>
-      <View>
-        <CHeader />
-        <Identity style={localStyles.imgStyle} />
-        <CText color={colors.black} type={'B24'} style={localStyles.verIdeTxt}>
-          {strings.VerifyIdentity}
-        </CText>
-        <CText color={colors.black} type={'R16'} style={localStyles.whereCode}>
-          {strings.WhereCode}
-          <CText type={'B16'} color={colors.SignUpTxt}>
-            {strings.WhereCode2}
+      <View style={styles.ph20}>
+        <View>
+          <CHeader />
+          <Identity style={localStyles.imgStyle} />
+          <CText
+            color={colors.black}
+            type={'B24'}
+            style={localStyles.verIdeTxt}>
+            {strings.VerifyIdentity}
           </CText>
-          <CText color={colors.black}>{strings.WhereCode3}</CText>
-        </CText>
-        <View style={localStyles.Email}>
-          <View style={localStyles.mainView}>
-            <Ionicons
-              name={'checkmark-circle'}
-              size={moderateScale(24)}
-              color={colors.SignUpTxt}
-            />
-            <View style={localStyles.EmailTxt}>
-              <CText color={colors.black} type={'B18'}>
-                {strings.Email}
-              </CText>
-              <CText
-                color={colors.black}
-                type={'R16'}
-                style={localStyles.RealEmail}>
-                {strings.RealEmail}
-              </CText>
+          <CText
+            color={colors.black}
+            type={'R16'}
+            style={localStyles.whereCode}>
+            {strings.WhereCode}
+            <CText type={'B16'} color={colors.SignUpTxt}>
+              {strings.WhereCode2}
+            </CText>
+            <CText color={colors.black}>{strings.WhereCode3}</CText>
+          </CText>
+          <View style={localStyles.Email}>
+            <View style={localStyles.mainView}>
+              <Ionicons
+                name={'checkmark-circle'}
+                size={moderateScale(24)}
+                color={colors.SignUpTxt}
+              />
+              <View style={localStyles.EmailTxt}>
+                <CText color={colors.black} type={'B18'}>
+                  {strings.Email}
+                </CText>
+                <CText
+                  color={colors.black}
+                  type={'R16'}
+                  style={localStyles.RealEmail}>
+                  {strings.RealEmail}
+                </CText>
+              </View>
             </View>
+            <Material
+              name={'email-outline'}
+              size={moderateScale(24)}
+              color={colors.google}
+            />
           </View>
-          <Material
-            name={'email-outline'}
-            size={moderateScale(24)}
-            color={colors.silver}
-          />
         </View>
+        <CButton
+          ParentLoginBtn={localStyles.ParentButton}
+          onPress={moveToItsYou}
+          text={'Continue'}
+        />
       </View>
-      <CButton
-        ParentLoginBtn={localStyles.ParentButton}
-        onPress={moveToItsYou}
-        text={'Continue'}
-      />
     </SafeAreaView>
   );
 }
 
 const localStyles = StyleSheet.create({
   main: {
-    ...styles.mh20,
+    backgroundColor: colors.white,
     ...styles.flex,
     ...styles.justifyBetween,
   },

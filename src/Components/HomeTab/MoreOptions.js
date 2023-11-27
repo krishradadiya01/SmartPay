@@ -57,7 +57,7 @@ export default function MoreOptions({navigation}) {
             <CText color={colors.black} type={'B16'} style={localStyles.name}>
               {item.name}
             </CText>
-            <CText color={colors.tabColor}>{item.subName}</CText>
+            <CText type={'M12'} color={colors.tabColor}>{item.subName}</CText>
           </View>
         </View>
 
@@ -74,7 +74,7 @@ export default function MoreOptions({navigation}) {
     return (
       <TouchableOpacity style={style} onPress={onPress}>
         <Image source={image} style={localStyles.childImg} />
-        <CText color={colors.black} style={localStyles.Txt}>
+        <CText type={'M12'} color={colors.black} style={localStyles.Txt}>
           {text}
         </CText>
       </TouchableOpacity>
@@ -128,9 +128,10 @@ export default function MoreOptions({navigation}) {
         </View>
 
         <View style={localStyles.outerComponent}>
-          <FlatList data={HomeData} renderItem={renderItems} />
-          <FlatList data={HomeData} renderItem={renderItems} />
-          <FlatList data={HomeData} renderItem={renderItems} />
+          <FlatList
+            data={[...HomeData, ...HomeData, ...HomeData]}
+            renderItem={renderItems}
+          />
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -157,7 +158,7 @@ const localStyles = StyleSheet.create({
     backgroundColor: colors.GreyScale,
     ...styles.mt30,
     ...styles.ph30,
-    // ...styles.pv30,
+    ...styles.pv20,
     gap: moderateScale(20),
     borderRadius: moderateScale(16),
   },
@@ -179,7 +180,7 @@ const localStyles = StyleSheet.create({
     ...styles.justifyBetween,
     ...styles.pv20,
     borderBottomWidth: moderateScale(1),
-    borderBottomColor: colors.silver,
+    borderBottomColor: colors.bottomBorder,
   },
   oneBox: {
     ...styles.flexRow,

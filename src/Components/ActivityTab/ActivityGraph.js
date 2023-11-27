@@ -10,6 +10,7 @@ import React from 'react';
 import Feather from 'react-native-vector-icons/Feather';
 import Octicons from 'react-native-vector-icons/Octicons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome6';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
 // Local imports
 import {styles} from '../../Themes/index';
@@ -73,7 +74,11 @@ export default function ActivityGraph() {
   return (
     <SafeAreaView style={localStyles.main}>
       <ScrollView style={styles.mh20} showsVerticalScrollIndicator={false}>
-        <CHeader color={colors.black} title={'Activity'} rightIcon={<RightIcon />} />
+        <CHeader
+          color={colors.black}
+          title={'Activity'}
+          rightIcon={<RightIcon />}
+        />
         <View style={localStyles.parentContainer}>
           <View style={{gap: moderateScale(10)}}>
             <CText type={'M14'} color={colors.tabColor}>
@@ -169,9 +174,13 @@ export default function ActivityGraph() {
           <CText color={colors.black} type={'B18'}>
             {strings.Categories}
           </CText>
-          <CText color={colors.black} type={'M14'}>
-            {strings.Expense}
-          </CText>
+
+          <TouchableOpacity style={localStyles.ExpenseText}>
+            <CText color={colors.black} type={'M14'}>
+              {strings.Expense}
+            </CText>
+            <AntDesign color={colors.Primary} name={'down'} size={14} />
+          </TouchableOpacity>
         </View>
 
         <ScrollView
@@ -208,7 +217,7 @@ const localStyles = StyleSheet.create({
     width: moderateScale(38),
     height: moderateScale(38),
     borderWidth: moderateScale(1),
-    borderColor: colors.silver,
+    borderColor: colors.bottomBorder,
     ...styles.p10,
     borderRadius: moderateScale(12),
   },
@@ -242,7 +251,7 @@ const localStyles = StyleSheet.create({
     ...styles.flexRow,
     ...styles.alignCenter,
     borderWidth: moderateScale(1),
-    borderColor: colors.silver,
+    borderColor: colors.bottomBorder,
     borderRadius: moderateScale(16),
   },
   outerComponent: {
@@ -281,5 +290,10 @@ const localStyles = StyleSheet.create({
   },
   scrollView: {
     ...styles.mb20,
+  },
+  ExpenseText: {
+    ...styles.flexRow,
+    ...styles.alignCenter,
+    gap: moderateScale(5),
   },
 });

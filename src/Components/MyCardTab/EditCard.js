@@ -104,28 +104,29 @@ export default function EditCard() {
     );
   };
 
-  const ListFooter = () => {
-    const navigation = useNavigation();
-    const goBack = () => navigation.goBack();
-    return (
-      <CButton
-        text={'Save'}
-        onPress={goBack}
-        containerStyle={localStyles.CButtonTxt}
-      />
-    );
-  };
+  const navigation = useNavigation();
+  const goBack = () => navigation.goBack();
 
   return (
-    <SafeAreaView style={{backgroundColor: colors.white}}>
+    <SafeAreaView
+      style={[
+        {backgroundColor: colors.white},
+        styles.flex,
+        styles.justifyBetween,
+      ]}>
       <View style={localStyles.main}>
         <FlatList
           data={selected}
           renderItem={renderManageData}
           ListHeaderComponent={<ListHeader />}
-          ListFooterComponent={<ListFooter />}
         />
       </View>
+
+      <CButton
+        text={'Save'}
+        onPress={goBack}
+        containerStyle={localStyles.CButtonTxt}
+      />
     </SafeAreaView>
   );
 }
@@ -188,5 +189,10 @@ const localStyles = StyleSheet.create({
     ...styles.flexRow,
     ...styles.alignCenter,
     gap: moderateScale(15),
+  },
+  CButtonTxt: {
+    ...styles.mt0,
+    ...styles.mb20,
+    width: '90%'
   },
 });

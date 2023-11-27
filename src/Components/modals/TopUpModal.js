@@ -142,7 +142,7 @@ export default function TopUpModal(props) {
                 <AntDesign color={colors.black} name={'plus'} size={16} />
               </TouchableOpacity>
             </View>
-
+            
             <Slider
               value={defaultValue}
               onValueChange={sliderContainer}

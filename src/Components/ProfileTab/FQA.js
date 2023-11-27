@@ -121,12 +121,12 @@ const localStyles = StyleSheet.create({
     ...styles.mainContainerSurface,
   },
   outerComponent: {
-    ...styles.pv25,
+    ...styles.pv20,
     ...styles.ph15,
     gap: moderateScale(10),
     borderWidth: moderateScale(1),
     borderRadius: moderateScale(20),
-    borderColor: colors.silver,
+    borderColor: colors.bottomBorder,
   },
   gapContainer: {
     gap: moderateScale(25),

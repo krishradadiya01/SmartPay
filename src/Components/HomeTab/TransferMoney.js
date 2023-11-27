@@ -133,9 +133,8 @@ export default function TransferMoney({navigation}) {
             showsHorizontalScrollIndicator={false}
           />
         </View>
-
-        <CButton containerStyle={localStyles.ContBtn} onPress={moveToMoney} />
       </View>
+      <CButton containerStyle={localStyles.ContBtn} onPress={moveToMoney} />
     </SafeAreaView>
   );
 }
@@ -180,7 +179,7 @@ const localStyles = StyleSheet.create({
     ...styles.justifyBetween,
   },
   CTxtInp: {
-    ...styles.mv25,
+    ...styles.mv10,
   },
   GirlNameTxt: {
     ...styles.ph20,
@@ -188,6 +187,7 @@ const localStyles = StyleSheet.create({
   },
   ContBtn: {
     ...styles.mb20,
+    width: '90%'
   },
   imgSty: {
     width: moderateScale(48),

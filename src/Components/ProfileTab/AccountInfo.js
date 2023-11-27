@@ -121,7 +121,7 @@ const localStyles = StyleSheet.create({
     ...styles.mv20,
   },
   parentComponent: {
-    ...styles.mv20,
+    ...styles.mv15,
     ...styles.ph15,
     borderWidth: moderateScale(1),
     borderRadius: moderateScale(16),

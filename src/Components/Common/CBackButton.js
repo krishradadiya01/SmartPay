@@ -23,7 +23,7 @@ const localStyles = StyleSheet.create({
   imageStyle: {
     borderWidth: moderateScale(1),
     borderRadius: moderateScale(12),
-    borderColor: colors.silver,
+    borderColor: colors.bottomBorder,
     ...styles.mt10,
     ...styles.flex,
   },

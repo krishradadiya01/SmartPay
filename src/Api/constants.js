@@ -491,16 +491,19 @@ export const LocationData = [
     id: 1,
     image: Images.Star,
     reviews: strings.Reviews,
+    color: colors.tabColor,
   },
   {
     id: 2,
     image: Images.MiniCar,
     reviews: strings.Mils,
+    color: colors.tabColor,
   },
   {
     id: 3,
     image: Images.Time,
     reviews: strings.Time,
+    color: colors.tabColor,
   },
 ];
 

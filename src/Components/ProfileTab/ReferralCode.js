@@ -124,7 +124,7 @@ const localStyles = StyleSheet.create({
     ...styles.mh20,
   },
   bottomBorder: {
-    ...styles.mv50,
+    ...styles.mv20,
     borderBottomWidth: moderateScale(1),
     borderBottomColor: colors.bottomBorder,
   },

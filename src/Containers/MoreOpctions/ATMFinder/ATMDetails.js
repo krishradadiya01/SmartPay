@@ -129,7 +129,7 @@ const localStyles = StyleSheet.create({
   parentMaterial: {
     borderWidth: moderateScale(1),
     borderRadius: moderateScale(12),
-    borderColor: colors.silver,
+    borderColor: colors.google,
     width: moderateScale(40),
     height: moderateScale(40),
     ...styles.pl10,

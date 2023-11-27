@@ -63,7 +63,7 @@ const localStyles = StyleSheet.create({
   card1: {
     width: moderateScale(333),
     height: moderateScale(190),
-    ...styles.mv20,
+    ...styles.mt10,
   },
   parentChoose: {
     ...styles.flexRow,

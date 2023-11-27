@@ -109,7 +109,7 @@ export default function MyCardScreen({navigation}) {
   };
 
   return (
-    <SafeAreaView style={styles.main}>
+    <SafeAreaView style={localStyles.main}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.mh20}>
           <CHeader
@@ -201,7 +201,7 @@ export default function MyCardScreen({navigation}) {
             </TouchableOpacity>
           </View>
 
-          <View style={{gap: moderateScale(15)}}>
+          <View style={localStyles.TransactionHistory}>
             <TransHis
               onPress={moveToGraph}
               source={images.UiKit}
@@ -236,10 +236,9 @@ const localStyles = StyleSheet.create({
     ...styles.flex,
   },
   parentMore: {
-    width: moderateScale(40),
     height: moderateScale(38),
     borderWidth: moderateScale(1),
-    borderColor: colors.silver,
+    borderColor: colors.google,
     ...styles.p10,
     borderRadius: moderateScale(12),
   },
@@ -312,5 +311,9 @@ const localStyles = StyleSheet.create({
   headerSty: {
     ...styles.mh0,
     ...styles.pl25,
+  },
+  TransactionHistory: {
+    gap: moderateScale(15),
+    ...styles.mv25,
   },
 });

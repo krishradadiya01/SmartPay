@@ -39,6 +39,7 @@ const HeaderComponent = () => {
       <CHeader
         color={colors.black}
         title={'Spotify'}
+        customStyle={localStyles.SpotifyText}
         rightIcon={<RightIcon />}
       />
       <View style={localStyles.mainView}>
@@ -121,7 +122,7 @@ export default function HistoryDetails() {
             <View style={localStyles.viewOfPayment}>
               <CText
                 style={localStyles.dateTxt}
-                color={item.color}
+                color={colors.black}
                 type={'B14'}>
                 {item.payments}
               </CText>
@@ -156,10 +157,9 @@ const localStyles = StyleSheet.create({
     ...styles.ph20,
   },
   parentMore: {
-    width: moderateScale(38),
     height: moderateScale(38),
     borderWidth: moderateScale(1),
-    borderColor: colors.silver,
+    borderColor: colors.bottomBorder,
     ...styles.p10,
     borderRadius: moderateScale(12),
   },
@@ -222,5 +222,8 @@ const localStyles = StyleSheet.create({
   viewOfPayment: {
     gap: moderateScale(5),
     alignItems: 'flex-end',
+  },
+  SpotifyText: {
+    ...styles.ml80,
   },
 });

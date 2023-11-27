@@ -1,4 +1,4 @@
-import {StyleSheet, SafeAreaView, View, Alert} from 'react-native';
+import {StyleSheet, SafeAreaView, View} from 'react-native';
 import React, {useState} from 'react';
 
 // Local imports

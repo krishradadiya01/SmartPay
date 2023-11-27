@@ -87,7 +87,7 @@ export default function HistoryTrans({navigation}) {
                 <Feather
                   style={localStyles.eyeSty}
                   name={'eye'}
-                  color={colors.silver}
+                  color={colors.bottomBorder}
                   size={24}
                 />
                 <Image source={images.Switch} style={localStyles.switchImg} />
@@ -157,7 +157,7 @@ const localStyles = StyleSheet.create({
   parentMaterial: {
     borderWidth: moderateScale(1),
     borderRadius: moderateScale(12),
-    borderColor: colors.silver,
+    borderColor: colors.bottomBorder,
     width: moderateScale(40),
     height: moderateScale(40),
     ...styles.alignCenter,

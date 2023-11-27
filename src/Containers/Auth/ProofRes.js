@@ -157,7 +157,7 @@ const localStyles = StyleSheet.create({
   mainBoxes: {
     ...styles.mv10,
     borderRadius: moderateScale(16),
-    borderColor: colors.silver,
+    borderColor: colors.bottomBorder,
     borderWidth: moderateScale(1),
     backgroundColor: colors.white,
   },
@@ -168,7 +168,7 @@ const localStyles = StyleSheet.create({
     ...styles.pv25,
     borderRadius: moderateScale(16),
     borderBottomWidth: moderateScale(1),
-    borderBottomColor: colors.silver,
+    borderBottomColor: colors.bottomBorder,
   },
   parentPassAndTxt: {
     ...styles.rowCenter,

@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   FlatList,
   View,
+  ScrollView,
 } from 'react-native';
 import React from 'react';
 import Octicons from 'react-native-vector-icons/Octicons';
@@ -46,7 +47,7 @@ export default function SeeMyCard({navigation, route}) {
 
   return (
     <SafeAreaView style={localStyles.main}>
-      <View style={styles.ph20}>
+      <ScrollView showsVerticalScrollIndicator={false} style={styles.ph20}>
         <CHeader color={colors.black} title={'My Card'} />
         <FlatList
           data={cardList}
@@ -54,7 +55,7 @@ export default function SeeMyCard({navigation, route}) {
           showsVerticalScrollIndicator={false}
           ListFooterComponent={<ListFooterComponent />}
         />
-      </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }

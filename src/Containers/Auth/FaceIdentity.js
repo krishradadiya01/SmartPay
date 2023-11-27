@@ -50,7 +50,7 @@ export default function FaceIdentity({navigation}) {
           <CText color={colors.black}>{strings.IdentityWarning}</CText>
 
           {!!selectImage ? (
-            <View style={localStyles.parentGal}>
+            <View>
               <Image
                 source={{uri: selectImage}}
                 style={localStyles.gallImage}
@@ -92,7 +92,7 @@ const localStyles = StyleSheet.create({
     height: moderateScale(320),
   },
   parentImage: {
-    ...styles.mt40,
+    ...styles.mt25,
     ...styles.alignCenter,
   },
   ParentCButton: {
@@ -101,10 +101,6 @@ const localStyles = StyleSheet.create({
   gallImage: {
     width: moderateScale(320),
     height: moderateScale(320),
-  },
-  parentGal: {
-    ...styles.center,
-    ...styles.mt30,
   },
   CButtonTxt: {
     ...styles.mb30,

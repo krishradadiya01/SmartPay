@@ -9,7 +9,7 @@ const nameRegex = /^[a-zA-Z ]{2,40}$/;
 
 const cardNumberRegex = /^[0-9]{16}$/;
 
-const expiryDate = /^(0[1-9]|1[0-2])\/([0-9]{2})$/;
+const expiryDate = /^(0[1-9]|1[0-2])\/?(([0-9]{4}|[0-9]{2})$)/
 
 const cvvRegex = /^[0-9]{3}$/;
 

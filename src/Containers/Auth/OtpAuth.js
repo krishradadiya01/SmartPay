@@ -85,7 +85,7 @@ const localStyles = StyleSheet.create({
     height: moderateScale(56),
     borderWidth: moderateScale(1),
     borderRadius: moderateScale(12),
-    borderColor: colors.silver,
+    borderColor: colors.bottomBorder,
     ...typography.fontWeights.Bold,
     ...typography.fontSizes.f24,
     color: colors.black,

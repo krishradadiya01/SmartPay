@@ -69,24 +69,34 @@ export default function SelectProvider() {
       </TouchableOpacity>
     );
   };
+
   return (
     <SafeAreaView style={localStyles.main}>
-      <View style={styles.ph20}>
-        <CHeader color={colors.black} title={'Top Up'} />
-        <CText style={styles.mt30} color={colors.black} type={'B18'}>
-          {strings.BankTrans}
-        </CText>
+      <View style={localStyles.outerContainer}>
+        <View>
+          <CHeader color={colors.black} title={'Top Up'} />
+          <CText style={styles.mt15} color={colors.black} type={'B18'}>
+            {strings.BankTrans}
+          </CText>
 
-        <FlatList data={TransferData} renderItem={renderData} />
+          <FlatList
+            scrollEnabled={false}
+            data={TransferData}
+            renderItem={renderData}
+          />
 
-        <CText color={colors.black} style={localStyles.OtherTxt} type={'B18'}>
-          {strings.Other}
-        </CText>
-        <FlatList data={TransferData2} renderItem={renderData} />
+          <CText color={colors.black} style={localStyles.OtherTxt} type={'B18'}>
+            {strings.Other}
+          </CText>
+          <FlatList
+            scrollEnabled={false}
+            data={TransferData2}
+            renderItem={renderData}
+          />
 
-        <CButton text={'Confirm'} onPress={openModal} />
-
-        <TopUpModal sheetRef={amount} paymentDetail={selectedItem} />
+          <TopUpModal sheetRef={amount} paymentDetail={selectedItem} />
+        </View>
+        <CButton containerStyle={localStyles.CommonButtonStyle} text={'Confirm'} onPress={openModal} />
       </View>
     </SafeAreaView>
   );
@@ -110,7 +120,7 @@ const localStyles = StyleSheet.create({
     height: moderateScale(80),
     ...styles.flexRow,
     ...styles.alignCenter,
-    ...styles.mv10,
+    ...styles.mv5,
   },
   outerComponent: {
     gap: moderateScale(10),
@@ -121,6 +131,14 @@ const localStyles = StyleSheet.create({
     ...styles.ph20,
   },
   OtherTxt: {
-    ...styles.mv10,
+    ...styles.mv5,
   },
+  outerContainer: {
+    ...styles.mh20,
+    ...styles.flex,
+    ...styles.justifyBetween,
+  },
+  CommonButtonStyle: {
+    ...styles.mb30
+  }
 });

@@ -111,12 +111,13 @@ export default function HomeScreen({navigation}) {
     return (
       <TouchableOpacity style={localStyles.parentDep} onPress={onPress}>
         <Image source={image} style={localStyles.childImg} />
-        <CText color={colors.black} style={localStyles.Txt}>
+        <CText type={'M12'} color={colors.black} style={localStyles.Txt}>
           {text}
         </CText>
       </TouchableOpacity>
     );
   };
+
   const renderHomeData = ({item}) => {
     return (
       <TouchableOpacity style={localStyles.parentTrans}>
@@ -130,7 +131,7 @@ export default function HomeScreen({navigation}) {
             <CText color={colors.black} type={'B16'} style={localStyles.name}>
               {item.name}
             </CText>
-            <CText color={colors.tabColor}>{item.subName}</CText>
+            <CText type={'M12'} color={colors.tabColor}>{item.subName}</CText>
           </View>
         </View>
 
@@ -186,7 +187,7 @@ const localStyles = StyleSheet.create({
   mainImg: {
     ...styles.rowSpaceAround,
     backgroundColor: colors.GreyScale,
-    ...styles.mt85,
+    ...styles.mt90,
     ...styles.mh25,
     ...styles.p15,
     borderRadius: moderateScale(16),
@@ -217,7 +218,7 @@ const localStyles = StyleSheet.create({
     ...styles.justifyBetween,
     ...styles.pv15,
     borderBottomWidth: moderateScale(1),
-    borderBottomColor: colors.silver,
+    borderBottomColor: colors.bottomBorder,
   },
   oneBox: {
     ...styles.flexRow,

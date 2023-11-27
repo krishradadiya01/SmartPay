@@ -22,8 +22,8 @@ import strings from '../../I18n/mergeString';
 export default function Notification() {
   const renderData = ({item}) => {
     return (
-      <View>
-        <TouchableOpacity style={localStyles.outerComponent}>
+      <TouchableOpacity style={localStyles.outerComponent}>
+        <View style={localStyles.outerComponent}>
           <Image source={item.image} style={localStyles.iconSty} />
 
           <View style={localStyles.outerContainer}>
@@ -35,13 +35,13 @@ export default function Notification() {
                 {item.subName}
               </CText>
             </View>
-
-            <CText type={'R12'} color={colors.tabColor}>
-              {item.Time}
-            </CText>
           </View>
-        </TouchableOpacity>
-      </View>
+
+          <CText type={'R12'} color={colors.tabColor}>
+            {item.Time}
+          </CText>
+        </View>
+      </TouchableOpacity>
     );
   };
   const RightIcon = () => {
@@ -53,7 +53,7 @@ export default function Notification() {
   };
   return (
     <SafeAreaView style={localStyles.main}>
-      <View style={styles.mh20}>
+      <SafeAreaView style={styles.mh20}>
         <CHeader
           color={colors.black}
           customStyle={localStyles.notTxt}
@@ -61,24 +61,29 @@ export default function Notification() {
           rightIcon={<RightIcon />}
         />
 
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false}>
           <CText
             style={localStyles.TxtSty}
             type={'B16'}
             color={colors.tabColor}>
             {strings.TodayNot}
           </CText>
+
           <FlatList data={NotificationData1} renderItem={renderData} />
 
-          <CText
-            type={'B16'}
-            color={colors.tabColor}
-            style={localStyles.weekSty}>
-            {strings.ThisWeek}
-          </CText>
-          <FlatList data={NotificationData2} renderItem={renderData} />
+          <View style={localStyles.flatListDataStyle}>
+            <CText type={'B16'} color={colors.tabColor}>
+              {strings.ThisWeek}
+            </CText>
+
+            <FlatList
+              contentContainerStyle={styles.pv20}
+              data={[...NotificationData2, ...NotificationData2]}
+              renderItem={renderData}
+            />
+          </View>
         </ScrollView>
-      </View>
+      </SafeAreaView>
     </SafeAreaView>
   );
 }
@@ -100,20 +105,20 @@ const localStyles = StyleSheet.create({
     height: moderateScale(48),
   },
   outerComponent: {
-    gap: moderateScale(15),
     ...styles.mv15,
     ...styles.flexRow,
     ...styles.alignCenter,
+    gap: moderateScale(10),
   },
   TxtSty: {
-    ...styles.mv10,
+    ...styles.mt10,
   },
   outerContainer: {
     ...styles.flex,
     ...styles.flexRow,
     ...styles.justifyBetween,
   },
-  weekSty: {
-    ...styles.mv15,
+  flatListDataStyle: {
+    ...styles.mv50,
   },
 });

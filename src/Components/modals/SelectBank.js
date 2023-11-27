@@ -67,6 +67,7 @@ const localStyles = StyleSheet.create({
     ...styles.mh20,
     ...styles.mv20,
     ...styles.alignCenter,
+    backgroundColor: colors.white,
   },
   parentNewBank: {
     gap: moderateScale(13),

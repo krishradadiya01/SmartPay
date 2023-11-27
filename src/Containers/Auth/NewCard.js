@@ -132,7 +132,9 @@ export default function NewCard() {
     onHighlight(BlurStyle);
   };
 
-  const showCountry = () => {};
+  const showCountry = () => {
+    init.current?.show();
+  };
 
   const selectedCountry = itm => {
     setCountry(itm);
@@ -251,11 +253,16 @@ export default function NewCard() {
           </TouchableOpacity>
 
           <Countries sheetRef={init} selectedCountry={selectedCountry} />
-          <CButton text={'Save'} onPress={nextButton} />
 
           <ReadyCard visible={visible} onPressClose={onPressCancel} />
         </View>
       </KeyBoardAvoidWrapper>
+
+      <CButton
+        containerStyle={localStyles.CButtonStyle}
+        text={'Save'}
+        onPress={nextButton}
+      />
     </SafeAreaView>
   );
 }
@@ -271,11 +278,11 @@ const localStyles = StyleSheet.create({
   },
   parentImg: {
     ...styles.alignCenter,
-    ...styles.mv20,
+    ...styles.mv10,
   },
   parentColor: {
     position: 'absolute',
-    top: moderateScale(100),
+    top: moderateScale(87),
     right: 0,
   },
   numberTxt: {
@@ -288,7 +295,7 @@ const localStyles = StyleSheet.create({
     width: '48%',
   },
   mainCTxtInp: {
-    ...styles.mv20,
+    ...styles.mv10,
     ...styles.rowCenter,
     ...styles.justifyBetween,
   },
@@ -321,5 +328,9 @@ const localStyles = StyleSheet.create({
   mainValidationContainer: {
     ...styles.rowSpaceBetween,
     gap: moderateScale(15),
+  },
+  CButtonStyle: {
+    ...styles.mv15,
+    width: '90%',
   },
 });

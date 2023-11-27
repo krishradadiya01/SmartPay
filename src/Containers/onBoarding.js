@@ -21,7 +21,7 @@ export default function OnBoarding({navigation}) {
 
   const _viewabilityConfig = {itemVisiblePercentThreshold: 50};
 
-  const skip = () => {
+  const moveToAuth = () => {
     navigation.navigate(StackNav.AuthNavigation);
   };
 
@@ -70,7 +70,7 @@ export default function OnBoarding({navigation}) {
       <SafeAreaView style={localStyles.ParentSkipButton}>
         <CButton
           text={'Skip'}
-          onPress={skip}
+          onPress={moveToAuth}
           ParentLoginBtn={localStyles.SkipButton}
           ChildLoginBtn={localStyles.ChildSkipBtn}
         />

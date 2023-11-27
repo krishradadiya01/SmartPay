@@ -99,7 +99,7 @@ export default function Reasons({navigation}) {
         </View>
 
         <CButton
-          ParentLoginBtn={localStyles.CButtonMain}
+          containerStyle={localStyles.CButtonMain}
           onPress={moveToCreatePin}
         />
       </View>
@@ -118,17 +118,11 @@ const localStyles = StyleSheet.create({
   knowReasonTxt: {
     ...styles.mt15,
   },
-  PieChartMain: {
-    width: moderateScale(156),
-    height: moderateScale(108),
-    borderRadius: moderateScale(16),
-    ...styles.mv20,
-  },
   BoltMain: {
     width: moderateScale(156),
     height: moderateScale(108),
     borderRadius: moderateScale(16),
-    ...styles.mv20,
+    ...styles.mv10,
     ...styles.flex,
     ...styles.mh10,
     ...styles.justifyBetween,
@@ -139,21 +133,16 @@ const localStyles = StyleSheet.create({
     ...styles.justifyBetween,
     ...styles.mt10,
   },
-  PieChartStyle: {
-    ...styles.mh20,
-    ...styles.mv15,
-  },
   spendDailyTxt: {
     width: moderateScale(100),
     ...styles.pl20,
-    ...styles.mb15,
   },
   fastTransTxt: {
     ...styles.ph20,
     ...styles.mb15,
   },
   CButtonMain: {
-    ...styles.mb30,
+    ...styles.mv25
   },
   imgSty: {
     ...styles.p10,
