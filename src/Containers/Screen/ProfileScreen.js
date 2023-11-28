@@ -44,6 +44,10 @@ export default function ProfileScreen({navigation}) {
     navigation.navigate(StackNav.FQA);
   };
 
+  const moveToLogOut = () => {
+    navigation.navigate(StackNav.LogOut);
+  };
+
   const RenderData = ({image, name, onPress}) => {
     return (
       <TouchableOpacity style={localStyles.outerContainer} onPress={onPress}>
@@ -122,6 +126,11 @@ export default function ProfileScreen({navigation}) {
             onPress={moveToFQA}
           />
           <RenderData name={strings.Rate} image={images.RateUs} />
+          <RenderData
+            onPress={moveToLogOut}
+            name={strings.LogOut}
+            image={images.user}
+          />
         </View>
       </ScrollView>
     </SafeAreaView>

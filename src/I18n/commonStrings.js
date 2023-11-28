@@ -301,4 +301,8 @@ export default {
   validExpiryDate: 'Please Enter valid Date',
   validVcc: '* Invalid VCC',
   Mandatory: '* Mandatory',
+  LogOut: 'Log Out',
+  LogOutConfirm: 'Are You confirm to log out from Smartpay?',
+  usd: 'usd',
+  PleaseAmount: 'Please Enter Your Amount'
 };

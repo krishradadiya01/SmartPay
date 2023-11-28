@@ -28,6 +28,7 @@ export const StackNav = {
   SelectProvider: 'SelectProvider',
   TopUpModal: 'TopUpModal',
   PhoneBook: 'PhoneBook',
+  LogOut: 'LogOut'
 };
 
 export const AuthNav = {

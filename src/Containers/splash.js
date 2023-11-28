@@ -1,18 +1,20 @@
 import {View, Image, StyleSheet} from 'react-native';
 import React, {useEffect} from 'react';
+
+// Local imports
 import images from '../Assets/Images/index';
 import {moderateScale} from '../Common/constant';
 import {styles} from '../Themes';
 import {StorageValue} from '../Utils/asyncStorage';
 import {StackNav} from '../Navigation/navigationKeys';
 import {colors} from '../Themes/colors';
+import SplashScreen from 'react-native-splash-screen';
 
 const Splash = ({navigation}) => {
   useEffect(() => {
-    setTimeout(() => {
-      asyncProcess();
-    }, 1500);
-  });
+    SplashScreen.hide();
+    asyncProcess();
+  }, []);
 
   const asyncProcess = async () => {
     try {
@@ -20,7 +22,7 @@ const Splash = ({navigation}) => {
       if (Data) {
         let {OnBoardingDataValue, authDataValue} = Data;
         if (!!authDataValue) {
-          navigation.replace(StackNav.AuthNavigation);
+          navigation.replace(StackNav.TabNavigation);
         } else if (!!OnBoardingDataValue) {
           navigation.replace(StackNav.AuthNavigation);
         } else {

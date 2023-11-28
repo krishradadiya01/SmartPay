@@ -155,6 +155,11 @@ const StackNavigation = () => {
         component={StackRoute.PhoneBook}
         options={{headerShown: false}}
       />
+      <Stack.Screen
+        name={StackNav.LogOut}
+        component={StackRoute.LogOut}
+        options={{headerShown: false}}
+      />
     </Stack.Navigator>
   );
 };

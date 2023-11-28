@@ -67,12 +67,12 @@ export default function VerifyIdentity({navigation}) {
             />
           </View>
         </View>
-        <CButton
-          ParentLoginBtn={localStyles.ParentButton}
-          onPress={moveToItsYou}
-          text={'Continue'}
-        />
       </View>
+      <CButton
+        ParentLoginBtn={localStyles.ParentButton}
+        onPress={moveToItsYou}
+        text={'Continue'}
+      />
     </SafeAreaView>
   );
 }
@@ -112,5 +112,6 @@ const localStyles = StyleSheet.create({
   ParentButton: {
     borderRadius: moderateScale(16),
     ...styles.mb30,
+    width: '90%'
   },
 });

@@ -457,10 +457,22 @@ export const NotificationData2 = [
 ];
 
 export const TimeData = [
-  strings.Day,
-  strings.Week,
-  strings.Month,
-  strings.Year,
+  {
+    id: 1,
+    name: strings.Day,
+  },
+  {
+    id: 2,
+    name: strings.Week,
+  },
+  {
+    id: 3,
+    name: strings.Month,
+  },
+  {
+    id: 4,
+    name: strings.Year,
+  },
 ];
 
 export const ChatData = [
@@ -589,4 +601,18 @@ export const ReasonsData = [
     name: strings.FinancialAsset,
     selected: false,
   },
+];
+
+export const CurrencyList = [
+  {label: 'usd', value: 'usd'},
+  {label: 'inr', value: 'inr'},
+  {label: 'yen', value: 'yen'},
+  {label: 'lev', value: 'lev'},
+];
+
+export const MeSectionData = [
+  {label: 'Student', value: 'Student'},
+  {label: 'BusinessMan', value: 'BusinessMan'},
+  {label: 'Professional', value: 'Professional'},
+  {label: 'Senior Citizen', value: 'Senior Citizen'},
 ];

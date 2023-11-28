@@ -1,12 +1,11 @@
 import {StyleSheet, SafeAreaView, Image, View} from 'react-native';
 import React, {useState} from 'react';
-import Feathers from 'react-native-vector-icons/FontAwesome';
 
 // Local imports
 import CHeader from '../Common/CHeader';
 import {styles} from '../../Themes';
 import images from '../../Assets/Images/index';
-import {moderateScale} from '../../Common/constant';
+import {getHeight, moderateScale} from '../../Common/constant';
 import {colors} from '../../Themes/colors';
 import CText from '../Common/CText';
 import strings from '../../I18n/mergeString';
@@ -15,10 +14,13 @@ import typography from '../../Themes/typography';
 import CButton from '../Common/CButton';
 import KeyBoardAvoidWrapper from '../Common/KeyBoardAvoidWrapper';
 import TransferPopUp from '../../Components/modals/TransferPopUp';
+import {Dropdown} from 'react-native-element-dropdown';
+import {CurrencyList} from '../../Api/constants';
 
 export default function SendMoney() {
   const [visible, setVisible] = useState(false);
   const [amount, setAmount] = useState('');
+  const [currency, setCurrency] = useState('');
 
   const onPressClose = () => {
     setVisible(!visible);
@@ -26,6 +28,10 @@ export default function SendMoney() {
 
   const onChangeAmount = txt => {
     setAmount(parseFloat(txt));
+  };
+
+  const onChangeCurrency = ({value}) => {
+    setCurrency(value);
   };
 
   return (
@@ -55,21 +61,23 @@ export default function SendMoney() {
             </View>
 
             <View style={localStyles.parentTxtInp}>
-              <View style={localStyles.parentUsd}>
-                <CText
-                  align={'center'}
-                  type={'M16'}
-                  color={colors.tabColor}
-                  style={localStyles.UsdTxt}>
-                  {strings.USD}
-                </CText>
+              <Dropdown
+                style={localStyles.dropdownStyle}
+                data={CurrencyList}
+                value={currency}
+                maxHeight={moderateScale(180)}
+                labelField="label"
+                valueField="value"
+                label={strings.usd}
+                onChange={onChangeCurrency}
+                selectedTextStyle={localStyles.miniContainer}
+                itemTextStyle={localStyles.miniContainer}
+                itemContainerStyle={{
+                  backgroundColor: colors.GreyScale,
+                  width: 'auto',
+                }}
+              />
 
-                <Feathers
-                  name={'angle-down'}
-                  color={colors.tabColor}
-                  size={14}
-                />
-              </View>
               <CTextInput
                 mainTxtInp={localStyles.CTxtInp}
                 textInputStyle={localStyles.ChildTxtInp}
@@ -165,5 +173,17 @@ const localStyles = StyleSheet.create({
     ...styles.ph20,
     ...styles.flexGrow1,
     ...styles.mainContainerSurface,
+  },
+  dropdownStyle: {
+    backgroundColor: colors.GreyScale,
+    height: getHeight(52),
+    borderRadius: moderateScale(15),
+    borderWidth: moderateScale(1),
+    ...styles.ph20,
+    width: '32%',
+    ...styles.mv10,
+  },
+  miniContainer: {
+    color: colors.black,
   },
 });

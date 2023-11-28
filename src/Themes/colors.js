@@ -3,7 +3,7 @@ export const colors = {
   black: '#000000',
   silver: 'silver',
   skyBlue: '#2FA2B9',
-  red: 'red',
+  red: '#FF0000',
   forgot: '#0A6375',
   google: '#E5E7EB',
   SignUpTxt: '#0A6375',
@@ -17,4 +17,5 @@ export const colors = {
   tomato: '#F75555',
   secondary: '#FFF8F7',
   Toggle: '#0A6375',
+  Green: '#008000',
 };

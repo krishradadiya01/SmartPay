@@ -25,7 +25,7 @@ import {StackNav} from '../../Navigation/navigationKeys';
 
 export default function MyCardScreen({navigation}) {
   const [OnBoardingDetails, setOnBoardingDetails] = useState(0);
-  const [data, setData] = useState('');
+  const [data, setData] = useState(1);
 
   const _viewabilityConfig = {itemVisiblePercentThreshold: 50};
 
@@ -48,17 +48,17 @@ export default function MyCardScreen({navigation}) {
           localStyles.timeSty,
           {
             borderRadius: moderateScale(8),
-            backgroundColor: data === item ? colors.GreyScale : null,
+            backgroundColor: data === item.id ? colors.GreyScale : null,
           },
         ]}
-        onPress={() => onChangeColor(item)}>
+        onPress={() => onChangeColor(item.id)}>
         <CText
           style={[
             {
-              color: data === item ? colors.numbersColor : colors.black,
+              color: data === item.id ? colors.numbersColor : colors.black,
             },
           ]}>
-          {item}
+          {item.name}
         </CText>
       </TouchableOpacity>
     );
@@ -236,7 +236,8 @@ const localStyles = StyleSheet.create({
     ...styles.flex,
   },
   parentMore: {
-    height: moderateScale(38),
+    height: moderateScale(40),
+    width: moderateScale(42),
     borderWidth: moderateScale(1),
     borderColor: colors.google,
     ...styles.p10,

@@ -8,24 +8,28 @@ import {
 } from 'react-native';
 import React, {useState} from 'react';
 import Feathers from 'react-native-vector-icons/FontAwesome';
+import {Dropdown} from 'react-native-element-dropdown';
 
 // Local imports
 import CHeader from '../Common/CHeader';
 import {styles} from '../../Themes/index';
 import images from '../../Assets/Images/index';
-import {moderateScale} from '../../Common/constant';
+import {getHeight, moderateScale} from '../../Common/constant';
 import CText from '../Common/CText';
 import {colors} from '../../Themes/colors';
 import CTextInput from '../Common/CTextInput';
 import typography from '../../Themes/typography';
 import KeyBoardAvoidWrapper from '../Common/KeyBoardAvoidWrapper';
-import {DollarsData} from '../../Api/constants';
+import {CurrencyList, DollarsData} from '../../Api/constants';
 import CButton from '../Common/CButton';
 import {StackNav} from '../../Navigation/navigationKeys';
+import CDropdownInput from '../Common/CDropdownInput';
+import strings from '../../I18n/mergeString';
 
 export default function TopUpScreen({navigation}) {
   const [amount, setAmount] = useState('');
   const [Data, setData] = useState('');
+  const [currency, setCurrency] = useState();
 
   const moveToConfirm = () => {
     navigation.navigate(StackNav.Confirmation, {amount: amount});
@@ -37,6 +41,10 @@ export default function TopUpScreen({navigation}) {
 
   const onChangeAmount = txt => {
     setAmount(parseFloat(txt));
+  };
+
+  const onChangeCurrency = value => {
+    setCurrency(value);
   };
 
   const dollarsData = ({item}) => {
@@ -100,22 +108,25 @@ export default function TopUpScreen({navigation}) {
             </View>
 
             <View style={localStyles.parentTxtInp}>
-              <View style={localStyles.parentUsd}>
-                <CText
-                  align={'center'}
-                  type={'M16'}
-                  color={colors.tabColor}
-                  style={localStyles.UsdTxt}>
-                  {strings.USD}
-                </CText>
-
-                <Feathers
-                  name={'angle-down'}
-                  color={colors.tabColor}
-                  size={14}
-                />
-              </View>
+              <Dropdown
+                style={localStyles.dropdownStyle}
+                data={CurrencyList}
+                value={currency}
+                maxHeight={moderateScale(180)}
+                labelField="label"
+                valueField="value"
+                label={strings.usd}
+                onChange={onChangeCurrency}
+                selectedTextStyle={localStyles.miniContainer}
+                itemTextStyle={localStyles.miniContainer}
+                itemContainerStyle={{
+                  backgroundColor: colors.GreyScale,
+                  width: 'auto',
+                }}
+              />
               <CTextInput
+                placeholder={strings.PleaseAmount}
+                placeholde
                 mainTxtInp={localStyles.CTxtInp}
                 textInputStyle={localStyles.ChildTxtInp}
                 keyboardType={'numeric'}
@@ -225,5 +236,17 @@ const localStyles = StyleSheet.create({
   CButton: {
     width: '90%',
     ...styles.mv25,
+  },
+  miniContainer: {
+    color: colors.black,
+  },
+  dropdownStyle: {
+    backgroundColor: colors.GreyScale,
+    height: getHeight(52),
+    borderRadius: moderateScale(15),
+    borderWidth: moderateScale(1),
+    ...styles.ph20,
+    width: '32%',
+    ...styles.mv10,
   },
 });

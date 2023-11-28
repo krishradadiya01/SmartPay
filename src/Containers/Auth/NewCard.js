@@ -29,7 +29,6 @@ import {
   validateName,
   vccNumber,
 } from '../../Utils/validation';
-import {AuthNav} from '../../Navigation/navigationKeys';
 
 const BlurStyle = {
   borderColor: colors.white,

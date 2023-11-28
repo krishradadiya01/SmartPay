@@ -131,7 +131,9 @@ export default function HomeScreen({navigation}) {
             <CText color={colors.black} type={'B16'} style={localStyles.name}>
               {item.name}
             </CText>
-            <CText type={'M12'} color={colors.tabColor}>{item.subName}</CText>
+            <CText type={'M12'} color={colors.tabColor}>
+              {item.subName}
+            </CText>
           </View>
         </View>
 
@@ -146,7 +148,7 @@ export default function HomeScreen({navigation}) {
 
   return (
     <SafeAreaView style={[styles.mainContainerSurface]}>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <FlatList
           data={HomeData}
           ListHeaderComponent={ListHeaderComponent}

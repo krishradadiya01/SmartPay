@@ -95,7 +95,7 @@ export default function TransferMoney({navigation}) {
   return (
     <SafeAreaView style={localStyles.main}>
       <View style={localStyles.mainContainer}>
-        <View>
+        <ScrollView>
           <CHeader color={colors.black} title={strings.Transaction} />
           <CText color={colors.black} type={'B18'} style={localStyles.CardTxt}>
             {strings.ChooseCards}
@@ -132,7 +132,7 @@ export default function TransferMoney({navigation}) {
             horizontal
             showsHorizontalScrollIndicator={false}
           />
-        </View>
+        </ScrollView>
       </View>
       <CButton containerStyle={localStyles.ContBtn} onPress={moveToMoney} />
     </SafeAreaView>
@@ -187,7 +187,7 @@ const localStyles = StyleSheet.create({
   },
   ContBtn: {
     ...styles.mb20,
-    width: '90%'
+    width: '90%',
   },
   imgSty: {
     width: moderateScale(48),

@@ -46,6 +46,7 @@ import ATMDetails from '../Containers/MoreOpctions/ATMFinder/ATMDetails';
 import SelectProvider from '../Containers/MoreOpctions/MobileTopUp/SelectProvider';
 import TopUpModal from '../Components/modals/TopUpModal';
 import PhoneBook from '../Containers/MoreOpctions/MobileTopUp/PhoneBook';
+import LogOut from '../Components/ProfileTab/LogOut';
 
 export const StackRoute = {
   splash,
@@ -77,6 +78,7 @@ export const StackRoute = {
   SelectProvider,
   TopUpModal,
   PhoneBook,
+  LogOut
 };
 
 export const AuthRoute = {
